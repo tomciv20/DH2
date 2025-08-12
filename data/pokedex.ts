@@ -11067,10 +11067,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	vullaby: {
 		num: 629,
 		name: "Vullaby",
-		types: ["Dark", "Flying"],
+		types: ["Dark", "Poison"],
 		gender: "F",
-		baseStats: {hp: 70, atk: 55, def: 75, spa: 45, spd: 65, spe: 60},
-		abilities: {0: "Big Pecks", 1: "Overcoat", H: "Weak Armor"},
+		baseStats: {hp: 60, atk: 65, def: 45, spa: 60, spd: 60, spe: 50},
+		abilities: {0: "Poison Touch", 1: "Overcoat", H: "Weak Armor"},
 		heightm: 0.5,
 		weightkg: 9,
 		color: "Brown",
