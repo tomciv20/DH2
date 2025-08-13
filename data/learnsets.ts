@@ -65457,7 +65457,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
          sludgewave: ["9M"],
          heartstamp: ["9L20"],
 			psychic: ["9M"],
-         shadowball: ["9M"],
          allyswitch: ["9M"],
          dreameater: ["9M"],
 			venoshock: ["9M"],

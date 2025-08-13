@@ -2372,7 +2372,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Marowak",
 		types: ["Ground", "Ghost"],
 		baseStats: {hp: 75, atk: 120, def: 85, spa: 80, spd: 85, spe: 105},
-		abilities: {0: "Klutz},
+		abilities: {0: "Klutz"},
 		heightm: 1,
 		weightkg: 45,
 		color: "Brown",
