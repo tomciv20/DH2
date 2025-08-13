@@ -1161,7 +1161,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	paras: {
 		num: 46,
-		name: "SCP 049-2",
+		name: "Paras",
 		types: ["Bug", "Ghost"],
 		baseStats: {hp: 45, atk: 75, def: 55, spa: 25, spd: 60, spe: 60},
 		abilities: {0: "Moxie", 1: "Regenerator", H: "Mummy"},
@@ -1173,7 +1173,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	parasect: {
 		num: 47,
-		name: "SCP 049-2",
+		name: "Parasect",
 		types: ["Bug", "Ghost"],
 		baseStats: {hp: 65, atk: 105, def: 90, spa: 55, spd: 90, spe: 100},
 		abilities: {0: "Moxie", 1: "Regenerator", H: "Mummy"},
@@ -1381,7 +1381,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	mankey: {
 		num: 56,
-		name: "SCP-1000",
+		name: "Mankey",
 		types: ["Fighting", "Dark"],
 		baseStats: {hp: 50, atk: 80, def: 45, spa: 70, spd: 55, spe: 70},
 		abilities: {0: "Intimidate", 1: "Speed Boost", H: "Perish Body"},
@@ -1393,7 +1393,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	primeape: {
 		num: 57,
-		name: "SCP 1000",
+		name: "Primeape",
 		types: ["Fighting", "Dark"],
 		baseStats: {hp: 80, atk: 105, def: 75, spa: 95, spd: 85, spe: 95},
 		abilities: {0: "Intimidate", 1: "Speed Boost", H: "Perish Body"},
@@ -4706,7 +4706,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	raikou: {
 		num: 243,
-		name: "SCP 939-E",
+		name: "Raikou",
 		types: ["Electric", "Dark"],
 		gender: "N",
 		baseStats: {hp: 110, atk: 110, def: 80, spa: 60, spd: 80, spe: 140},
@@ -4719,8 +4719,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	entei: {
 		num: 244,
-		name: "SCP 939-F",
-		types: ["Fire"],
+		name: "Entei",
+		types: ["Fire", "Dark"],
 		gender: "N",
 		baseStats: {hp: 110, atk: 140, def: 80, spa: 60, spd: 80, spe: 110},
 		abilities: {0: "Hustle"},
@@ -4733,7 +4733,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	suicune: {
 		num: 245,
 		name: "Suicune",
-		types: ["SCP 939-W"],
+		types: ["Water", "Dark"],
 		gender: "N",
 		baseStats: {hp: 110, atk: 110, def: 95, spa: 60, spd: 95, spe: 110},
 		abilities: {0: "Hustle"},
@@ -6801,7 +6801,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	regirock: {
 		num: 377,
-		name: "SCP 173-R",
+		name: "Regirock",
 		types: ["Rock"],
 		gender: "N",
 		baseStats: {hp: 200, atk: 200, def: 100, spa: 20, spd: 60, spe: 200},
@@ -6814,7 +6814,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	regice: {
 		num: 378,
-		name: "SCP 173-I",
+		name: "Regice",
 		types: ["Ice"],
 		gender: "N",
 		baseStats: {hp: 200, atk: 200, def: 60, spa: 20, spd: 100, spe: 200},
@@ -6827,7 +6827,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	registeel: {
 		num: 379,
-		name: "SCP 173-S",
+		name: "Registeel",
 		types: ["Steel"],
 		gender: "N",
 		baseStats: {hp: 200, atk: 200, def: 80, spa: 20, spd: 80, spe: 200},
@@ -10230,7 +10230,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	zorua: {
 		num: 570,
-		name: "SCP 939",
+		name: "Zorua",
 		types: ["Dark", "Normal"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 80, atk: 80, def: 40, spa: 40, spd: 40, spe: 80},
@@ -10260,7 +10260,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	zoroark: {
 		num: 571,
-		name: "SCP 939",
+		name: "Zoroark",
 		types: ["Dark", "Normal"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 110, atk: 110, def: 65, spa: 80, spd: 75, spe: 110},
