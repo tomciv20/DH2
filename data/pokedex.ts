@@ -8410,7 +8410,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Dusknoir",
 		types: ["Ghost"],
 		baseStats: {hp: 55, atk: 110, def: 135, spa: 65, spd: 135, spe: 45},
-		abilities: {0: "Pressure", 1: Cursed Body, H: "Frisk"},
+		abilities: {0: "Pressure", 1: "Cursed Body", H: "Frisk"},
 		heightm: 2.2,
 		weightkg: 106.6,
 		color: "Black",
