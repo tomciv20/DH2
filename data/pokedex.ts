@@ -10536,7 +10536,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Foongus",
 		types: ["Grass", "Poison"],
 		baseStats: {hp: 49, atk: 55, def: 45, spa: 55, spd: 55, spe: 15},
-		abilities: {0: "Effect Spore", 1: "Imposter" H: "Regenerator"},
+		abilities: {0: "Effect Spore", 1: "Imposter", H: "Regenerator"},
 		heightm: 0.2,
 		weightkg: 1,
 		color: "White",
