@@ -12,16 +12,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	pichu: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	pichuspikyeared: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	pikachu: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
+		tier: "Illegal",
+		doublesTier: "Illegal",
+		natDexTier: "Illegal",
 	},
 	pikachucosplay: {
 		isNonstandard: "Past",
