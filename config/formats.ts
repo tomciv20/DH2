@@ -29,7 +29,7 @@ export const Formats: FormatList = [
         `&bullet; <a href="https://docs.google.com/spreadsheets/d/your-link-here">Spreadsheet / Documentation</a>`,
     ],
 		mod: 'THTPokemonOrigins',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Mega Evolution Clause', 'Terastal Clause', 'Dynamax Clause'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['All Pokemon', 'Baton Pass'],
 		unbanlist: [
         'Spoink','Grumpig','Combee','Beedrill','Vespiquen','Teddiursa','Ursaring','Bellsprout','Weepinbel','Victreebel',
