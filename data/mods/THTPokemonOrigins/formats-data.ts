@@ -4,7 +4,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	ekans: {
-		tier: "LC",
+		tier: "THT",
 	},
 	arbok: {
 		tier: "ZU",

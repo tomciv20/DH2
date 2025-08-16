@@ -18,6 +18,90 @@ The column value will be ignored for repeat sections.
 */
 
 export const Formats: FormatList = [
+	{
+    section: "THT Mods",
+    column: 1,
+	},
+	{
+		name: "[Gen 9] THT Pokemon Origins",
+		desc: `<b>THT Pokemon Origins</b>: A custom mod featuring new Pokémon, moves, abilities, and mechanics exclusive to THT.`,
+		threads: [
+        `&bullet; <a href="https://docs.google.com/spreadsheets/d/your-link-here">Spreadsheet / Documentation</a>`,
+    ],
+		mod: 'THTPokemonOrigins',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Mega Evolution Clause', 'Terastal Clause', 'Dynamax Clause'],
+		banlist: ['All Pokemon', 'Baton Pass'],
+		unbanlist: [
+        'Spoink','Grumpig','Combee','Beedrill','Vespiquen','Teddiursa','Ursaring','Bellsprout','Weepinbel','Victreebel',
+        'Rufflet','Braviary','Phanpy','Donphan','Ekans','Arbok','Poliwag','Poliwhirl','Poliwrath','Politoed','Scraggy','Scrafty',
+        'Exeggcute','Exeggutor','Cherubi','Cherrim','Drifloon','Drifblim','Ralts','Kirlia','Gardevoir','Gallade','Slakoth',
+        'Vigoroth','Slaking','Slugma','Magcargo','Ponyta','Rapidash','Magnemite','Magneton','Magnezone','Murkrow','Honchkrow',
+        'Vulpix','Ninetales','Tangela','Tangrowth','Vanillite','Vanillish','Vanilluxe','Zubat','Golbat','Crobat','Trubbish',
+        'Garbodor','Croagunk','Toxicroak','Tympole','Palpitoad','Seismitoad','Shellos','Gastrodon','Munna','Musharna','Cranidos',
+        'Ramparados','Shieldon','Bastiodon','Lileep','Cradily','Anorith','Armaldo','Archen','Archeops','Tirtouga','Carracosta',
+        'Drilbur','Excadrill','Eevee','Flareon','Jolteon','Vaporeon','Espeon','Umbreon','Glaceon','Leafeon','Cottonee','Whimsicott',
+        'Petillil','Lilligant','Togepi','Togetic','Togekiss','Munchlax','Snorlax','Sandile','Krokorok','Krookidile','Darumaka',
+        'Darmanitan','Darmanitan Zen','Trapinch','Vibrava','Flygon','Numel','Camerupt','Hippopotas','Hippowdon','Swinub','Piloswine',
+        'Mamoswine','Rhyhorn','Rhydon','Rhyperior','Maractus','Yamask','Cofagrigus','Abra','Kadabra','Alakazam','Gastly','Haunter',
+        'Gengar','Slowpoke','Slowbro','Slowking','Chingling','Chimecho','Elekid','Electabuzz','Electivire','Magby','Magmar','Magmortar',
+        'Sewaddle','Swadloon','Leavanny','Tauros','Bouffalant','Riolu','Lucario','Mincinno','Cinccino','Purrloin','Liepard','Pawniard',
+        'Bisharp','Gligar','Gliscor','Blitzle','Zebstrika','Buizel','Floatzel','Ducklett','Swanna','Yanma','Yanmega','Hoppip','Skiploom',
+        'Jumpluff','Karrablast','Escavalier','Foongus','Amoongus','Deerling','Sawsbuck','Shelmet','Accelgor','Timburr','Gurdurr','Conkelldur',
+        'Larvesta','Volcarona','Larvitar','Pupitar','Tyranitar','Magikarp','Gyarados','Feebas','Milotic','Chinchou','Lanturn','Frillish',
+        'Jellicent','Spheal','Sealeo','Walrein','Lapras','Horsea','Seadra','Kingdra','Dratini','Dragonair','Dragonite','Axew','Fraxure',
+        'Haxorus','Deino','Zweilous','Hydreigon','Druddigon','Ferroseed','Ferrothorn','Tynamo','Eelektrik','Eelektross','Klink','Klang',
+        'Klinklang','Joltik','Galvantula','Mareep','Flaafy','Ampharos','Tropius','Heracross','Venipede','Whirlipede','Scolipede','Seedot',
+        'Nuzleaf','Shiftry','Litwick','Lampent','Chandelure','Elgyem','Beeheeyem','Duskull','Dusclops','Dusknoir','Solosis','Duosion',
+        'Reuniclus','Skorupi','Drapion','Shinx','Luxio','Luxray','Torkoal','Gible','Gabite','Garchomp','Beldum','Metang','Metagross',
+        'Snorunt','Glalie','Froslass','Sneasel','Weavile','Oshawott','Dewott','Samurott','Gothita','Gothorita','Gothitelle','Bagon',
+        'Shelgon','Salamence','Shaymin','Shaymin Sky','Audino','Terrakion','Cobalion','Virizion','Vullaby','Mandibuzz','Cubchoo','Beartic',
+        'Shuppet','Banette','Voltorb','Electrode','Zorua','Zoroark','Entei','Suicune','Raikou','Bonsly','Sudowoodo','Regirock','Regice',
+        'Registeel','Regigigas','Rotom','Rotom Wash','Rotom Heat','Rotom Mow','Rotom Fridge','Rotom Fan','Bronzor','Bronzong','Cubone','Marowak',
+        'Paras','Parasect','Snover','Abomasnow','Misdreavus','Mismagius','Dwebble','Crustle','Kyurem-White','Seviper','Ditto','Huntail','Mankey',
+        'Primeape','Carnivine','Heatran','Darkrai','Arceus','Kyurem','Keldeo','Landorus I','Landorus T','Thundurus I','Thundurus T','Tornadus I','Tornadus T',
+        'Genesect','Zekrom','Giratina - Origin','Reshiram','Roggenrola','Boldore','Gigalith','Aron','Lairon','Aggron','Lillipup','Herdier','Stoutland','Golett',
+		  'Golurk',
+		],
+		onValidateTeam(team, format) {
+        const allowed = new Set([
+            'Spoink','Grumpig','Combee','Beedrill','Vespiquen','Teddiursa','Ursaring','Bellsprout','Weepinbel','Victreebel',
+            'Rufflet','Braviary','Phanpy','Donphan','Ekans','Arbok','Poliwag','Poliwhirl','Poliwrath','Politoed','Scraggy','Scrafty',
+            'Exeggcute','Exeggutor','Cherubi','Cherrim','Drifloon','Drifblim','Ralts','Kirlia','Gardevoir','Gallade','Slakoth',
+            'Vigoroth','Slaking','Slugma','Magcargo','Ponyta','Rapidash','Magnemite','Magneton','Magnezone','Murkrow','Honchkrow',
+            'Vulpix','Ninetales','Tangela','Tangrowth','Vanillite','Vanillish','Vanilluxe','Zubat','Golbat','Crobat','Trubbish',
+            'Garbodor','Croagunk','Toxicroak','Tympole','Palpitoad','Seismitoad','Shellos','Gastrodon','Munna','Musharna','Cranidos',
+            'Ramparados','Shieldon','Bastiodon','Lileep','Cradily','Anorith','Armaldo','Archen','Archeops','Tirtouga','Carracosta',
+            'Drilbur','Excadrill','Eevee','Flareon','Jolteon','Vaporeon','Espeon','Umbreon','Glaceon','Leafeon','Cottonee','Whimsicott',
+            'Petillil','Lilligant','Togepi','Togetic','Togekiss','Munchlax','Snorlax','Sandile','Krokorok','Krookidile','Darumaka',
+            'Darmanitan','Darmanitan Zen','Trapinch','Vibrava','Flygon','Numel','Camerupt','Hippopotas','Hippowdon','Swinub','Piloswine',
+            'Mamoswine','Rhyhorn','Rhydon','Rhyperior','Maractus','Yamask','Cofagrigus','Abra','Kadabra','Alakazam','Gastly','Haunter',
+            'Gengar','Slowpoke','Slowbro','Slowking','Chingling','Chimecho','Elekid','Electabuzz','Electivire','Magby','Magmar','Magmortar',
+            'Sewaddle','Swadloon','Leavanny','Tauros','Bouffalant','Riolu','Lucario','Mincinno','Cinccino','Purrloin','Liepard','Pawniard',
+            'Bisharp','Gligar','Gliscor','Blitzle','Zebstrika','Buizel','Floatzel','Ducklett','Swanna','Yanma','Yanmega','Hoppip','Skiploom',
+            'Jumpluff','Karrablast','Escavalier','Foongus','Amoongus','Deerling','Sawsbuck','Shelmet','Accelgor','Timburr','Gurdurr','Conkelldur',
+            'Larvesta','Volcarona','Larvitar','Pupitar','Tyranitar','Magikarp','Gyarados','Feebas','Milotic','Chinchou','Lanturn','Frillish',
+            'Jellicent','Spheal','Sealeo','Walrein','Lapras','Horsea','Seadra','Kingdra','Dratini','Dragonair','Dragonite','Axew','Fraxure',
+            'Haxorus','Deino','Zweilous','Hydreigon','Druddigon','Ferroseed','Ferrothorn','Tynamo','Eelektrik','Eelektross','Klink','Klang',
+            'Klinklang','Joltik','Galvantula','Mareep','Flaafy','Ampharos','Tropius','Heracross','Venipede','Whirlipede','Scolipede','Seedot',
+            'Nuzleaf','Shiftry','Litwick','Lampent','Chandelure','Elgyem','Beeheeyem','Duskull','Dusclops','Dusknoir','Solosis','Duosion',
+            'Reuniclus','Skorupi','Drapion','Shinx','Luxio','Luxray','Torkoal','Gible','Gabite','Garchomp','Beldum','Metang','Metagross',
+            'Snorunt','Glalie','Froslass','Sneasel','Weavile','Oshawott','Dewott','Samurott','Gothita','Gothorita','Gothitelle','Bagon',
+            'Shelgon','Salamence','Shaymin','Shaymin Sky','Audino','Terrakion','Cobalion','Virizion','Vullaby','Mandibuzz','Cubchoo','Beartic',
+            'Shuppet','Banette','Voltorb','Electrode','Zorua','Zoroark','Entei','Suicune','Raikou','Bonsly','Sudowoodo','Regirock','Regice',
+            'Registeel','Regigigas','Rotom','Rotom Wash','Rotom Heat','Rotom Mow','Rotom Fridge','Rotom Fan','Bronzor','Bronzong','Cubone','Marowak',
+            'Paras','Parasect','Snover','Abomasnow','Misdreavus','Mismagius','Dwebble','Crustle','Kyurem-White','Seviper','Ditto','Huntail','Mankey',
+            'Primeape','Carnivine','Heatran','Darkrai','Arceus','Kyurem','Keldeo','Landorus I','Landorus T','Thundurus I','Thundurus T','Tornadus I','Tornadus T',
+            'Genesect','Zekrom','Giratina - Origin','Reshiram','Roggenrola','Boldore','Gigalith','Aron','Lairon','Aggron','Lillipup','Herdier','Stoutland','Golett',
+				'Golurk',
+        ]);
+        for (const set of team) {
+            if (!allowed.has(set.species)) {
+                return [`${set.species} is not allowed in [Gen 9] THT Pokemon Origins.`];
+            }
+        }
+		},
+	},
+
 	///////////////////////////////////////////////////////////////
 	///////////////////// Gen 9 Pet Mods //////////////////////////
 	///////////////////////////////////////////////////////////////
