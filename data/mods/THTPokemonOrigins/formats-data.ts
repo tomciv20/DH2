@@ -13,15 +13,15 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	},
 	pichu: {
 		tier: "Illegal",
+		isNonstandard: "Past",
 	},
 	pichuspikyeared: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
 	pikachu: {
+		isNonstandard: "Custom",
 		tier: "Illegal",
-		doublesTier: "Illegal",
-		natDexTier: "Illegal",
 	},
 	pikachucosplay: {
 		isNonstandard: "Past",
