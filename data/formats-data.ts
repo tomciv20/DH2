@@ -1,19 +1,19 @@
 export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable = {
 	bulbasaur: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	ivysaur: {
-		tier: "NFE",
+		tier: "Illegal",
 	},
 	venusaur: {
-		tier: "PU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
+		tier: "Illegal",
+		doublesTier: "Illegal",
+		natDexTier: "Illegal",
 	},
 	venusaurmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "UU",
+		natDexTier: "Illegal",
 	},
 	venusaurgmax: {
 		isNonstandard: "Past",
@@ -94,9 +94,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	beedrill: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "THT UU",
 	},
 	beedrillmega: {
 		isNonstandard: "Past",
