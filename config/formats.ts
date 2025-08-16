@@ -46,7 +46,7 @@ export const Formats: FormatList = [
         'Gengar','Slowpoke','Slowbro','Slowking','Chingling','Chimecho','Elekid','Electabuzz','Electivire','Magby','Magmar','Magmortar',
         'Sewaddle','Swadloon','Leavanny','Tauros','Bouffalant','Riolu','Lucario','Minccino','Cinccino','Purrloin','Liepard','Pawniard',
         'Bisharp','Gligar','Gliscor','Blitzle','Zebstrika','Buizel','Floatzel','Ducklett','Swanna','Yanma','Yanmega','Hoppip','Skiploom',
-        'Jumpluff','Karrablast','Escavalier','Foongus','Amoongus','Deerling','Sawsbuck','Shelmet','Accelgor','Timburr','Gurdurr','Conkeldurr',
+        'Jumpluff','Karrablast','Escavalier','Foongus','Amoonguss','Deerling','Sawsbuck','Shelmet','Accelgor','Timburr','Gurdurr','Conkeldurr',
         'Larvesta','Volcarona','Larvitar','Pupitar','Tyranitar','Magikarp','Gyarados','Feebas','Milotic','Chinchou','Lanturn','Frillish',
         'Jellicent','Spheal','Sealeo','Walrein','Lapras','Horsea','Seadra','Kingdra','Dratini','Dragonair','Dragonite','Axew','Fraxure',
         'Haxorus','Deino','Zweilous','Hydreigon','Druddigon','Ferroseed','Ferrothorn','Tynamo','Eelektrik','Eelektross','Klink','Klang',
