@@ -44,7 +44,7 @@ export const Formats: FormatList = [
         'Darmanitan','Darmanitan-Zen','Trapinch','Vibrava','Flygon','Numel','Camerupt','Hippopotas','Hippowdon','Swinub','Piloswine',
         'Mamoswine','Rhyhorn','Rhydon','Rhyperior','Maractus','Yamask','Cofagrigus','Abra','Kadabra','Alakazam','Gastly','Haunter',
         'Gengar','Slowpoke','Slowbro','Slowking','Chingling','Chimecho','Elekid','Electabuzz','Electivire','Magby','Magmar','Magmortar',
-        'Sewaddle','Swadloon','Leavanny','Tauros','Bouffalant','Riolu','Lucario','Mincinno','Cinccino','Purrloin','Liepard','Pawniard',
+        'Sewaddle','Swadloon','Leavanny','Tauros','Bouffalant','Riolu','Lucario','Minccino','Cinccino','Purrloin','Liepard','Pawniard',
         'Bisharp','Gligar','Gliscor','Blitzle','Zebstrika','Buizel','Floatzel','Ducklett','Swanna','Yanma','Yanmega','Hoppip','Skiploom',
         'Jumpluff','Karrablast','Escavalier','Foongus','Amoongus','Deerling','Sawsbuck','Shelmet','Accelgor','Timburr','Gurdurr','Conkeldurr',
         'Larvesta','Volcarona','Larvitar','Pupitar','Tyranitar','Magikarp','Gyarados','Feebas','Milotic','Chinchou','Lanturn','Frillish',
