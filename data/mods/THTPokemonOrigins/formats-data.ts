@@ -1,7 +1,6 @@
 export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	beedrill: {
-		tier: "PU",
-		natDexTier: "RU",
+		tier: "THT",
 	},
 	ekans: {
 		tier: "THT",
@@ -22,78 +21,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	pikachu: {
 		isNonstandard: "Custom",
 		tier: "Illegal",
-	},
-	pikachucosplay: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachurockstar: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachubelle: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachupopstar: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachuphd: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachulibre: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachuoriginal: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachuhoenn: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachusinnoh: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachuunova: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachukalos: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachualola: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachupartner: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	pikachustarter: {
-		isNonstandard: "LGPE",
-		tier: "Illegal",
-	},
-	pikachugmax: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-	},
-	pikachuworld: {
-		tier: "ZU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
 	},
 	raichu: {
 		tier: "ZU",

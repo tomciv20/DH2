@@ -4697,7 +4697,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Blissey",
 		types: ["Normal"],
 		gender: "F",
-		baseStats: {hp: 255, atk: 10, def: 10, spa: 75, spd: 135, spe: 255},
+		baseStats: {hp: 255, atk: 10, def: 10, spa: 75, spd: 135, spe: 55},
 		abilities: {0: "Natural Cure", 1: "Serene Grace", H: "Healer"},
 		heightm: 1.5,
 		weightkg: 46.8,

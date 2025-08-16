@@ -10794,10 +10794,10 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 	reshiram: {
 		num: 643,
 		name: "Reshiram",
-		types: ["Dragon", "Fire"],
+		types: ["Rock", "Fire"],
 		gender: "N",
-		baseStats: {hp: 100, atk: 120, def: 100, spa: 150, spd: 120, spe: 90},
-		abilities: {0: "Turboblaze"},
+		baseStats: {hp: 100, atk: 12, def: 100, spa: 150, spd: 120, spe: 90},
+		abilities: {0: "Turboblaze", 1: "Volt Absorb"},
 		heightm: 3.2,
 		weightkg: 330,
 		color: "White",
