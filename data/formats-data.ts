@@ -287,7 +287,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	crobat: {
 		tier: "UU",
-		doublesTier: "OU";
+		doublesTier: "OU",
 	},
 	oddish: {
 		tier: "Illegal",
@@ -303,11 +303,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	paras: {
 		tier: "LC",
-		doublesTier: "LC";
+		doublesTier: "LC",
 	},
 	parasect: {
 		tier: "OU",
-		doublesTier: "OU";
+		doublesTier: "OU",
 	},
 	venonat: {
 		tier: "Illegal",
