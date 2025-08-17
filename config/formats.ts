@@ -23,12 +23,12 @@ export const Formats: FormatList = [
     column: 1,
 	},
 	{
-		name: "[Gen 9] THT Pokemon Origins",
-		desc: `<b>THT Pokemon Origins</b>: A custom mod featuring new Pokémon, moves, abilities, and mechanics exclusive to THT.`,
+		name: "[Gen 9] THT Pokemon",
+		desc: `<b>THT Pokemon</b>: A custom mod featuring new Pokémon, moves, abilities, and mechanics exclusive to THT.`,
 		threads: [
         `&bullet; <a href="https://docs.google.com/spreadsheets/d/your-link-here">Spreadsheet / Documentation</a>`,
     ],
-		mod: 'THTPokemonOrigins',
+		mod: 'THTPokemon',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['All Pokemon', 'Baton Pass'],
 		unbanlist: [
@@ -96,7 +96,7 @@ export const Formats: FormatList = [
         ]);
         for (const set of team) {
             if (!allowed.has(set.species)) {
-                return [`${set.species} is not allowed in [Gen 9] THT Pokemon Origins.`];
+                return [`${set.species} is not allowed in [Gen 9] THT Pokemon.`];
             }
         }
 		},
