@@ -5358,7 +5358,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
-		name: "Feint",
+		name: "Neck Snap",
 		pp: 10,
 		priority: 2,
 		flags: {mirror: 1, noassist: 1, failcopycat: 1},
