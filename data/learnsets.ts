@@ -68587,7 +68587,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			workup: ["9L24", "8M", "8L24", "7M", "7L38", "6L38", "5M", "5L38"],
 			zenheadbutt: ["9M", "8M", "7T", "6T", "5T"],
 			dragonclaw: ["9M"],
-			belch: ["9M"],
 			poisonfang: ["9M"],
 		},
 		eventData: [
