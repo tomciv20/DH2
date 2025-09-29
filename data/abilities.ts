@@ -4098,7 +4098,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['slicing']) {
 				this.debug('Sharpness boost');
-				return this.chainModify(1.5);
+				return this.chainModify(1.3);
 			}
 		},
 		flags: {},
