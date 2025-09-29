@@ -29,6 +29,7 @@ export const Formats: FormatList = [
         `&bullet; <a href="https://docs.google.com/spreadsheets/d/your-link-here">Spreadsheet / Documentation</a>`,
     ],
 		mod: 'gen9',
+		teambuilderFormat: 'National Dex',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['All Pokemon', 'Baton Pass'],
 		unbanlist: [

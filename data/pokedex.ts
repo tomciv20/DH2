@@ -8234,7 +8234,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Electric", "Fighting"],
 		genderRatio: {M: 0.75, F: 0.25},
 		baseStats: {hp: 75, atk: 125, def: 70, spa: 95, spd: 85, spe: 95},
-		abilities: {0: "Motor Drive", 1: "Galvanize", H: "Teravolt"},
+		abilities: {0: "Motor Drive", 1: "Vital Spirit", H: "Teravolt"},
 		heightm: 1.8,
 		weightkg: 138.6,
 		color: "Yellow",
