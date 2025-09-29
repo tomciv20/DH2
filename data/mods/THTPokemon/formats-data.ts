@@ -3256,9 +3256,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		natDexTier: "LC",
 	},
 	accelgor: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	stunfisk: {
 		isNonstandard: "Past",

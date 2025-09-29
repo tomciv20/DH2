@@ -53427,7 +53427,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dreameater: ["9M"],
 			trickroom: ["9M"],
 			snarl: ["9M"],
-			round: ["9M"],
 			poisonfang: ["9M"],
 			hypervoice: ["9M"],
 			perishsong: ["9M"],
