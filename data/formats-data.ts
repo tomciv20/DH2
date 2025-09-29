@@ -82,7 +82,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	beedrill: {
-		tier: "UU",
+		tier: "Kanto",
 	},
 	beedrillmega: {
 		isNonstandard: "Past",
@@ -1191,9 +1191,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	ampharos: {
-		tier: "OU",
-		doublesTier: "DOU",
-		natDexTier: "OU",
+		tier: "Johto",
+		doublesTier: "Johto",
+		natDexTier: "Johto",
 	},
 	ampharosmega: {
 		isNonstandard: "Past",
@@ -2085,9 +2085,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	banette: {
-		tier: "OU",
-		doublesTier: "DOU",
-		natDexTier: "OU",
+		tier: "SCP",
+		doublesTier: "SCP",
+		natDexTier: "SCP",
 	},
 	banettemega: {
 		isNonstandard: "Past",
@@ -2106,9 +2106,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	tropius: {
-		tier: "UU",
-		doublesTier: "DUU",
-		natDexTier: "UU",
+		tier: "Hoenn",
+		doublesTier: "Hoenn",
+		natDexTier: "Hoenn",
 	},
 	chingling: {
 		tier: "LC",
@@ -2366,9 +2366,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	luxray: {
-		tier: "OU",
-		doublesTier: "DOU",
-		natDexTier: "OU",
+		tier: "Sinnoh",
+		doublesTier: "Sinnoh",
+		natDexTier: "Sinnoh",
 	},
 	cranidos: {
 		tier: "LC",
