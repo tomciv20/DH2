@@ -104,7 +104,7 @@ export const Formats: FormatList = [
 		desc: `<b>THT Pokemon</b>: A custom mod featuring new Pokémon, moves, abilities, and mechanics exclusive to THT.`,
 		mod: 'gen9',
 		teambuilderFormat: 'National Dex',
-		ruleset: ['Standard Draft', 'Item Clause = 1', 'VGC Timer', '!Sleep Clause Mod', '!OHKO Clause', '!Evasion Clause', 'Adjust Level = 50', 'Picked Team Size = 4', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
+		ruleset: ['Standard Draft', 'Item Clause', 'VGC Timer', '!Sleep Clause Mod', '!OHKO Clause', '!Evasion Clause', 'Adjust Level = 50', 'Picked Team Size = 4', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['All Pokemon', 'Baton Pass'],
 		unbanlist: [
         'Spoink','Grumpig','Combee','Beedrill','Vespiquen','Teddiursa','Ursaring','Bellsprout','Weepinbell','Victreebel',
