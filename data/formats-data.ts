@@ -528,9 +528,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	farfetchd: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "NFE",
+		doublesTier: "NFE",
+		natDexTier: "NFE",
 	},
 	farfetchdgalar: {
 		isNonstandard: "Past",
@@ -538,9 +538,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	sirfetchd: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "OU",
 	},
 	doduo: {
 		tier: "Illegal",
@@ -1791,14 +1791,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	skitty: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	delcatty: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "OU",
 	},
 	sableye: {
 		tier: "Illegal",
@@ -4639,14 +4638,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	clobbopus: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	grapploct: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "OU",
 	},
 	sinistea: {
 		tier: "Illegal",
