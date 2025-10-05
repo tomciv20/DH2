@@ -261,14 +261,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "NFE",
 	},
 	vulpixalola: {
-		tier: "Illegal",
+		tier: "LC",
+		doublesTier: "NFE",
 	},
 	ninetales: {
 		tier: "OU",
 		doublesTier: "DUU",
 	},
 	ninetalesalola: {
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "DUU",
 	},
 	igglybuff: {
 		tier: "Illegal",
