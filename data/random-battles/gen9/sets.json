@@ -11,7 +11,7 @@
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Clangorous Soul", "Earthquake", "Gunk Shot", "Clanging Scales"],
-                "abilities": ["Intimidate", "Dragon's Maw'"],
+                "abilities": ["Intimidate", "Dragon's Maw"],
                 "teraTypes": ["Grass", "Ground"]
             },
             {
@@ -82,7 +82,7 @@
                 "movepool": ["Belly Drum", "Drain Punch", "Surging Strikes", "Aqua Jet"],
                 "abilities": ["Water Absorb"],
                 "teraTypes": ["Dark", "Fighting", "Water"]
-            },
+            }
         ]
     },
     "victreebel": {
@@ -134,7 +134,7 @@
                 "movepool": ["Psychic", "Hydro Pump", "Shell Side Arm", "Fire Blast", "Ice Beam"],
                 "abilities": ["Quick Draw"],
                 "teraTypes": ["Water", "Fire", "Psychic", "Poison"]
-            },
+            }
         ]
     },
     "gengar": {
