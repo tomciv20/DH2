@@ -20634,6 +20634,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			wideguard: ["9M"],
 			freezingglare: ["9M"],
 			encore: ["9M"],
+			icespinner: ["9M"],
 		},
 		eventData: [
 			{generation: 3, level: 44, moves: ["hydropump", "raindance", "blizzard", "healbell"]},
@@ -33406,6 +33407,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mefirst: ["9M"],
 			strength: ["9M"],
 			waterspout: ["9M"],
+			wavecrash: ["9M"],
 		},
 		eventData: [
 			{generation: 3, level: 50, shiny: 1, moves: ["bubblebeam", "raindance", "gust", "aurorabeam"]},
