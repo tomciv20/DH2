@@ -2611,23 +2611,6 @@
             }
         ]
     },
-    "alomomola": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": ["Flip Turn", "Protect", "Scald", "Wish"],
-                "abilities": ["Regenerator"],
-                "teraTypes": ["Steel"]
-            },
-            {
-                "role": "Fast Support",
-                "movepool": ["Flip Turn", "Protect", "Scald", "Wish"],
-                "abilities": ["Regenerator"],
-                "teraTypes": ["Steel"]
-            }
-        ]
-    },
     "galvantula": {
         "level": 82,
         "sets": [
@@ -2720,29 +2703,6 @@
                 "movepool": ["Brave Bird", "Bulk Up", "Close Combat", "Roost"],
                 "abilities": ["Defiant"],
                 "teraTypes": ["Fighting", "Steel"]
-            }
-        ]
-    },
-    "braviaryhisui": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": ["Agility", "Heat Wave", "Hurricane", "Psychic"],
-                "abilities": ["Sheer Force"],
-                "teraTypes": ["Fairy", "Fire", "Psychic", "Steel"]
-            },
-            {
-                "role": "Wallbreaker",
-                "movepool": ["Esper Wing", "Hurricane", "U-turn", "Vacuum Wave"],
-                "abilities": ["Tinted Lens"],
-                "teraTypes": ["Fairy", "Fighting", "Psychic", "Steel"]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": ["Calm Mind", "Defog", "Esper Wing", "Hurricane", "Roost"],
-                "abilities": ["Tinted Lens"],
-                "teraTypes": ["Fairy", "Psychic", "Steel"]
             }
         ]
     },
@@ -2910,23 +2870,6 @@
             }
         ]
     },
-    "reshiram": {
-        "level": 76,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": ["Blue Flare", "Draco Meteor", "Dragon Tail", "Earth Power", "Will-O-Wisp"],
-                "abilities": ["Turboblaze"],
-                "teraTypes": ["Fire", "Ground"]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": ["Dragon Dance", "Flare Blitz", "Outrage", "Stone Edge"],
-                "abilities": ["Turboblaze"],
-                "teraTypes": ["Dragon", "Fire"]
-            }
-        ]
-    },
     "zekrom": {
         "level": 71,
         "sets": [
@@ -2994,23 +2937,6 @@
             }
         ]
     },
-    "kyuremblack": {
-        "level": 71,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": ["Dragon Dance", "Fusion Bolt", "Icicle Spear", "Scale Shot"],
-                "abilities": ["Teravolt"],
-                "teraTypes": ["Electric"]
-            },
-            {
-                "role": "Tera Blast user",
-                "movepool": ["Dragon Dance", "Icicle Spear", "Scale Shot", "Tera Blast"],
-                "abilities": ["Teravolt"],
-                "teraTypes": ["Ground"]
-            }
-        ]
-    },
     "keldeoresolute": {
         "level": 79,
         "sets": [
@@ -3025,23 +2951,6 @@
                 "movepool": ["Calm Mind", "Hydro Pump", "Secret Sword", "Substitute", "Surf"],
                 "abilities": ["Justified"],
                 "teraTypes": ["Steel"]
-            }
-        ]
-    },
-    "meloetta": {
-        "level": 82,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": ["Calm Mind", "Focus Blast", "Hyper Voice", "Psyshock", "U-turn"],
-                "abilities": ["Serene Grace"],
-                "teraTypes": ["Fighting", "Normal", "Psychic"]
-            },
-            {
-                "role": "Wallbreaker",
-                "movepool": ["Close Combat", "Knock Off", "Relic Song", "Triple Axel"],
-                "abilities": ["Serene Grace"],
-                "teraTypes": ["Dark", "Fighting"]
             }
         ]
     }
