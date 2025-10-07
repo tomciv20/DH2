@@ -8411,7 +8411,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	dusknoir: {
 		num: 477,
 		name: "Dusknoir",
-		types: ["Ghost"],
+		types: ["Ghost", "Fighting"],
 		baseStats: {hp: 55, atk: 110, def: 135, spa: 65, spd: 135, spe: 45},
 		abilities: {0: "Pressure", 1: "Cursed Body", H: "Frisk"},
 		heightm: 2.2,
@@ -11169,7 +11169,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Volcarona",
 		types: ["Bug", "Fire"],
 		baseStats: {hp: 85, atk: 60, def: 65, spa: 135, spd: 105, spe: 100},
-		abilities: {0: "Flame Body", H: "Swarm"},
+		abilities: {0: "Flame Body", 1: "Swarm", H: "Dancer"},
 		heightm: 1.6,
 		weightkg: 46,
 		color: "White",
