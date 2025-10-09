@@ -64597,6 +64597,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sacredsword: ["9M"],
 			hornattack: ["9M"],
 			tachyoncutter: ["9M"],
+			irontail: ["9M"],
 		},
 	},
 	foongus: {
