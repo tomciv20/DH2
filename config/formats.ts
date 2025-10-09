@@ -115,6 +115,23 @@ export const Formats: FormatList = [
 		bestOfDefault: true,
 		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
 	},
+	{
+		name: "[Gen 9] Random Doubles Battle",
+		mod: 'gen9',
+		gameType: 'doubles',
+		team: 'random',
+		bestOfDefault: true,
+		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Illusion Level Mod', 'Sleep Clause Mod'],
+	},
+	{
+		name: "[Gen 9] Free-For-All Random Battle",
+		mod: 'gen9',
+		team: 'randomFFA',
+		gameType: 'freeforall',
+		tournamentShow: false,
+		rated: false,
+		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
+	},
 	///////////////////////////////////////////////////////////////
 	///////////////////// Gen 9 Pet Mods //////////////////////////
 	///////////////////////////////////////////////////////////////
