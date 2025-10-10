@@ -126,7 +126,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Free-For-All Random Battle",
 		mod: 'gen9',
-		team: 'randomFFA',
+		team: 'random',
 		gameType: 'freeforall',
 		tournamentShow: false,
 		rated: false,
