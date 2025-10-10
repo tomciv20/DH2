@@ -7574,7 +7574,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Cherrim-Sunshine",
 		baseSpecies: "Cherrim",
 		forme: "Sunshine",
-		types: ["Grass"],
+		types: ["Grass", "Fire"],
 		baseStats: {hp: 75, atk: 90, def: 75, spa: 95, spd: 83, spe: 85},
 		abilities: {0: "Flower Gift"},
 		heightm: 0.5,
