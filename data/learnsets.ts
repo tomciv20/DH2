@@ -51967,6 +51967,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			courtchange: ["9M"],
 			terrainpulse: ["9M"],
 			spikes: ["9M"],
+			punishment: ["9M"],
 		},
 	},
 	bronzong: {

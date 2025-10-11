@@ -321,7 +321,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Calm Mind", "Soft-Boiled", "Scald", "Draining Kiss", "Hyper Voice", "Energy Ball"],
+                "movepool": ["Calm Mind", "Soft-Boiled", "Scald", "Draining Kiss", "Energy Ball"],
                 "abilities": ["Sweet Veil"],
                 "teraTypes": ["Fairy", "Grass"]
             }
@@ -1592,7 +1592,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Shell Smash", "Nasty Plot", "Doom Desire", "Charge Beam", "Protect"],
+                "movepool": ["Nasty Plot", "Doom Desire", "Charge Beam", "Protect"],
                 "abilities": ["Moody"],
                 "teraTypes": ["Electric"]
             }
@@ -2882,7 +2882,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Bulk Up", "Collision Course", "Rage Fist", "Ice Shard", "Avalanche"],
+                "movepool": ["Bulk Up", "Collision Course", "Rage Fist", "Ice Shard"],
                 "abilities": ["Anger Point", "Rattled"],
                 "teraTypes": ["Ghost"]
             }
