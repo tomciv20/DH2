@@ -37148,6 +37148,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trumpcard: ["9M"],
 			wringout: ["9M"],
 			uproar: ["9M"],
+			freezedry: ["9M"],
 		},
 		eventData: [
 			{generation: 5, level: 50, shiny: 1, abilities: ["trace"], moves: ["hypnosis", "thunderbolt", "focusblast", "psychic"], pokeball: "cherishball"},
@@ -45600,6 +45601,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			flashcannon: ["9M"],
 			phantomforce: ["9M"],
 			bittermalice: ["9M"],
+			freezedry: ["9M"],
 		},
 	},
 	spheal: {
@@ -54682,6 +54684,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			infernalparade: ["9M"],
 			poltergeist: ["9M"],
 			terrainpulse: ["9M"],
+			meteorbeam: ["9M"],
 		},
 	},
 	regigigas: {
@@ -64039,6 +64042,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swift: ["9M"],
 			takedown: ["9M"],
 			terrainpulse: ["9M"],
+			freezedry: ["9M"],
 		},
 	},
 	vanillish: {
@@ -65789,6 +65793,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			eerieimpulse: ["9M"],
 			electroball: ["9M"],
 			terrainpulse: ["9M"],
+			freezedry: ["9M"],
 		},
 	},
 	beheeyem: {
@@ -66125,7 +66130,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M", "8M", "7T", "6T", "5T"],
 			trickroom: ["9M", "8M", "7M", "6M", "5M"],
 			willowisp: ["9M", "9L1", "8M", "8L1", "7M", "6M", "5M"],
-			armorcannon: ["9M"],
 		},
 		eventData: [
 			{generation: 5, level: 50, gender: "F", nature: "Modest", ivs: {spa: 31}, abilities: ["flashfire"], moves: ["heatwave", "shadowball", "energyball", "psychic"], pokeball: "cherishball"},

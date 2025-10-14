@@ -1947,13 +1947,13 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Earthquake", "Flamethrower", "Ice Punch", "Knock Off", "Plasma Fists", "Volt Switch", "Thunderous Kick"],
+                "movepool": ["Earthquake", "Flamethrower", "Ice Punch", "Knock Off", "Plasma Fists", "Volt Switch", "Thunderous Kick", "Protect", "Follow Me"],
                 "abilities": ["Motor Drive", "Teravolt"],
                 "teraTypes": ["Dark", "Electric", "Ground"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Bulk Up", "Earthquake", "Ice Punch", "Plasma Fists", "Drain Punch"],
+                "movepool": ["Bulk Up", "Earthquake", "Ice Punch", "Plasma Fists", "Drain Punch", "Protect"],
                 "abilities": ["Motor Drive", "Teravolt"],
                 "teraTypes": ["Ground", "Water", "Dark"]
             },

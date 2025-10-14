@@ -3268,7 +3268,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	poisonpuppeteer: {
 		onAnyAfterSetStatus(status, target, source, effect) {
-			if (source.baseSpecies.name !== "Pecharunt") return;
 			if (source !== this.effectState.target || target === source || effect.effectType !== 'Move') return;
 			if (status.id === 'psn' || status.id === 'tox') {
 				target.addVolatile('confusion');
@@ -4573,7 +4572,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
-				return this.chainModify(1.3);
+				return this.chainModify(1.5);
 			}
 		},
 		flags: {},
