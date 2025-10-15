@@ -2884,7 +2884,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 131,
 		name: "Lapras",
 		types: ["Ice", "Dragon"],
-		baseStats: {hp: 130, atk: 85, def: 80, spa: 85, spd: 95, spe: 60},
+		baseStats: {hp: 130, atk: 85, def: 90, spa: 85, spd: 105, spe: 60},
 		abilities: {0: "Water Absorb", 1: "Shell Armor", H: "Ice Body"},
 		heightm: 2.5,
 		weightkg: 220,

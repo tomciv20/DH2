@@ -20634,6 +20634,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			freezingglare: ["9M"],
 			encore: ["9M"],
 			icespinner: ["9M"],
+			wish: ["9M"],
 		},
 		eventData: [
 			{generation: 3, level: 44, moves: ["hydropump", "raindance", "blizzard", "healbell"]},
