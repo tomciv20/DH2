@@ -45602,6 +45602,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			phantomforce: ["9M"],
 			bittermalice: ["9M"],
 			freezedry: ["9M"],
+			doodle: ["9M"],
 		},
 	},
 	spheal: {
@@ -49920,6 +49921,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			thunderwave: ["9M"],
 			explosion: ["9M"],
 			gyroball: ["9M"],
+			recover: ["9M"],
 		},
 		eventData: [
 			{generation: 5, level: 15, gender: "M", moves: ["metalsound", "takedown", "bodyslam", "protect"], pokeball: "cherishball"},
@@ -56660,6 +56662,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			strength: ["9M"],
 			confusion: ["9M"],
 			heartstamp: ["9M"],
+			metronome: ["9M"],
 		},
 	},
 	watchog: {
