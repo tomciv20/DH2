@@ -28,7 +28,7 @@ export const Formats: FormatList = [
 		mod: 'gen9',
 		teambuilderFormat: 'National Dex',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
-		banlist: ['All Pokemon', 'Baton Pass'],
+		banlist: ['All Pokemon', 'Kings Rock', 'Quick Powder', 'Razor Fang', 'Metal Powder', 'Last Respects', 'Shed Tail', 'Acupressure', 'Confuse Ray', 'Flatter', 'Supersonic', 'Swagger', 'Sweet Kiss', 'Hidden Power'],
 		unbanlist: [
         'Spoink','Grumpig','Combee','Beedrill','Vespiquen','Teddiursa','Ursaring','Bellsprout','Weepinbell','Victreebel',
         'Rufflet','Braviary','Phanpy','Donphan','Ekans','Arbok','Poliwag','Poliwhirl','Poliwrath','Politoed','Scraggy','Scrafty',
@@ -106,6 +106,7 @@ export const Formats: FormatList = [
 		searchShow: false,
 		bestOfDefault: true,
 		ruleset: ['Standard Draft', 'Item Clause', 'VGC Timer', '!Sleep Clause Mod', '!OHKO Clause', '!Evasion Clause', 'Adjust Level = 50', 'Picked Team Size = 4', 'Min Source Gen = 9',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
+		banlist: ['Hidden Power'],
 	},
 	{
 		name: "[Gen 9] Random Battle",
