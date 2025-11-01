@@ -105,7 +105,8 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		searchShow: false,
 		bestOfDefault: true,
-		ruleset: ['Standard Draft', 'Item Clause', 'VGC Timer', '!Sleep Clause Mod', '!OHKO Clause', '!Evasion Clause', 'Adjust Level = 50', 'Picked Team Size = 4', 'Min Source Gen = 9',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
+		teambuilderFormat: 'National Dex',
+		ruleset: ['Standard NatDex', 'Item Clause', 'VGC Timer', '!Sleep Clause Mod', '!OHKO Clause', '!Evasion Clause', 'Adjust Level = 50', 'Picked Team Size = 4', 'Min Source Gen = 9',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['Hidden Power'],
 	},
 	{
