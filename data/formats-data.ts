@@ -2694,9 +2694,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	shayminsky: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "DOU",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	arceus: {
 		tier: "Uber",
