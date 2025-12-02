@@ -46,7 +46,7 @@ export const Formats: FormatList = [
 		searchShow: false,
 		bestOfDefault: true,
 		teambuilderFormat: 'National Dex',
-		ruleset: ['Item Clause', 'VGC Timer', 'Adjust Level = 50', 'Picked Team Size = 4',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
+		ruleset: ['Team Preview', 'Item Clause', 'VGC Timer', 'Adjust Level = 50', 'Picked Team Size = 4',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
 		banlist: ['Hidden Power'],
 	},
 	{
