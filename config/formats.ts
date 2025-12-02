@@ -41,6 +41,26 @@ export const Formats: FormatList = [
 		banlist: ['Hidden Power'],
 	},
 	{
+		name: "[Gen 9] Victini Test",
+		gameType: 'doubles',
+		searchShow: false,
+		bestOfDefault: true,
+		teambuilderFormat: 'National Dex',
+		ruleset: ['Item Clause', 'VGC Timer', 'Adjust Level = 50', 'Picked Team Size = 4',  'Z-Move Clause', 'Terastal Clause', 'Dynamax Clause'],
+		banlist: ['Hidden Power'],
+	},
+	{
+		name: "[Gen 9] 4v4 Doubles Custom Game",
+
+		mod: 'gen9',
+		gameType: 'doubles',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Adjust Level = 50', 'Picked Team Size = 4',],
+	},
+	{
 		name: "[Gen 9] Random Battle",
 		desc: `Randomized teams of Pok&eacute;mon with sets that are generated to be competitively viable.`,
 		mod: 'gen9',
