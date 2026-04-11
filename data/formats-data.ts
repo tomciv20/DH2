@@ -20,13 +20,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	charmander: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	charmeleon: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	charizard: {
-		tier: "Illegal",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	charizardmegax: {
 		isNonstandard: "Past",
@@ -41,13 +42,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	squirtle: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	wartortle: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	blastoise: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	blastoisemega: {
 		isNonstandard: "Past",
