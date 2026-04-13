@@ -816,8 +816,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	captivate: {
 		name: "Captivate",
-		desc: "Lowers the target's Special Attack by 2 stages. The target is unaffected if both the user and the target are the same gender, or if either is genderless. Pokemon with the Oblivious Ability are immune.",
-		shortDesc: "Lowers the foe(s) Sp. Atk by 2 if opposite gender.",
+		desc: "Lowers the target's Special Attack by 2 stages.",
+		shortDesc: "Lowers the foe(s) Sp. Atk by 2.",
 	},
 	catastropika: {
 		name: "Catastropika",
@@ -830,7 +830,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	celebrate: {
 		name: "Celebrate",
-		shortDesc: "No competitive use.",
+		shortDesc: "Boosts Defense, Sp. Def, and Speed by 1.",
 
 		activate: "  Congratulations, [TRAINER]!",
 	},
@@ -993,8 +993,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	confide: {
 		name: "Confide",
-		desc: "Lowers the target's Special Attack by 1 stage.",
-		shortDesc: "Lowers the target's Sp. Atk by 1.",
+		desc: "Lowers the target's Special Attack and Special Defense by 1 stage.",
+		shortDesc: "Lowers the target's SpA and SpD by 1.",
 	},
 	confuseray: {
 		name: "Confuse Ray",
@@ -2814,14 +2814,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	happyhour: {
 		name: "Happy Hour",
-		shortDesc: "No competitive use.",
+		shortDesc: "Heal self and ally 1/4 HP and boost crit rate.",
 
 		activate: "  Everyone is caught up in the happy atmosphere!",
 	},
 	harden: {
 		name: "Harden",
-		desc: "Raises the user's Defense by 1 stage.",
-		shortDesc: "Raises the user's Defense by 1.",
+		desc: "+1 Priority. Raises the user's Defense by 1 stage.",
+		shortDesc: "+1 Priority. Raises the user's Defense by 1.",
 	},
 	hardpress: {
 		name: "Hard Press",
@@ -3065,8 +3065,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	holdhands: {
 		name: "Hold Hands",
-		desc: "No competitive use. Fails if there is no ally adjacent to the user.",
-		shortDesc: "No competitive use.",
+		desc: "Raise self and ally Defense and Special Defense by 1 stage.",
+		shortDesc: "Raise self and ally Def and SpD.",
 	},
 	honeclaws: {
 		name: "Hone Claws",
@@ -3075,7 +3075,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hornattack: {
 		name: "Horn Attack",
-		shortDesc: "No additional effect.",
+		shortDesc: "Steel+Normal combined effectiveness.",
 	},
 	horndrill: {
 		name: "Horn Drill",
@@ -3930,8 +3930,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	mefirst: {
 		name: "Me First",
-		desc: "The user uses the move the target chose for use this turn against it, if possible, with its power multiplied by 1.5. The move must be a damaging move other than Beak Blast, Belch, Blazing Torque, Combat Torque, Comeuppance, Counter, Covet, Focus Punch, Magical Torque, Me First, Metal Burst, Mirror Coat, Noxious Torque, Shell Trap, Struggle, Thief, or Wicked Torque. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
-		shortDesc: "Copies a foe at 1.5x power. User must be faster.",
+		desc: "The user uses the move the target chose for use this turn against it, if possible, with its power multiplied by 2. The move must be a damaging move other than Beak Blast, Belch, Blazing Torque, Combat Torque, Comeuppance, Counter, Covet, Focus Punch, Magical Torque, Me First, Metal Burst, Mirror Coat, Noxious Torque, Shell Trap, Struggle, Thief, or Wicked Torque. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
+		shortDesc: "Copies a foe at 2x power. User must be faster.",
 		gen8: {
 			desc: "The user uses the move the target chose for use this turn against it, if possible, with its power multiplied by 1.5. The move must be a damaging move other than Beak Blast, Belch, Chatter, Counter, Covet, Focus Punch, Me First, Metal Burst, Mirror Coat, Shell Trap, Struggle, or Thief. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
 		},
@@ -4563,10 +4563,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	payday: {
 		name: "Pay Day",
-		desc: "No additional effect.",
-		shortDesc: "Scatters coins.",
+		desc: "Hits all enemies.",
+		shortDesc: "Hits all foes. Scatters coins.",
 
-		activate: "  Coins were scattered everywhere!",
+		activate: "  Coins were scattered everywhere! Humilau is gooning!",
 	},
 	peck: {
 		name: "Peck",
@@ -4804,8 +4804,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	present: {
 		name: "Present",
-		desc: "If this move is successful, it deals damage or heals the target. 40% chance for 40 power, 30% chance for 80 power, 10% chance for 120 power, and 20% chance to heal the target by 1/4 of its maximum HP, rounded down.",
-		shortDesc: "40, 80, 120 power, or heals target 1/4 max HP.",
+		desc: "If this move is successful, it deals damage or heals the target. 40% chance for 60 power, 30% chance for 90 power, 19% chance for 130 power, 1% chance for 1000 power, and 10% chance to heal the target by 1/2 of its maximum HP, rounded down.",
+		shortDesc: "60, 90, 130, 1000 power, or heals target 1/2 max HP.",
 		gen2: {
 			desc: "If this move is successful, it deals damage or heals the target. 102/256 chance for 40 power, 76/256 chance for 80 power, 26/256 chance for 120 power, or 52/256 chance to heal the target by 1/4 of its maximum HP, rounded down. If this move deals damage, it uses an abnormal version of the damage formula by substituting certain values. The user's Attack stat is replaced with 10 times the effectiveness of this move against the target, the target's Defense stat is replaced with the index number of the user's secondary type, and the user's level is replaced with the index number of the target's secondary type. If a Pokemon does not have a secondary type, its primary type is used. The index numbers for each type are Normal: 0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7, Ghost: 8, Steel: 9, Fire: 20, Water: 21, Grass: 22, Electric: 23, Psychic: 24, Ice: 25, Dragon: 26, Dark: 27. If at any point a division by 0 would happen in the damage formula, it divides by 1 instead.",
 		},
@@ -5013,8 +5013,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	rage: {
 		name: "Rage",
-		desc: "Once this move is successfully used, the user's Attack is raised by 1 stage every time it is hit by another Pokemon's attack as long as this move is chosen for use.",
-		shortDesc: "Raises the user's Attack by 1 if hit during use.",
+		desc: "Power is equal to 50+(X*30), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
+		shortDesc: "+30 power for each time user was hit. Max 6 hits.",
 		gen3: {
 			desc: "Once this move is used and unless the target protected itself, the user's Attack is raised by 1 stage every time it is hit by another Pokemon's attack as long as this move is chosen for use.",
 		},
@@ -5510,7 +5510,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	scratch: {
 		name: "Scratch",
-		shortDesc: "No additional effect.",
+		desc: "Has a 100% chance to lower the target's Attack by 1 stage.",
+		shortDesc: "100% chance to lower the foe(s) Attack by 1.",
 	},
 	screech: {
 		name: "Screech",
@@ -5629,8 +5630,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sharpen: {
 		name: "Sharpen",
-		desc: "Raises the user's Attack by 1 stage.",
-		shortDesc: "Raises the user's Attack by 1.",
+		desc: "Raises the user's Attack by 1 stage and crit rate by 1 stage.",
+		shortDesc: "Raises the user's Attack by 1 and crit rate by 1.",
 	},
 	shatteredpsyche: {
 		name: "Shattered Psyche",
@@ -5844,7 +5845,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	slam: {
 		name: "Slam",
-		shortDesc: "No additional effect.",
+		desc: "Has a 50% chance to paralyze the target.",
+		shortDesc: "50% chance to paralyze the target.",
 	},
 	slash: {
 		name: "Slash",
@@ -5914,7 +5916,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	smellingsalts: {
 		name: "Smelling Salts",
 		desc: "Power doubles if the target is paralyzed. If the user has not fainted, the target is cured of paralysis.",
-		shortDesc: "Power doubles if target is paralyzed, and cures it.",
+		shortDesc: "Supereffective against Ghost. 2x power against paralyzed, cures it.",
 		gen4: {
 			desc: "Power doubles if the target is paralyzed. If this move is successful, the target is cured of paralysis.",
 		},
@@ -6206,7 +6208,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	splash: {
 		name: "Splash",
-		shortDesc: "No competitive use.",
+		shortDesc: "Raises all stats by 2. Fails if not Magikarp.",
 
 		activate: "  But nothing happened!",
 	},
@@ -6660,8 +6662,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	tailwhip: {
 		name: "Tail Whip",
-		desc: "Lowers the target's Defense by 1 stage.",
-		shortDesc: "Lowers the foe(s) Defense by 1.",
+		desc: "Lowers the target's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the foe(s) Def and SpD by 1.",
 		gen2: {
 			shortDesc: "Lowers the target's Defense by 1.",
 		},
@@ -7094,7 +7096,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	trumpcard: {
 		name: "Trump Card",
-		desc: "The power of this move is based on the amount of PP remaining after normal PP reduction and the Pressure Ability resolve. 200 power for 0 PP, 80 power for 1 PP, 60 power for 2 PP, 50 power for 3 PP, and 40 power for 4 or more PP.",
+		desc: "The power of this move is based on the amount of PP remaining after normal PP reduction and the Pressure Ability resolve. 200 power for 0 PP, 150 power for 1 PP, 120 power for 2 PP, 90 power for 3 PP, and 60 power for 4 or more PP.",
 		shortDesc: "More power the fewer PP this move has left.",
 	},
 	twinbeam: {
@@ -7212,7 +7214,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	visegrip: {
 		name: "Vise Grip",
-		shortDesc: "No additional effect.",
+		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		shortDesc: "Traps and damages the target for 4-5 turns.",
 	},
 	vitalthrow: {
 		name: "Vital Throw",

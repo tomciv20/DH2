@@ -65,12 +65,15 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('earlybird')) {
+			if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asoneglastrier')) {
 				pokemon.statusState.time--;
 			}
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
+				if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asoneglastrier')) {
+            this.heal(pokemon.baseMaxhp / 4, pokemon);
+				}
 				return;
 			}
 			this.add('cant', pokemon, 'slp');
