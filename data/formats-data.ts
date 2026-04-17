@@ -75,12 +75,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	weedle: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "LC",
 	},
 	kakuna: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	beedrill: {
 		tier: "UU",
@@ -213,40 +211,34 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	sandshrew: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	sandshrewalola: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	sandslash: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	sandslashalola: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	nidoranf: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "LC",
 	},
 	nidorina: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	nidoqueen: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	nidoranm: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "LC",
 	},
 	nidorino: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	nidoking: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	cleffa: {
 		tier: "Illegal",
@@ -293,16 +285,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "OU",
 	},
 	oddish: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	gloom: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	vileplume: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	bellossom: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	paras: {
 		tier: "LC",
@@ -331,7 +323,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	meowth: {
-		tier: "Illegal",
+		tier: "LC",
 	},
 	meowthalola: {
 		tier: "Illegal",
@@ -344,7 +336,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	persian: {
-		tier: "Illegal",
+		tier: "OU",
 	},
 	persianalola: {
 		tier: "Illegal",

@@ -1504,7 +1504,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Flower Veil",
-		rating: 0,
+		rating: 2,
 		num: 166,
 	},
 	fluffy: {
@@ -2414,7 +2414,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Leaf Guard",
-		rating: 0.5,
+		rating: 2,
 		num: 102,
 	},
 	levitate: {
@@ -3900,7 +3900,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Queenly Majesty",
-		rating: 2.5,
+		rating: 3.5,
 		num: 214,
 	},
 	quickdraw: {
@@ -4066,7 +4066,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Rivalry",
-		rating: 0,
+		rating: 3.5,
 		num: 79,
 	},
 	rkssystem: {
@@ -4829,7 +4829,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Stench",
-		rating: 0.5,
+		rating: 2,
 		num: 1,
 	},
 	stickyhold: {
@@ -4982,7 +4982,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Supreme Overlord",
-		rating: 4,
+		rating: 3.5,
 		num: 293,
 	},
 	surgesurfer: {
