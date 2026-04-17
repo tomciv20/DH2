@@ -1689,7 +1689,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return this.chainModify(1.2);
 		},
 		flags: {breakable: 1},
-		flags: {},
 		name: "Gooey",
 		rating: 2,
 		num: 183,

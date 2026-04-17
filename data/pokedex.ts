@@ -170,7 +170,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Water"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 44, atk: 48, def: 65, spa: 50, spd: 64, spe: 43},
-		abilities: {0: "Rain Dish", 1: "Torrent" H: "Tera Shell"},
+		abilities: {0: "Rain Dish", 1: "Torrent", H: "Tera Shell"},
 		heightm: 0.5,
 		weightkg: 9,
 		color: "Blue",

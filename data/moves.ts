@@ -22059,7 +22059,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				def: -1,
 			},
 		},
-		secondary: null,
 		target: "any",
 		type: "Flying",
 		contestType: "Cool",
