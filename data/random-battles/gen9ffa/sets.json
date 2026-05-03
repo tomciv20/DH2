@@ -463,6 +463,58 @@
             }
         ]
     },
+    "dodrio": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": ["Brave Bird", "Triple Axel", "Blaze Kick", "Thrash", "Triple Arrows", "Baton Pass"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
+            },
+            {
+                "role": "Doubles Support",
+                "movepool": ["Tailwind", "Feather Dance", "Double-Edge", "Brave Bird"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Ground", "Steel"]
+            },
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Rest", "Brave Bird", "Thrash", "Triple Axel", "Blaze Kick", "Triple Arrows", "Protect"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
+            },
+            {
+                "role": "Choice Item user",
+                "movepool": ["Brave Bird", "Triple Axel", "Blaze Kick", "Thrash", "Triple Arrows", "Baton Pass"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
+            }
+        ]
+    },
+    "muk": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Belch", "Recycle", "Disable", "Metronome", "Protect", "Helping Hand"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying"]
+            },
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Belch", "Gunk Shot", "Ice Punch", "Fire Punch", "Drain Punch", "Endure", "Shadow Sneak", "Protect"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying", "Ghost"]
+            },
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Belch", "Rest", "Sleep Talk", "Drain Punch"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying"]
+            }
+        ]
+    },
     "gengar": {
         "level": 85,
         "sets": [
@@ -553,6 +605,29 @@
                 "movepool": ["Gravity", "Grav Apple", "Population Bomb", "Sleep Powder"],
                 "abilities": ["Seed Sower", "Harvest"],
                 "teraTypes": ["Steel", "Normal"]
+            }
+        ]
+    },
+    "weezing": {
+        "level": 92,
+        "sets": [
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Explosion", "Sludge", "Acid", "Flamethrower", "Thunderbolt", "Pain Split", "Strange Steam", "Protect"],
+                "abilities": ["Levitate", "Neutralizing Gas", "Aftermath"],
+                "teraTypes": ["Normal", "Fire", "Electric"]
+            },
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Explosion", "Sludge", "Toxic", "Protect", "Haze"],
+                "abilities": ["Levitate", "Neutralizing Gas", "Aftermath"],
+                "teraTypes": ["Normal"]
+            },
+            {
+                "role": "Choice Item user",
+                "movepool": ["Explosion", "Self-Destruct", "Misty Explosion", "Memento"],
+                "abilities": ["Aftermath"],
+                "teraTypes": ["Normal", "Fairy"]
             }
         ]
     },
@@ -660,7 +735,7 @@
         ]
     },
     "vaporeon": {
-        "level": 91,
+        "level": 80,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -2829,7 +2904,7 @@
         ]
     },
     "leavanny": {
-        "level": 87,
+        "level": 84,
         "sets": [
             {
                 "role": "Fast Support",
@@ -5058,6 +5133,35 @@
                 "movepool": ["Raging Bull", "Mighty Cleave", "Earthquake", "Trailblaze", "Swords Dance"],
                 "abilities": ["Sap Sipper"],
                 "teraTypes": ["Ghost", "Ground"]
+            }
+        ]
+    },
+    "pangoro": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Choice Item user",
+                "movepool": ["Darkest Lariat", "False Surrender", "Sucker Punch", "Sky Uppercut", "Drain Punch", "Bullet Punch", "Poison Jab"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Steel", "Poison"]
+            },
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Bulk Up", "Swords Dance", "Drain Punch", "Sucker Punch", "Bullet Punch"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Steel", "Poison"]
+            },
+            {
+                "role": "Doubles Support",
+                "movepool": ["Parting Shot", "Sucker Punch", "Close Combat", "Coaching"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Drain Punch", "Sucker Punch", "Dizzy Punch", "Poison Jab", "Smart Strike", "Fire Punch", "Ice Punch", "Thunder Punch", "Mega Punch", "Protect"],
+                "abilities": ["Iron Fist"],
+                "teraTypes": ["Poison", "Steel", "Fire", "Electric", "Normal", "Dark"]
             }
         ]
     },

@@ -82,9 +82,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(source.baseMaxhp / 3, source, target);
 			}
 		},
+		onAnyModifyMove(move) {
+			if (['explosion', 'mindblown', 'mistyexplosion', 'selfdestruct'].includes(move.id)) {
+            move.basePower *= 1.5;
+			}
+		},
 		flags: {},
 		name: "Aftermath",
-		rating: 2,
+		rating: 3.5,
 		num: 106,
 	},
 	airlock: {

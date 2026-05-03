@@ -468,16 +468,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	ponytagalar: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	rapidash: {
-		tier: "UU",
-		natDexTier: "UU",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	rapidashgalar: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	slowpoke: {
 		tier: "LC",
@@ -538,12 +538,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "OU",
 	},
 	doduo: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	dodrio: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	seel: {
 		tier: "Illegal",
@@ -554,16 +554,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	grimer: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	grimeralola: {
 		tier: "Illegal",
 		natDexTier: "Illegal",
 	},
 	muk: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	mukalola: {
 		tier: "Illegal",
@@ -707,12 +707,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	koffing: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	weezing: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	weezinggalar: {
 		tier: "Illegal",
@@ -3571,14 +3571,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	pancham: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	pangoro: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	furfrou: {
 		isNonstandard: "Past",
@@ -3622,14 +3620,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	swirlix: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	slurpuff: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	inkay: {
 		tier: "Illegal",

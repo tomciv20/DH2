@@ -1260,7 +1260,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Belch",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1, sound: 1, bypasssub: 1},
+		flags: {protect: 1, sound: 1, bypasssub: 1},
 		onDisableMove(pokemon) {
 			if (!pokemon.ateBerry) pokemon.disableMove('belch');
 		},
@@ -16480,8 +16480,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sappyseed: {
 		num: 738,
-		accuracy: 50,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 50,
 		category: "Physical",
 		name: "Sappy Seed",
 		pp: 10,

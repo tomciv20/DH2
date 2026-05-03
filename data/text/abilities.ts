@@ -19,8 +19,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	aftermath: {
 		name: "Aftermath",
-		desc: "If this Pokemon is knocked out with a contact move, that move's user loses 1/3 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
-		shortDesc: "If this Pokemon is KOed with a contact move, that move's user loses 1/3 its max HP.",
+		desc: "If this Pokemon is knocked out with a contact move, that move's user loses 1/3 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented. All self destructing moves do 1.5x damage.",
+		shortDesc: "If KOed with contact, attacker loses 1/3 HP. 1.5x damage selfKOing moves.",
 
 		damage: "  [POKEMON] was hurt by the explosion!",
 	},
@@ -1829,7 +1829,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	strongjaw: {
 		name: "Strong Jaw",
 		desc: "This Pokemon's bite-based attacks have their power multiplied by 1.5.",
-		shortDesc: "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.",
+		shortDesc: "This Pokemon's bite-based attacks have 1.5x power.",
 	},
 	sturdy: {
 		name: "Sturdy",

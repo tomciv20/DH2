@@ -433,6 +433,52 @@
             }
         ]
     },
+    "dodrio": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Brave Bird", "Triple Axel", "Blaze Kick", "Thrash", "Triple Arrows", "Baton Pass", "Pursuit"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Baton Pass", "Work Up", "Rest", "Brave Bird"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Ground", "Steel"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Rest", "Brave Bird", "Thrash", "Triple Axel", "Blaze Kick", "Triple Arrows"],
+                "abilities": ["As One (Glastrier)"],
+                "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
+            }
+        ]
+    },
+    "muk": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Belch", "Recycle", "Disable", "Metronome"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Belch", "Gunk Shot", "Ice Punch", "Fire Punch", "Drain Punch", "Endure", "Shadow Sneak"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying", "Ghost"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Belch", "Rest", "Sleep Talk", "Drain Punch"],
+                "abilities": ["Cud Chew", "Sticky Hold", "Gluttony"],
+                "teraTypes": ["Poison", "Dark", "Flying"]
+            }
+        ]
+    },
     "gengar": {
         "level": 84,
         "sets": [
@@ -526,6 +572,29 @@
             }
         ]
     },
+    "weezing": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Explosion", "Sludge", "Acid", "Flamethrower", "Thunderbolt", "Pain Split", "Strange Steam"],
+                "abilities": ["Levitate", "Neutralizing Gas", "Aftermath"],
+                "teraTypes": ["Normal", "Fire", "Electric"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Explosion", "Sludge", "Toxic", "Protect", "Haze"],
+                "abilities": ["Levitate", "Neutralizing Gas", "Aftermath"],
+                "teraTypes": ["Normal"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Explosion", "Self-Destruct", "Misty Explosion", "Memento"],
+                "abilities": ["Aftermath"],
+                "teraTypes": ["Normal", "Fairy"]
+            }
+        ]
+    },
     "rhydon": {
         "level": 85,
         "sets": [
@@ -538,7 +607,7 @@
         ]
     },
     "tauros": {
-        "level": 80,
+        "level": 82,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -4939,6 +5008,35 @@
                 "movepool": ["Raging Bull", "Mighty Cleave", "Earthquake", "Trailblaze", "Swords Dance"],
                 "abilities": ["Sap Sipper"],
                 "teraTypes": ["Ghost", "Ground"]
+            }
+        ]
+    },
+    "pangoro": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Darkest Lariat", "False Surrender", "Sucker Punch", "Sky Uppercut", "Drain Punch", "Bullet Punch", "Poison Jab"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Steel", "Poison"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Bulk Up", "Swords Dance", "Drain Punch", "Sucker Punch", "Bullet Punch"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Parting Shot", "Sucker Punch", "Close Combat", "Poison Jab"],
+                "abilities": ["Iron Fist", "Mold Breaker", "Scrappy"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Drain Punch", "Sucker Punch", "Dizzy Punch", "Poison Jab", "Smart Strike", "Fire Punch", "Ice Punch", "Thunder Punch", "Mega Punch"],
+                "abilities": ["Iron Fist"],
+                "teraTypes": ["Poison", "Steel", "Fire", "Electric", "Normal", "Dark"]
             }
         ]
     },
