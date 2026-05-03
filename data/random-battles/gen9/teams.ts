@@ -392,8 +392,12 @@ export class RandomTeams {
 			}
 			// Moves that hit up to 5 times:
 			if (move.multihit && Array.isArray(move.multihit) && move.multihit[1] === 5) counter.add('skilllink');
+			if (move.multihit) counter.add('multihit');
 			if (move.recoil || move.hasCrashDamage) counter.add('recoil');
 			if (move.drain) counter.add('drain');
+			if (move.volatileStatus === 'partiallytrapped') counter.add('trap');
+			if (typeof move.accuracy === 'number' && move.accuracy < 100) counter.add('inaccurate');
+			if (move.self?.boosts && Object.values(move.self.boosts).some(v => v < 0)) counter.add('selfLowering');
 			// Moves which have a base power:
 			if (move.basePower || move.basePowerCallback) {
 				if (!this.noStab.includes(moveid) || PRIORITY_POKEMON.includes(species.id) && move.priority > 0) {
@@ -1142,10 +1146,8 @@ export class RandomTeams {
 		if (species.id === 'pikachu') return 'Light Ball';
 		if (species.id === 'regieleki') return 'Magnet';
 		if (species.id === 'smeargle') return 'Focus Sash';
-		if (
-			species.id === 'snorunt' || moves.has('populationbomb') ||
-			(ability === 'Hustle' && counter.get('setup') && !isDoubles && this.randomChance(1, 2))
-		) return 'Wide Lens';
+		if (species.id === 'snorunt' || moves.has('populationbomb')) return 'Wide Lens';
+		if (ability === 'Quick Draw' && this.randomChance(3, 5)) return 'Quick Claw';
 		if (moves.has('clangoroussoul') || (species.id === 'toxtricity' && moves.has('shiftgear'))) return 'Throat Spray';
 		if (
 			(species.baseSpecies === 'Magearna' && role === 'Tera Blast user') ||
@@ -1162,11 +1164,13 @@ export class RandomTeams {
 			!isDoubles && (species.id === 'luvdisc' || (species.id === 'terapagos' && !moves.has('rest')))
 		) return 'Heavy-Duty Boots';
 		if (moves.has('bellydrum') && moves.has('substitute')) return 'Salac Berry';
-		if (
-			['Cheek Pouch', 'Cud Chew', 'Harvest', 'Ripen'].some(m => ability === m) ||
-			moves.has('bellydrum') || moves.has('filletaway')
-		) {
-			return 'Sitrus Berry';
+		if (moves.has('bellydrum') || moves.has('filletaway')) return 'Sitrus Berry';
+		if (['Cheek Pouch', 'Cud Chew', 'Harvest', 'Ripen'].some(m => ability === m)) {
+			return this.sample([
+				'Sitrus Berry', 'Lum Berry', 'Wiki Berry', 'Figy Berry',
+				'Aguav Berry', 'Mago Berry', 'Iapapa Berry',
+				'Salac Berry', 'Liechi Berry', 'Ganlon Berry', 'Petaya Berry', 'Apicot Berry',
+			]);
 		}
 		if (['healingwish', 'switcheroo', 'trick'].some(m => moves.has(m))) {
 			if (
@@ -1284,6 +1288,98 @@ export class RandomTeams {
 		) {
 			return (this.dex.getEffectiveness('Rock', species) >= 1) ? 'Heavy-Duty Boots' : 'Clear Amulet';
 		}
+		// Item variety block (mirrors singles getItem)
+		// Expert Belt: 20% when 4+ different attacking types
+		const moveTypes = new Set<string>();
+		for (const move of counter.damagingMoves) moveTypes.add(move.type);
+		if (moveTypes.size >= 4 && this.randomChance(1, 5)) return 'Expert Belt';
+		// Eject Pack: 15% with a self-stat-lowering move
+		if (counter.get('selfLowering') && this.randomChance(3, 20)) return 'Eject Pack';
+		// Blunder Policy: 25% if any move has 70% accuracy or lower
+		if (
+			[...moves].some(m => {
+				const mv = this.dex.moves.get(m);
+				return typeof mv.accuracy === 'number' && mv.accuracy <= 70;
+			}) && this.randomChance(1, 4)
+		) return 'Blunder Policy';
+		// Weather extending items: 30%
+		const weatherItem = (
+			(ability === 'Drought' || moves.has('sunnyday')) ? 'Heat Rock' :
+			(ability === 'Drizzle' || moves.has('raindance')) ? 'Damp Rock' :
+			(ability === 'Sand Stream' || moves.has('sandstorm')) ? 'Smooth Rock' :
+			(ability === 'Snow Warning' || moves.has('snowscape') || moves.has('hail')) ? 'Icy Rock' : null
+		);
+		if (weatherItem && this.randomChance(3, 10)) return weatherItem;
+		// Terrain Extender: 30%
+		if (
+			['Electric Surge', 'Psychic Surge', 'Misty Surge', 'Grassy Surge'].includes(ability) ||
+			['electricterrain', 'psychicterrain', 'mistyterrain', 'grassyterrain'].some(m => moves.has(m))
+		) {
+			if (this.randomChance(3, 10)) return 'Terrain Extender';
+		}
+		// Custap Berry: 20% for very slow (spe <= 30) or Sturdy
+		if ((species.baseStats.spe <= 30 || ability === 'Sturdy') && this.randomChance(1, 5)) return 'Custap Berry';
+		// Quick Claw: 10% for slow pokemon (spe <= 50)
+		if (species.baseStats.spe <= 50 && this.randomChance(1, 10)) return 'Quick Claw';
+		// Type resist berry: 5% - pick from types the pokemon is weak to
+		if (this.randomChance(1, 20)) {
+			const typeResistBerries: [string, string][] = [
+				['Fire', 'Occa Berry'], ['Water', 'Passho Berry'], ['Electric', 'Wacan Berry'],
+				['Grass', 'Rindo Berry'], ['Ice', 'Yache Berry'], ['Fighting', 'Chople Berry'],
+				['Poison', 'Kebia Berry'], ['Ground', 'Shuca Berry'], ['Flying', 'Coba Berry'],
+				['Psychic', 'Payapa Berry'], ['Bug', 'Tanga Berry'], ['Rock', 'Charti Berry'],
+				['Ghost', 'Kasib Berry'], ['Dragon', 'Haban Berry'], ['Dark', 'Colbur Berry'],
+				['Steel', 'Babiri Berry'], ['Fairy', 'Roseli Berry'],
+			];
+			const weaknesses = typeResistBerries.filter(([type]) => this.dex.getEffectiveness(type, species) >= 1);
+			if (weaknesses.length) return this.sample(weaknesses)[1];
+		}
+		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves or Hustle
+		if (
+			(counter.get('inaccurate') >= 2 || ability === 'Hustle') &&
+			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability)
+		) {
+			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
+		}
+		// Loaded Dice for multi-hit move users
+		if (counter.get('multihit') && this.randomChance(1, 2)) return 'Loaded Dice';
+		// Binding Band for trapping moves
+		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
+		// Big Root for draining moves
+		if (counter.get('drain') && this.randomChance(1, 2)) return 'Big Root';
+		// Punching Glove for punch moves
+		if (counter.get('ironfist') && this.randomChance(1, 2)) return 'Punching Glove';
+		// Muscle Band for physical attackers
+		if (counter.get('Physical') >= 2 && this.randomChance(1, 4)) return 'Muscle Band';
+		// Wise Glasses for special attackers
+		if (counter.get('Special') >= 2 && this.randomChance(1, 4)) return 'Wise Glasses';
+		// Type-boosting plates (2 same-type moves: ~20% chance; 3+: ~90% chance)
+		const typeToPlate: {[type: string]: string} = {
+			Dragon: 'Draco Plate', Dark: 'Dread Plate', Ground: 'Earth Plate',
+			Fighting: 'Fist Plate', Fire: 'Flame Plate', Ice: 'Icicle Plate',
+			Bug: 'Insect Plate', Steel: 'Iron Plate', Grass: 'Meadow Plate',
+			Psychic: 'Mind Plate', Fairy: 'Pixie Plate', Flying: 'Sky Plate',
+			Water: 'Splash Plate', Ghost: 'Spooky Plate', Rock: 'Stone Plate',
+			Poison: 'Toxic Plate', Electric: 'Zap Plate',
+		};
+		for (const [type, plate] of Object.entries(typeToPlate)) {
+			const moveCount = counter.get(type);
+			if (moveCount >= 3 && this.randomChance(9, 10)) return plate;
+			if (moveCount >= 2 && this.randomChance(1, 5)) return plate;
+		}
+		// Incense items for pokemon with moves across matching type combos
+		const incenseGroups: [string, string[]][] = [
+			['Full Incense', ['Normal', 'Fighting', 'Poison']],
+			['Odd Incense', ['Psychic', 'Ghost', 'Dark']],
+			['Rock Incense', ['Rock', 'Ground', 'Steel']],
+			['Rose Incense', ['Grass', 'Bug', 'Fairy']],
+			['Sea Incense', ['Water', 'Ice', 'Dragon']],
+			['Wave Incense', ['Flying', 'Electric', 'Fire']],
+		];
+		for (const [incense, types] of incenseGroups) {
+			const matchingTypes = types.filter(t => counter.get(t) >= 1).length;
+			if (matchingTypes >= 2 && this.randomChance(1, 4)) return incense;
+		}
 		if (!counter.get('Status')) return 'Assault Vest';
 		return 'Sitrus Berry';
 	}
@@ -1374,6 +1470,99 @@ export class RandomTeams {
 			['flamecharge', 'rapidspin', 'trailblaze'].every(m => !moves.has(m)) &&
 			['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker'].some(m => role === (m))
 		) return 'Life Orb';
+		// Expert Belt: 20% when 4+ different attacking types
+		const moveTypes = new Set<string>();
+		for (const move of counter.damagingMoves) moveTypes.add(move.type);
+		if (moveTypes.size >= 4 && this.randomChance(1, 5)) return 'Expert Belt';
+		// Eject Pack: 15% with a self-stat-lowering move
+		if (counter.get('selfLowering') && this.randomChance(3, 20)) return 'Eject Pack';
+		// Blunder Policy: 25% if any move has 70% accuracy or lower
+		if (
+			[...moves].some(m => {
+				const mv = this.dex.moves.get(m);
+				return typeof mv.accuracy === 'number' && mv.accuracy <= 70;
+			}) && this.randomChance(1, 4)
+		) return 'Blunder Policy';
+		// Weather extending items: 30%
+		const weatherItem = (
+			(ability === 'Drought' || moves.has('sunnyday')) ? 'Heat Rock' :
+			(ability === 'Drizzle' || moves.has('raindance')) ? 'Damp Rock' :
+			(ability === 'Sand Stream' || moves.has('sandstorm')) ? 'Smooth Rock' :
+			(ability === 'Snow Warning' || moves.has('snowscape') || moves.has('hail')) ? 'Icy Rock' : null
+		);
+		if (weatherItem && this.randomChance(3, 10)) return weatherItem;
+		// Terrain Extender: 30%
+		if (
+			['Electric Surge', 'Psychic Surge', 'Misty Surge', 'Grassy Surge'].includes(ability) ||
+			['electricterrain', 'psychicterrain', 'mistyterrain', 'grassyterrain'].some(m => moves.has(m))
+		) {
+			if (this.randomChance(3, 10)) return 'Terrain Extender';
+		}
+		// Custap Berry: 20% for very slow (spe <= 30) or Sturdy
+		if ((species.baseStats.spe <= 30 || ability === 'Sturdy') && this.randomChance(1, 5)) return 'Custap Berry';
+		// Quick Claw: 10% for slow pokemon (spe <= 50)
+		if (species.baseStats.spe <= 50 && this.randomChance(1, 10)) return 'Quick Claw';
+		// Type resist berry: 5% - pick from types the pokemon is weak to
+		if (this.randomChance(1, 20)) {
+			const typeResistBerries: [string, string][] = [
+				['Fire', 'Occa Berry'], ['Water', 'Passho Berry'], ['Electric', 'Wacan Berry'],
+				['Grass', 'Rindo Berry'], ['Ice', 'Yache Berry'], ['Fighting', 'Chople Berry'],
+				['Poison', 'Kebia Berry'], ['Ground', 'Shuca Berry'], ['Flying', 'Coba Berry'],
+				['Psychic', 'Payapa Berry'], ['Bug', 'Tanga Berry'], ['Rock', 'Charti Berry'],
+				['Ghost', 'Kasib Berry'], ['Dragon', 'Haban Berry'], ['Dark', 'Colbur Berry'],
+				['Steel', 'Babiri Berry'], ['Fairy', 'Roseli Berry'],
+			];
+			const weaknesses = typeResistBerries.filter(([type]) => this.dex.getEffectiveness(type, species) >= 1);
+			if (weaknesses.length) return this.sample(weaknesses)[1];
+		}
+		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves or Hustle
+		if (
+			(counter.get('inaccurate') >= 2 || ability === 'Hustle') &&
+			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability)
+		) {
+			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
+		}
+		// Increased Loaded Dice chance for multi-hit move users
+		if (counter.get('multihit') && this.randomChance(1, 2)) return 'Loaded Dice';
+		// Small chance for physical attackers to get Clear Amulet
+		if (counter.get('Physical') >= 2 && this.randomChance(1, 10)) return 'Clear Amulet';
+		// Binding Band for trapping moves
+		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
+		// Big Root for draining moves
+		if (counter.get('drain') && this.randomChance(1, 2)) return 'Big Root';
+		// Punching Glove for punch moves
+		if (counter.get('ironfist') && this.randomChance(1, 2)) return 'Punching Glove';
+		// Muscle Band for physical attackers
+		if (counter.get('Physical') >= 2 && this.randomChance(1, 4)) return 'Muscle Band';
+		// Wise Glasses for special attackers
+		if (counter.get('Special') >= 2 && this.randomChance(1, 4)) return 'Wise Glasses';
+		// Type-boosting plates (2 same-type moves: ~20% chance; 3+: ~90% chance)
+		const typeToPlate: {[type: string]: string} = {
+			Dragon: 'Draco Plate', Dark: 'Dread Plate', Ground: 'Earth Plate',
+			Fighting: 'Fist Plate', Fire: 'Flame Plate', Ice: 'Icicle Plate',
+			Bug: 'Insect Plate', Steel: 'Iron Plate', Grass: 'Meadow Plate',
+			Psychic: 'Mind Plate', Fairy: 'Pixie Plate', Flying: 'Sky Plate',
+			Water: 'Splash Plate', Ghost: 'Spooky Plate', Rock: 'Stone Plate',
+			Poison: 'Toxic Plate', Electric: 'Zap Plate',
+		};
+		for (const [type, plate] of Object.entries(typeToPlate)) {
+			const moveCount = counter.get(type);
+			if (moveCount >= 3 && this.randomChance(9, 10)) return plate;
+			if (moveCount >= 2 && this.randomChance(1, 5)) return plate;
+		}
+		// Incense items for pokemon with moves across matching type combos
+		const incenseGroups: [string, string[]][] = [
+			['Full Incense', ['Normal', 'Fighting', 'Poison']],
+			['Odd Incense', ['Psychic', 'Ghost', 'Dark']],
+			['Rock Incense', ['Rock', 'Ground', 'Steel']],
+			['Rose Incense', ['Grass', 'Bug', 'Fairy']],
+			['Sea Incense', ['Water', 'Ice', 'Dragon']],
+			['Wave Incense', ['Flying', 'Electric', 'Fire']],
+		];
+		for (const [incense, types] of incenseGroups) {
+			const matchingTypes = types.filter(t => counter.get(t) >= 1).length;
+			if (matchingTypes >= 2 && this.randomChance(1, 4)) return incense;
+		}
 		return 'Leftovers';
 	}
 

@@ -4582,8 +4582,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	petalblizzard: {
 		name: "Petal Blizzard",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent Pokemon.",
+		desc: "1.5x damage in snow.",
+		shortDesc: "1.5x damage in snow. Hits adjacent Pokemon.",
 	},
 	petaldance: {
 		name: "Petal Dance",

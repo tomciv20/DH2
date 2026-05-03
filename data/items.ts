@@ -60,6 +60,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		boosts: {
 			spa: 1,
+			spd: 1,
 		},
 		num: 545,
 		gen: 5,
@@ -119,7 +120,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			}
 		},
 		boosts: {
-			spe: 1,
+			spe: 2,
 		},
 		num: 846,
 		gen: 7,
@@ -310,6 +311,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (pokemon.status === 'frz') {
 				pokemon.cureStatus();
 			}
+			this.heal(Math.floor(pokemon.baseMaxhp / 3), pokemon);
 		},
 		num: 153,
 		gen: 3,
@@ -482,7 +484,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onTryHeal(damage, target, source, effect) {
 			const heals = ['drain', 'leechseed', 'ingrain', 'aquaring', 'strengthsap'];
 			if (heals.includes(effect.id)) {
-				return this.chainModify([5324, 4096]);
+				return this.chainModify([6144, 4096]);
 			}
 		},
 		num: 296,
@@ -757,6 +759,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		boosts: {
 			atk: 1,
+			spd: 1,
 		},
 		num: 546,
 		gen: 5,
@@ -845,6 +848,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (pokemon.status === 'par') {
 				pokemon.cureStatus();
 			}
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 149,
 		gen: 3,
@@ -1389,9 +1393,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Dragon',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Dragon') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Dragon') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -1476,9 +1481,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Dark',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Dark') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Dark') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -1544,9 +1550,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Ground',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Ground') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Ground') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -1708,12 +1715,12 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onHit(target, source, move) {
 			if (move && target.getMoveHitData(move).typeMod > 0) {
 				if (target.eatItem()) {
-					this.heal(target.baseMaxhp / 4);
+					this.heal(target.baseMaxhp / 3);
 				}
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat() { },
 		num: 208,
@@ -1948,9 +1955,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Fighting',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Fighting') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Fighting') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -1983,9 +1991,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Fire',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Fire') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Fire') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -2155,7 +2164,12 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		fling: {
 			basePower: 10,
 		},
-		onFractionalPriority: -0.1,
+		onBasePowerPriority: 15,
+		onBasePower(basePower, user, target, move) {
+			if (move.type === 'Normal' || move.type === 'Fighting' || move.type === 'Poison') {
+				return this.chainModify([4710, 4096]);
+			}
+		},
 		num: 316,
 		gen: 4,
 		isNonstandard: "Past",
@@ -2209,6 +2223,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onEat(pokemon) {
 			this.boost({def: 1});
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 202,
 		gen: 3,
@@ -2727,8 +2742,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Ice') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -2779,8 +2795,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Bug') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -2818,8 +2835,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Steel') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -2842,7 +2860,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical' && source.hp && source.isActive && !source.hasAbility('magicguard')) {
 				if (target.eatItem()) {
-					this.damage(source.baseMaxhp / (target.hasAbility('ripen') ? 4 : 8), source, target);
+					this.damage(source.baseMaxhp * (target.hasAbility('ripen') ? 2 : 1) / 5, source, target);
 				}
 			}
 		},
@@ -3322,6 +3340,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		boosts: {
 			spd: 1,
+			spe: 1,
 		},
 		num: 648,
 		gen: 6,
@@ -3529,6 +3548,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onEat(pokemon) {
 			this.boost({spd: 1});
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 688,
 		gen: 6,
@@ -3582,8 +3602,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Grass') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -3735,7 +3756,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				this.effectState.lastMove = move.id;
 			},
 			onModifyDamage(damage, source, target, move) {
-				const dmgMod = [4096, 4915, 5734, 6553, 7372, 8192];
+				const dmgMod = [4096, 5120, 6144, 7168, 8192, 9216];
 				const numConsecutive = this.effectState.numConsecutive > 5 ? 5 : this.effectState.numConsecutive;
 				this.debug(`Current Metronome boost: ${dmgMod[numConsecutive]}/4096`);
 				return this.chainModify([dmgMod[numConsecutive], 4096]);
@@ -3792,8 +3813,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			type: "Rock",
 		},
 		onResidual(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility('gluttony') && pokemon.abilityState.gluttony)) {
+			if (pokemon.hp <= pokemon.maxhp * 3 / 4) {
 				pokemon.eatItem();
 			}
 		},
@@ -3833,8 +3853,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Psychic') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -3937,6 +3958,11 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				return this.chainModify([4505, 4096]);
 			}
 		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.category === 'Physical') {
+				return this.chainModify([3686, 4096]);
+			}
+		},
 		num: 266,
 		gen: 4,
 	},
@@ -4019,8 +4045,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onSourceTryPrimaryHit(target, source, move) {
 			if (target === source || move.category === 'Status' || move.flags['pledgecombo']) return;
 			if (move.type === 'Normal' && source.useItem()) {
-				source.addVolatile('gem');
+				source.addVolatile('normalgem');
 			}
+		},
+		condition: {
+			duration: 1,
+			affectsFainted: true,
+			onBasePowerPriority: 14,
+			onBasePower(basePower, user, target, move) {
+				this.debug('Normal Gem Boost');
+				return this.chainModify([6144, 4096]);
+			},
 		},
 		num: 564,
 		gen: 5,
@@ -4067,8 +4102,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Psychic') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Psychic' || move.type === 'Ghost' || move.type === 'Dark') {
+				return this.chainModify([4710, 4096]);
 			}
 		},
 		num: 314,
@@ -4206,6 +4241,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
 				pokemon.cureStatus();
 			}
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 151,
 		gen: 3,
@@ -4226,6 +4262,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onEat(pokemon) {
 			pokemon.removeVolatile('confusion');
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 156,
 		gen: 3,
@@ -4321,9 +4358,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onPlate: 'Fairy',
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Fairy') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Fairy') {
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -4648,7 +4686,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
 				this.debug('Punching Glove boost');
-				return this.chainModify([4506, 4096]);
+				return this.chainModify([4915, 4096]);
 			}
 		},
 		onModifyMovePriority: 1,
@@ -4752,6 +4790,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (pokemon.status === 'brn') {
 				pokemon.cureStatus();
 			}
+			this.heal(Math.floor(pokemon.baseMaxhp / 10), pokemon);
 		},
 		num: 152,
 		gen: 3,
@@ -4931,8 +4970,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Rock') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
+				return this.chainModify([4710, 4096]);
 			}
 		},
 		num: 315,
@@ -5025,8 +5064,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Grass') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Grass' || move.type === 'Bug' || move.type === 'Fairy') {
+				return this.chainModify([4710, 4096]);
 			}
 		},
 		num: 318,
@@ -5068,7 +5107,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' && source.hp && source.isActive && !source.hasAbility('magicguard')) {
 				if (target.eatItem()) {
-					this.damage(source.baseMaxhp / (target.hasAbility('ripen') ? 4 : 8), source, target);
+					this.damage(source.baseMaxhp * (target.hasAbility('ripen') ? 2 : 1) / 5, source, target);
 				}
 			}
 		},
@@ -5247,8 +5286,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Water' || move.type === 'Ice' || move.type === 'Dragon') {
+				return this.chainModify([4710, 4096]);
 			}
 		},
 		num: 254,
@@ -5306,7 +5345,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onAfterMoveSecondarySelfPriority: -1,
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (move.totalDamage && !pokemon.forceSwitchFlag) {
-				this.heal(move.totalDamage / 8, pokemon);
+				this.heal(move.totalDamage / 6, pokemon);
 			}
 		},
 		num: 253,
@@ -5432,8 +5471,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Flying') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -5491,7 +5531,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			}
 		},
 		boosts: {
-			atk: 1,
+			def: 1,
+			spe: 1,
 		},
 		num: 649,
 		gen: 6,
@@ -5577,8 +5618,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -5597,8 +5639,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Ghost') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -5760,8 +5803,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Rock') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -5975,8 +6019,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Poison') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {
@@ -7195,8 +7240,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
+			if (move.type === 'Flying' || move.type === 'Electric' || move.type === 'Fire') {
+				return this.chainModify([4710, 4096]);
 			}
 		},
 		num: 317,
@@ -7360,6 +7405,11 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				return this.chainModify([4505, 4096]);
 			}
 		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.category === 'Special') {
+				return this.chainModify([3686, 4096]);
+			}
+		},
 		num: 267,
 		gen: 4,
 	},
@@ -7394,8 +7444,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === 'Electric') {
-				return this.chainModify([4915, 4096]);
+				return this.chainModify([5325, 4096]);
 			}
+			return this.chainModify([2867, 4096]);
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source.baseSpecies.num === 493) || pokemon.baseSpecies.num === 493) {

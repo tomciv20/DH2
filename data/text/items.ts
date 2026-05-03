@@ -15,7 +15,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	absorbbulb: {
 		name: "Absorb Bulb",
-		shortDesc: "Raises holder's Sp. Atk by 1 stage if hit by a Water-type attack. Single use.",
+		shortDesc: "Raises holder's Sp. Atk and Sp. Def by 1 stage if hit by a Water-type attack. Single use.",
 	},
 	adamantcrystal: {
 		name: "Adamant Crystal",
@@ -27,7 +27,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	adrenalineorb: {
 		name: "Adrenaline Orb",
-		shortDesc: "Raises holder's Speed by 1 stage if it gets affected by Intimidate. Single use.",
+		shortDesc: "Raises holder's Speed by 2 stages if it gets affected by Intimidate. Single use.",
 	},
 	aerodactylite: {
 		name: "Aerodactylite",
@@ -80,7 +80,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	aspearberry: {
 		name: "Aspear Berry",
-		shortDesc: "Holder is cured if it is frozen. Single use.",
+		shortDesc: "Holder is cured if it is frozen and restores 1/3 max HP. Single use.",
 	},
 	assaultvest: {
 		name: "Assault Vest",
@@ -128,14 +128,14 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	bigroot: {
 		name: "Big Root",
-		shortDesc: "Holder gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
+		shortDesc: "Holder gains 1.5x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
 		gen6: {
 			shortDesc: "Holder gains 1.3x HP from draining moves, Aqua Ring, Ingrain, and Leech Seed.",
 		},
 	},
 	bindingband: {
 		name: "Binding Band",
-		shortDesc: "Holder's partial-trapping moves deal 1/6 max HP per turn instead of 1/8.",
+		shortDesc: "Holder's partial-trapping moves deal 1/5 max HP per turn instead of 1/8.",
 	},
 	blackbelt: {
 		name: "Black Belt",
@@ -175,7 +175,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	blunderpolicy: {
 		name: "Blunder Policy",
-		shortDesc: "If the holder misses due to accuracy, its Speed is raised by 2 stages. Single use.",
+		shortDesc: "If the holder misses due to accuracy, its Speed is raised by 3 stages. Single use.",
 	},
 	boosterenergy: {
 		name: "Booster Energy",
@@ -217,7 +217,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	cellbattery: {
 		name: "Cell Battery",
-		shortDesc: "Raises holder's Attack by 1 if hit by an Electric-type attack. Single use.",
+		shortDesc: "Raises holder's Attack and Sp. Def by 1 stage if hit by an Electric-type attack. Single use.",
 	},
 	charcoal: {
 		name: "Charcoal",
@@ -240,7 +240,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	cheriberry: {
 		name: "Cheri Berry",
-		shortDesc: "Holder cures itself if it is paralyzed. Single use.",
+		shortDesc: "Holder is cured if it is paralyzed and restores 10% max HP. Single use.",
 	},
 	cherishball: {
 		name: "Cherish Ball",
@@ -386,7 +386,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	dracoplate: {
 		name: "Draco Plate",
-		shortDesc: "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type.",
+		shortDesc: "Holder's Dragon-type attacks have 1.3x power; other types have 0.7x. Judgment is Dragon type.",
 	},
 	dragonfang: {
 		name: "Dragon Fang",
@@ -422,7 +422,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	dreadplate: {
 		name: "Dread Plate",
-		shortDesc: "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type.",
+		shortDesc: "Holder's Dark-type attacks have 1.3x power; other types have 0.7x. Judgment is Dark type.",
 	},
 	dreamball: {
 		name: "Dream Ball",
@@ -450,7 +450,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	earthplate: {
 		name: "Earth Plate",
-		shortDesc: "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type.",
+		shortDesc: "Holder's Ground-type attacks have 1.3x power; other types have 0.7x. Judgment is Ground type.",
 	},
 	eeviumz: {
 		name: "Eevium Z",
@@ -493,7 +493,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	enigmaberry: {
 		name: "Enigma Berry",
-		shortDesc: "Restores 1/4 max HP after holder is hit by a supereffective move. Single use.",
+		shortDesc: "Restores 1/3 max HP after holder is hit by a supereffective move. Single use.",
 		gen3: {
 			shortDesc: "No competitive use.",
 		},
@@ -573,7 +573,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	fistplate: {
 		name: "Fist Plate",
-		shortDesc: "Holder's Fighting-type attacks have 1.2x power. Judgment is Fighting type.",
+		shortDesc: "Holder's Fighting-type attacks have 1.3x power; other types have 0.7x. Judgment is Fighting type.",
 	},
 	flameorb: {
 		name: "Flame Orb",
@@ -581,7 +581,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	flameplate: {
 		name: "Flame Plate",
-		shortDesc: "Holder's Fire-type attacks have 1.2x power. Judgment is Fire type.",
+		shortDesc: "Holder's Fire-type attacks have 1.3x power; other types have 0.7x. Judgment is Fire type.",
 	},
 	floatstone: {
 		name: "Float Stone",
@@ -646,7 +646,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	fullincense: {
 		name: "Full Incense",
-		shortDesc: "Holder moves last in its priority bracket.",
+		shortDesc: "Holder's Normal-, Fighting-, and Poison-type attacks have 1.15x power.",
 	},
 	galaricacuff: {
 		name: "Galarica Cuff",
@@ -662,7 +662,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	ganlonberry: {
 		name: "Ganlon Berry",
-		shortDesc: "Raises holder's Defense by 1 stage when at 1/4 max HP or less. Single use.",
+		shortDesc: "Raises holder's Defense by 1 stage and restores 10% max HP when at 1/4 max HP or less. Single use.",
 	},
 	garchompite: {
 		name: "Garchompite",
@@ -838,7 +838,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	icicleplate: {
 		name: "Icicle Plate",
-		shortDesc: "Holder's Ice-type attacks have 1.2x power. Judgment is Ice type.",
+		shortDesc: "Holder's Ice-type attacks have 1.3x power; other types have 0.7x. Judgment is Ice type.",
 	},
 	iciumz: {
 		name: "Icium Z",
@@ -854,7 +854,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	insectplate: {
 		name: "Insect Plate",
-		shortDesc: "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type.",
+		shortDesc: "Holder's Bug-type attacks have 1.3x power; other types have 0.7x. Judgment is Bug type.",
 	},
 	ironball: {
 		name: "Iron Ball",
@@ -865,11 +865,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	ironplate: {
 		name: "Iron Plate",
-		shortDesc: "Holder's Steel-type attacks have 1.2x power. Judgment is Steel type.",
+		shortDesc: "Holder's Steel-type attacks have 1.3x power; other types have 0.7x. Judgment is Steel type.",
 	},
 	jabocaberry: {
 		name: "Jaboca Berry",
-		shortDesc: "If holder is hit by a physical move, attacker loses 1/8 of its max HP. Single use.",
+		shortDesc: "If holder is hit by a physical move, attacker loses 1/5 of its max HP. Single use.",
 	},
 	jawfossil: {
 		name: "Jaw Fossil",
@@ -1015,7 +1015,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	luminousmoss: {
 		name: "Luminous Moss",
-		shortDesc: "Raises holder's Sp. Def by 1 stage if hit by a Water-type attack. Single use.",
+		shortDesc: "Raises holder's Sp. Def and Speed by 1 stage if hit by a Water-type attack. Single use.",
 	},
 	lunaliumz: {
 		name: "Lunalium Z",
@@ -1084,7 +1084,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	marangaberry: {
 		name: "Maranga Berry",
-		shortDesc: "Raises holder's Sp. Def by 1 stage after it is hit by a special attack. Single use.",
+		shortDesc: "Raises holder's Sp. Def by 1 stage and restores 10% max HP after being hit by a special attack. Single use.",
 	},
 	marshadiumz: {
 		name: "Marshadium Z",
@@ -1104,7 +1104,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	meadowplate: {
 		name: "Meadow Plate",
-		shortDesc: "Holder's Grass-type attacks have 1.2x power. Judgment is Grass type.",
+		shortDesc: "Holder's Grass-type attacks have 1.3x power; other types have 0.7x. Judgment is Grass type.",
 	},
 	medichamite: {
 		name: "Medichamite",
@@ -1143,7 +1143,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	metronome: {
 		name: "Metronome",
-		shortDesc: "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.",
+		shortDesc: "Damage of moves used on consecutive turns is increased. Max 2.25x after 5 turns.",
 		gen4: {
 			shortDesc: "Damage of moves used on consecutive turns is increased. Max 2x after 10 turns.",
 		},
@@ -1162,7 +1162,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	micleberry: {
 		name: "Micle Berry",
-		shortDesc: "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.",
+		shortDesc: "Holder's next move has 1.2x accuracy when at 3/4 max HP or less. Single use.",
 	},
 	mimikiumz: {
 		name: "Mimikium Z",
@@ -1170,7 +1170,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	mindplate: {
 		name: "Mind Plate",
-		shortDesc: "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type.",
+		shortDesc: "Holder's Psychic-type attacks have 1.3x power; other types have 0.7x. Judgment is Psychic type.",
 	},
 	miracleseed: {
 		name: "Miracle Seed",
@@ -1200,7 +1200,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	muscleband: {
 		name: "Muscle Band",
-		shortDesc: "Holder's physical attacks have 1.1x power.",
+		shortDesc: "Holder's physical attacks have 1.1x power; holder takes 0.9x from physical attacks.",
 	},
 	mysticwater: {
 		name: "Mystic Water",
@@ -1234,7 +1234,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	normalgem: {
 		name: "Normal Gem",
-		shortDesc: "Holder's first successful Normal-type attack will have 1.3x power. Single use.",
+		shortDesc: "Holder's first successful Normal-type attack will have 1.5x power. Single use.",
 		gen5: {
 			shortDesc: "Holder's first successful Normal-type attack will have 1.5x power. Single use.",
 		},
@@ -1249,7 +1249,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	oddincense: {
 		name: "Odd Incense",
-		shortDesc: "Holder's Psychic-type attacks have 1.2x power.",
+		shortDesc: "Holder's Psychic-, Ghost-, and Dark-type attacks have 1.15x power.",
 	},
 	oldamber: {
 		name: "Old Amber",
@@ -1281,11 +1281,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	pechaberry: {
 		name: "Pecha Berry",
-		shortDesc: "Holder is cured if it is poisoned. Single use.",
+		shortDesc: "Holder is cured if it is poisoned and restores 10% max HP. Single use.",
 	},
 	persimberry: {
 		name: "Persim Berry",
-		shortDesc: "Holder is cured if it is confused. Single use.",
+		shortDesc: "Holder is cured if it is confused and restores 10% max HP. Single use.",
 	},
 	petayaberry: {
 		name: "Petaya Berry",
@@ -1313,7 +1313,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	pixieplate: {
 		name: "Pixie Plate",
-		shortDesc: "Holder's Fairy-type attacks have 1.2x power. Judgment is Fairy type.",
+		shortDesc: "Holder's Fairy-type attacks have 1.3x power; other types have 0.7x. Judgment is Fairy type.",
 	},
 	plumefossil: {
 		name: "Plume Fossil",
@@ -1422,7 +1422,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	punchingglove: {
 		name: "Punching Glove",
-		shortDesc: "Holder's punch-based attacks have 1.1x power and do not make contact.",
+		shortDesc: "Holder's punch-based attacks have 1.2x power and do not make contact.",
 	},
 	qualotberry: {
 		name: "Qualot Berry",
@@ -1455,7 +1455,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	rawstberry: {
 		name: "Rawst Berry",
-		shortDesc: "Holder is cured if it is burned. Single use.",
+		shortDesc: "Holder is cured if it is burned and restores 10% max HP. Single use.",
 	},
 	razorclaw: {
 		name: "Razor Claw",
@@ -1510,7 +1510,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	rockincense: {
 		name: "Rock Incense",
-		shortDesc: "Holder's Rock-type attacks have 1.2x power.",
+		shortDesc: "Holder's Rock-, Ground-, and Steel-type attacks have 1.15x power.",
 	},
 	rockmemory: {
 		name: "Rock Memory",
@@ -1536,7 +1536,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	roseincense: {
 		name: "Rose Incense",
-		shortDesc: "Holder's Grass-type attacks have 1.2x power.",
+		shortDesc: "Holder's Grass-, Bug-, and Fairy-type attacks have 1.15x power.",
 	},
 	roseliberry: {
 		name: "Roseli Berry",
@@ -1544,7 +1544,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	rowapberry: {
 		name: "Rowap Berry",
-		shortDesc: "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use.",
+		shortDesc: "If holder is hit by a special move, attacker loses 1/5 of its max HP. Single use.",
 	},
 	rustedshield: {
 		name: "Rusted Shield",
@@ -1598,7 +1598,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	seaincense: {
 		name: "Sea Incense",
-		shortDesc: "Holder's Water-type attacks have 1.2x power.",
+		shortDesc: "Holder's Water-, Ice-, and Dragon-type attacks have 1.15x power.",
 		gen3: {
 			shortDesc: "Holder's Water-type attacks have 1.05x power.",
 		},
@@ -1620,7 +1620,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	shellbell: {
 		name: "Shell Bell",
-		shortDesc: "After an attack, holder gains 1/8 of the damage in HP dealt to other Pokemon.",
+		shortDesc: "After an attack, holder gains 1/6 of the damage in HP dealt to other Pokemon.",
 
 		heal: "  [POKEMON] restored a little HP using its Shell Bell!",
 	},
@@ -1664,7 +1664,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	skyplate: {
 		name: "Sky Plate",
-		shortDesc: "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.",
+		shortDesc: "Holder's Flying-type attacks have 1.3x power; other types have 0.7x. Judgment is Flying type.",
 	},
 	slowbronite: {
 		name: "Slowbronite",
@@ -1680,7 +1680,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	snowball: {
 		name: "Snowball",
-		shortDesc: "Raises holder's Attack by 1 if hit by an Ice-type attack. Single use.",
+		shortDesc: "Raises holder's Defense and Speed by 1 stage if hit by an Ice-type attack. Single use.",
 	},
 	softsand: {
 		name: "Soft Sand",
@@ -1713,11 +1713,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	splashplate: {
 		name: "Splash Plate",
-		shortDesc: "Holder's Water-type attacks have 1.2x power. Judgment is Water type.",
+		shortDesc: "Holder's Water-type attacks have 1.3x power; other types have 0.7x. Judgment is Water type.",
 	},
 	spookyplate: {
 		name: "Spooky Plate",
-		shortDesc: "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type.",
+		shortDesc: "Holder's Ghost-type attacks have 1.3x power; other types have 0.7x. Judgment is Ghost type.",
 	},
 	sportball: {
 		name: "Sport Ball",
@@ -1763,7 +1763,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	stoneplate: {
 		name: "Stone Plate",
-		shortDesc: "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.",
+		shortDesc: "Holder's Rock-type attacks have 1.3x power; other types have 0.7x. Judgment is Rock type.",
 	},
 	strawberrysweet: {
 		name: "Strawberry Sweet",
@@ -1832,7 +1832,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	toxicplate: {
 		name: "Toxic Plate",
-		shortDesc: "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type.",
+		shortDesc: "Holder's Poison-type attacks have 1.3x power; other types have 0.7x. Judgment is Poison type.",
 	},
 	tr00: {
 		name: "TR00",
@@ -2303,7 +2303,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	waveincense: {
 		name: "Wave Incense",
-		shortDesc: "Holder's Water-type attacks have 1.2x power.",
+		shortDesc: "Holder's Flying-, Electric-, and Fire-type attacks have 1.15x power.",
 	},
 	weaknesspolicy: {
 		name: "Weakness Policy",
@@ -2343,7 +2343,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	wiseglasses: {
 		name: "Wise Glasses",
-		shortDesc: "Holder's special attacks have 1.1x power.",
+		shortDesc: "Holder's special attacks have 1.1x power; holder takes 0.9x from special attacks.",
 	},
 	yacheberry: {
 		name: "Yache Berry",
@@ -2351,7 +2351,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	zapplate: {
 		name: "Zap Plate",
-		shortDesc: "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type.",
+		shortDesc: "Holder's Electric-type attacks have 1.3x power; other types have 0.7x. Judgment is Electric type.",
 	},
 	zoomlens: {
 		name: "Zoom Lens",
