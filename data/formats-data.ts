@@ -282,7 +282,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	crobat: {
 		tier: "UU",
-		doublesTier: "OU",
+		doublesTier: "DOU",
 	},
 	oddish: {
 		tier: "LC",
@@ -302,7 +302,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	parasect: {
 		tier: "OU",
-		doublesTier: "OU",
+		doublesTier: "DOU",
 	},
 	venonat: {
 		tier: "Illegal",
@@ -355,7 +355,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	primeape: {
 		tier: "OU",
-		doublesTier: "OU",
+		doublesTier: "DOU",
 		natDexTier: "OU",
 	},
 	growlithe: {
@@ -669,7 +669,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	marowak: {
 		tier: "OU",
-		doublesTier: "OU",
+		doublesTier: "DOU",
 		natDexTier: "OU",
 	},
 	marowakalola: {
@@ -2925,7 +2925,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	scolipede: {
 		tier: "UU",
-		doublesTier: "UU",
+		doublesTier: "DUU",
 		natDexTier: "UU",
 	},
 	cottonee: {
@@ -3046,7 +3046,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	carracosta: {
 		tier: "UU",
-		doublesTier: "UU",
+		doublesTier: "DUU",
 		natDexTier: "UU",
 	},
 	archen: {
@@ -3055,7 +3055,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	archeops: {
 		tier: "UU",
-		doublesTier: "UU",
+		doublesTier: "DUU",
 		natDexTier: "UU",
 	},
 	trubbish: {
@@ -3064,7 +3064,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	garbodor: {
 		tier: "UU",
-		doublesTier: "UU",
+		doublesTier: "DUU",
 		natDexTier: "UU",
 	},
 	garbodorgmax: {

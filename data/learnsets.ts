@@ -72229,7 +72229,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			falsesurrender: ["9M"],
 			brutalswing: ["9M"],
 			upperhand: ["9M"],
-			brutalswing: ["9M"],
 		},
 	},
 	furfrou: {

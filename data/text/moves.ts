@@ -1946,6 +1946,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		activate: "  [TARGET] fell for the feint!",
 	},
 	feintattack: {
+		name: "Feint Attack",
 		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		shortDesc: "Nullifies Detect, Protect, and Quick/Wide Guard.",
 	},

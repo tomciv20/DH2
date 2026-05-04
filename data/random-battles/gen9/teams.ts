@@ -1267,28 +1267,7 @@ export class RandomTeams {
 		) return 'Leftovers';
 		if (species.id === 'sylveon') return 'Pixie Plate';
 		if (ability === 'Intimidate' && this.dex.getEffectiveness('Rock', species) >= 1) return 'Heavy-Duty Boots';
-		if (
-			(offensiveRole || (role === 'Tera Blast user' && (species.baseStats.spe >= 80 || moves.has('trickroom')))) &&
-			(!moves.has('fakeout') || species.id === 'ambipom') && !moves.has('incinerate') &&
-			(!moves.has('uturn') || types.includes('Bug') || ability === 'Libero') &&
-			((!moves.has('icywind') && !moves.has('electroweb')) || species.id === 'ironbundle')
-		) {
-			return (
-				(ability === 'Quark Drive' || ability === 'Protosynthesis') && !isLead && species.id !== 'ironvaliant' &&
-				['dracometeor', 'firstimpression', 'uturn', 'voltswitch'].every(m => !moves.has(m))
-			) ? 'Booster Energy' : 'Life Orb';
-		}
-		if (isLead && (species.id === 'glimmora' ||
-			(['Doubles Fast Attacker', 'Doubles Wallbreaker', 'Offensive Protect'].includes(role) &&
-			species.baseStats.hp + species.baseStats.def + species.baseStats.spd <= 230))
-		) return 'Focus Sash';
-		if (
-			['Doubles Fast Attacker', 'Doubles Wallbreaker', 'Offensive Protect'].includes(role) &&
-			moves.has('fakeout') || moves.has('incinerate')
-		) {
-			return (this.dex.getEffectiveness('Rock', species) >= 1) ? 'Heavy-Duty Boots' : 'Clear Amulet';
-		}
-		// Item variety block (mirrors singles getItem)
+		// Utility variety items — before Life Orb wall so all roles can qualify
 		// Expert Belt: 20% when 4+ different attacking types
 		const moveTypes = new Set<string>();
 		for (const move of counter.damagingMoves) moveTypes.add(move.type);
@@ -1380,6 +1359,27 @@ export class RandomTeams {
 			const matchingTypes = types.filter(t => counter.get(t) >= 1).length;
 			if (matchingTypes >= 2 && this.randomChance(1, 4)) return incense;
 		}
+		if (
+			(offensiveRole || (role === 'Tera Blast user' && (species.baseStats.spe >= 80 || moves.has('trickroom')))) &&
+			(!moves.has('fakeout') || species.id === 'ambipom') && !moves.has('incinerate') &&
+			(!moves.has('uturn') || types.includes('Bug') || ability === 'Libero') &&
+			((!moves.has('icywind') && !moves.has('electroweb')) || species.id === 'ironbundle')
+		) {
+			return (
+				(ability === 'Quark Drive' || ability === 'Protosynthesis') && !isLead && species.id !== 'ironvaliant' &&
+				['dracometeor', 'firstimpression', 'uturn', 'voltswitch'].every(m => !moves.has(m))
+			) ? 'Booster Energy' : 'Life Orb';
+		}
+		if (isLead && (species.id === 'glimmora' ||
+			(['Doubles Fast Attacker', 'Doubles Wallbreaker', 'Offensive Protect'].includes(role) &&
+			species.baseStats.hp + species.baseStats.def + species.baseStats.spd <= 230))
+		) return 'Focus Sash';
+		if (
+			['Doubles Fast Attacker', 'Doubles Wallbreaker', 'Offensive Protect'].includes(role) &&
+			moves.has('fakeout') || moves.has('incinerate')
+		) {
+			return (this.dex.getEffectiveness('Rock', species) >= 1) ? 'Heavy-Duty Boots' : 'Clear Amulet';
+		}
 		if (!counter.get('Status')) return 'Assault Vest';
 		return 'Sitrus Berry';
 	}
@@ -1460,16 +1460,7 @@ export class RandomTeams {
 		if (
 			!counter.get('setup') && ability !== 'Levitate' && this.dex.getEffectiveness('Ground', species) >= 2
 		) return 'Air Balloon';
-		if (['Bulky Attacker', 'Bulky Support', 'Bulky Setup'].some(m => role === (m))) return 'Leftovers';
-		if (species.id === 'pawmot' && moves.has('nuzzle')) return 'Leppa Berry';
-		if (role === 'Fast Support' || role === 'Fast Bulky Setup') {
-			return (counter.get('Physical') + counter.get('Special') >= 3 && !moves.has('nuzzle')) ? 'Life Orb' : 'Leftovers';
-		}
-		if (role === 'Tera Blast user' && DEFENSIVE_TERA_BLAST_USERS.includes(species.id)) return 'Leftovers';
-		if (
-			['flamecharge', 'rapidspin', 'trailblaze'].every(m => !moves.has(m)) &&
-			['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker'].some(m => role === (m))
-		) return 'Life Orb';
+		// Utility variety items — checked before Leftovers/Life Orb walls so all roles can qualify
 		// Expert Belt: 20% when 4+ different attacking types
 		const moveTypes = new Set<string>();
 		for (const move of counter.damagingMoves) moveTypes.add(move.type);
@@ -1522,7 +1513,7 @@ export class RandomTeams {
 		) {
 			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
 		}
-		// Increased Loaded Dice chance for multi-hit move users
+		// Loaded Dice for multi-hit move users
 		if (counter.get('multihit') && this.randomChance(1, 2)) return 'Loaded Dice';
 		// Small chance for physical attackers to get Clear Amulet
 		if (counter.get('Physical') >= 2 && this.randomChance(1, 10)) return 'Clear Amulet';
@@ -1563,6 +1554,16 @@ export class RandomTeams {
 			const matchingTypes = types.filter(t => counter.get(t) >= 1).length;
 			if (matchingTypes >= 2 && this.randomChance(1, 4)) return incense;
 		}
+		if (['Bulky Attacker', 'Bulky Support', 'Bulky Setup'].some(m => role === (m))) return 'Leftovers';
+		if (species.id === 'pawmot' && moves.has('nuzzle')) return 'Leppa Berry';
+		if (role === 'Fast Support' || role === 'Fast Bulky Setup') {
+			return (counter.get('Physical') + counter.get('Special') >= 3 && !moves.has('nuzzle')) ? 'Life Orb' : 'Leftovers';
+		}
+		if (role === 'Tera Blast user' && DEFENSIVE_TERA_BLAST_USERS.includes(species.id)) return 'Leftovers';
+		if (
+			['flamecharge', 'rapidspin', 'trailblaze'].every(m => !moves.has(m)) &&
+			['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker'].some(m => role === (m))
+		) return 'Life Orb';
 		return 'Leftovers';
 	}
 
@@ -1572,8 +1573,8 @@ export class RandomTeams {
 	): number {
 		if (this.adjustLevel) return this.adjustLevel;
 		// doubles levelling
-		if (isDoubles && this.randomDoublesSets[species.id]["level"]) return this.randomDoublesSets[species.id]["level"]!;
-		if (!isDoubles && this.randomSets[species.id]["level"]) return this.randomSets[species.id]["level"]!;
+		if (isDoubles && this.randomDoublesSets[species.id]?.["level"]) return this.randomDoublesSets[species.id]!["level"]!;
+		if (!isDoubles && this.randomSets[species.id]?.["level"]) return this.randomSets[species.id]!["level"]!;
 		// Default to tier-based levelling
 		const tier = species.tier;
 		const tierScale: Partial<Record<Species['tier'], number>> = {
