@@ -327,7 +327,7 @@
             }
         ]
     },
-    "vaporeon": {
+    "_vaporeon": {
         "level": 91,
         "sets": [
             {
@@ -350,7 +350,7 @@
             }
         ]
     },
-    "jolteon": {
+    "_jolteon": {
         "level": 84,
         "sets": [
             {
@@ -367,7 +367,7 @@
             }
         ]
     },
-    "flareon": {
+    "_flareon": {
         "level": 90,
         "sets": [
             {
@@ -545,7 +545,7 @@
             }
         ]
     },
-    "espeon": {
+    "_espeon": {
         "level": 84,
         "sets": [
             {
@@ -556,7 +556,7 @@
             }
         ]
     },
-    "umbreon": {
+    "_umbreon": {
         "level": 84,
         "sets": [
             {
@@ -1916,7 +1916,7 @@
             }
         ]
     },
-    "leafeon": {
+    "_leafeon": {
         "level": 89,
         "sets": [
             {
@@ -1939,7 +1939,7 @@
             }
         ]
     },
-    "glaceon": {
+    "_glaceon": {
         "level": 94,
         "sets": [
             {
@@ -3078,7 +3078,7 @@
             }
         ]
     },
-    "tornadus": {
+    "_tornadus": {
         "level": 82,
         "sets": [
             {
@@ -3101,7 +3101,7 @@
             }
         ]
     },
-    "tornadustherian": {
+    "_tornadustherian": {
         "level": 79,
         "sets": [
             {
@@ -3118,7 +3118,7 @@
             }
         ]
     },
-    "thundurus": {
+    "_thundurus": {
         "level": 80,
         "sets": [
             {
@@ -3141,7 +3141,7 @@
             }
         ]
     },
-    "thundurustherian": {
+    "_thundurustherian": {
         "level": 80,
         "sets": [
             {
@@ -3181,7 +3181,7 @@
             }
         ]
     },
-    "landorus": {
+    "_landorus": {
         "level": 75,
         "sets": [
             {
@@ -3198,7 +3198,7 @@
             }
         ]
     },
-    "landorustherian": {
+    "_landorustherian": {
         "level": 76,
         "sets": [
             {

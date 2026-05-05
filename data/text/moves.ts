@@ -2277,8 +2277,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	forestscurse: {
 		name: "Forest's Curse",
-		desc: "Causes the Grass type to be added to the target, effectively making it have two or three types. Fails if the target is already a Grass type. If Trick-or-Treat adds a type to the target, it replaces the type added by this move and vice versa.",
-		shortDesc: "Adds Grass to the target's type(s).",
+		desc: "Causes the Grass type to be added to the target, effectively making it have two or three types. Fails if the target is already a Grass type. If Trick-or-Treat adds a type to the target, it replaces the type added by this move and vice versa. Target loses 25% max HP and user gains 25% of the target's max HP.",
+		shortDesc: "Adds Grass to the target's type(s). Steal 25% max hp.",
 	},
 	foulplay: {
 		name: "Foul Play",
@@ -7049,8 +7049,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	trickortreat: {
 		name: "Trick-or-Treat",
-		desc: "Causes the Ghost type to be added to the target, effectively making it have two or three types. Fails if the target is already a Ghost type. If Forest's Curse adds a type to the target, it replaces the type added by this move and vice versa.",
-		shortDesc: "Adds Ghost to the target's type(s).",
+		desc: "Causes the Ghost type to be added to the target, effectively making it have two or three types. Fails if the target is already a Ghost type. If Forest's Curse adds a type to the target, it replaces the type added by this move and vice versa. Deals 1/3 max HP damage to enemies and heals 1/3 max HP if used on an ally.",
+		shortDesc: "Adds Ghost to the target's type(s). Deal 1/3 Max HP to enemy. Heal if Ally.",
 	},
 	trickroom: {
 		name: "Trick Room",

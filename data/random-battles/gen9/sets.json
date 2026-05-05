@@ -773,25 +773,31 @@
         ]
     },
     "dragonite": {
-        "level": 74,
+        "level": 77,
         "sets": [
             {
                 "role": "Bulky Setup",
                 "movepool": ["Dragon Dance", "Earthquake", "Outrage", "Roost"],
-                "abilities": ["Multiscale"],
+                "abilities": ["Multiscale", "Levitate"],
                 "teraTypes": ["Ground", "Steel"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Dragon Dance", "Earthquake", "Iron Head", "Outrage"],
-                "abilities": ["Multiscale"],
-                "teraTypes": ["Steel"]
+                "movepool": ["Dragon Dance", "Earthquake", "Play Rough", "Outrage"],
+                "abilities": ["Multiscale", "Levitate"],
+                "teraTypes": ["Ground", "Steel"]
             },
             {
-                "role": "Tera Blast user",
-                "movepool": ["Dragon Dance", "Earthquake", "Outrage", "Tera Blast"],
-                "abilities": ["Multiscale"],
-                "teraTypes": ["Flying"]
+                "role": "Bulky Attacker",
+                "movepool": ["Dragon Ascent", "Eternabeam", "Play Rough", "Encore"],
+                "abilities": ["Multiscale", "Levitate"],
+                "teraTypes": ["Flying", "Dragon", "Fairy", "Steel"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Extreme Speed", "Draco Meteor", "Play Rough", "Fire Blast"],
+                "abilities": ["Multiscale", "Levitate"],
+                "teraTypes": ["Normal", "Fire"]
             }
         ]
     },
@@ -5037,6 +5043,70 @@
                 "movepool": ["Drain Punch", "Sucker Punch", "Dizzy Punch", "Poison Jab", "Smart Strike", "Fire Punch", "Ice Punch", "Thunder Punch", "Mega Punch"],
                 "abilities": ["Iron Fist"],
                 "teraTypes": ["Poison", "Steel", "Fire", "Electric", "Normal", "Dark"]
+            }
+        ]
+    },
+    "slurpuff": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Fire Blast", "Play Rough", "Slam", "Sticky Web"],
+                "abilities": ["Supersweet Syrup"],
+                "teraTypes": ["Steel", "Fire"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Belly Drum", "Play Rough", "Drain Punch", "Thief"],
+                "abilities": ["Unburden"],
+                "teraTypes": ["Steel", "Fighting"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Misty Terrain", "Misty Explosion", "Terrain Pulse", "Fire Blast"],
+                "abilities": ["Sweet Veil"],
+                "teraTypes": ["Fairy", "Fire"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Sparkly Swirl", "Sticky Web", "Teatime", "Belch"],
+                "abilities": ["Unburden"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Wish", "Protect", "Yawn", "Sparkly Swirl"],
+                "abilities": ["Sweet Veil", "Supersweet Syrup"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "trevenant": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Trick Room", "Poltergeist", "Wood Hammer", "Drain Punch", "Earthquake", "Sucker Punch"],
+                "abilities": ["Natural Cure", "Harvest"],
+                "teraTypes": ["Dark", "Fighting"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Leech Seed", "Trick-or-Treat", "Spirit Shackle", "Protect"],
+                "abilities": ["Harvest"],
+                "teraTypes": ["Dark", "Water", "Rock"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Leafage", "Horn Leech", "Spirit Shackle", "Will-O-Wisp"],
+                "abilities": ["Natural Cure", "Harvest"],
+                "teraTypes": ["Dark", "Rock"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Rest", "Forest's Curse", "Poison Jab", "Poltergeist"],
+                "abilities": ["Natural Cure"],
+                "teraTypes": ["Poison"]
             }
         ]
     },

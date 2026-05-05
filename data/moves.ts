@@ -855,7 +855,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		nEffectiveness(typeMod, target, type, move) {
+		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Fairy', type);
 		},
 		secondary: {
@@ -6418,10 +6418,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, metronome: 1},
-		onHit(target) {
+		onHit(target, source) {
 			if (target.hasType('Grass')) return false;
 			if (!target.addType('Grass')) return false;
 			this.add('-start', target, 'typeadd', 'Grass', '[from] move: Forest\'s Curse');
+
+			// Deal 25% of target's max HP as damage
+			const damageAmount = Math.floor(target.maxhp * 0.25);
+			this.damage(damageAmount, target, source);
+
+			// Heal the user by 25% of their max HP
+			const healAmount = Math.floor(target.maxhp * 0.25);
+			this.heal(healAmount, source, source);
 		},
 		secondary: null,
 		target: "normal",
@@ -21017,17 +21025,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, metronome: 1},
-		onHit(target) {
-			if (target.hasType('Ghost')) return false;
-			if (!target.addType('Ghost')) return false;
-			this.add('-start', target, 'typeadd', 'Ghost', '[from] move: Trick-or-Treat');
-
+		onHit(target, source, move) {
+			// Curse Glitch - always applies
 			if (target.side.active.length === 2 && target.position === 1) {
-				// Curse Glitch
 				const action = this.queue.willMove(target);
 				if (action && action.move.id === 'curse') {
 					action.targetLoc = -1;
 				}
+			}
+
+			if (source.isAlly(target)) {
+				// Heal ally for 33% of their max HP
+				if (!this.heal(Math.floor(target.baseMaxhp * 0.33))) {
+					if (target.volatiles['healblock'] && target.hp !== target.maxhp) {
+						this.attrLastMove('[still]');
+						this.add('cant', source, 'move: Heal Block', move);
+					} else {
+						this.add('-immune', target);
+					}
+					return this.NOT_FAIL;
+				}
+			} else {
+				// Add Ghost type to enemy
+				if (target.hasType('Ghost')) return false;
+				if (!target.addType('Ghost')) return false;
+				this.add('-start', target, 'typeadd', 'Ghost', '[from] move: Trick-or-Treat');
+
+				// Deal 33% of target's max HP as damage
+				const damageAmount = Math.floor(target.maxhp * 0.33);
+				this.damage(damageAmount, target, source);
 			}
 		},
 		secondary: null,

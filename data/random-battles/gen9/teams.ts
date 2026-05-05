@@ -215,7 +215,7 @@ export class RandomTeams {
 			Ice: (movePool, moves, abilities, types, counter) => (
 				movePool.includes('freezedry') || movePool.includes('blizzard') || !counter.get('Ice')
 			),
-			Normal: (movePool, moves, types, counter) => (movePool.includes('boomburst') || movePool.includes('hypervoice')),
+			Normal: (movePool, moves, abilities, types, counter) => (movePool.includes('boomburst') || movePool.includes('hypervoice')),
 			Poison: (movePool, moves, abilities, types, counter) => {
 				if (types.includes('Ground')) return false;
 				return !counter.get('Poison');

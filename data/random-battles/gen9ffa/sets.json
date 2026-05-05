@@ -819,27 +819,27 @@
         "sets": [
             {
                 "role": "Bulky Setup",
-                "movepool": ["Dragon Dance", "Earthquake", "Outrage", "Roost", "Protect"],
-                "abilities": ["Multiscale", "Inner Focus"],
-                "teraTypes": ["Ground", "Steel"]
+                "movepool": ["Dragon Dance", "Play Rough", "Outrage", "Roost", "Protect"],
+                "abilities": ["Multiscale", "Inner Focus", "Levitate"],
+                "teraTypes": ["Steel"]
             },
             {
-                "role": "Wallbreaker",
-                "movepool": ["Extreme Speed", "Earthquake", "Dual Wingbeat", "Outrage"],
-                "abilities": ["Multiscale", "Inner Focus"],
+                "role": "Choice Item User",
+                "movepool": ["Extreme Speed", "Earthquake", "Play Rough", "Outrage"],
+                "abilities": ["Multiscale", "Inner Focus", "Levitate"],
                 "teraTypes": ["Normal"]
             },
             {
-                "role": "Tera Blast user",
-                "movepool": ["Scale Shot", "Outrage", "Tera Blast", "Protect"],
-                "abilities": ["Multiscale"],
-                "teraTypes": ["Flying"]
+                "role": "Bulky Protect",
+                "movepool": ["Fire Blast", "Eternabeam", "Dazzling Gleam", "Protect"],
+                "abilities": ["Multiscale", "Inner Focus", "Levitate"],
+                "teraTypes": ["Fire"]
             },
             {
-                "role": "Fast Support",
-                "movepool": ["Tailwind", "Dual Wingbeat", "Dragon Claw", "Protect"],
-                "abilities": ["Multiscale"],
-                "teraTypes": ["Flying", "Steel"]
+                "role": "Doubles Support",
+                "movepool": ["Tailwind", "Fairy Wind", "Breaking Swipe", "Roost"],
+                "abilities": ["Multiscale", "Inner Focus", "Levitate"],
+                "teraTypes": ["Steel"]
             }
         ]
     },
@@ -5162,6 +5162,70 @@
                 "movepool": ["Drain Punch", "Sucker Punch", "Dizzy Punch", "Poison Jab", "Smart Strike", "Fire Punch", "Ice Punch", "Thunder Punch", "Mega Punch", "Protect"],
                 "abilities": ["Iron Fist"],
                 "teraTypes": ["Poison", "Steel", "Fire", "Electric", "Normal", "Dark"]
+            }
+        ]
+    },
+    "slurpuff": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Fire Blast", "Play Rough", "Protect", "Sticky Web"],
+                "abilities": ["Supersweet Syrup"],
+                "teraTypes": ["Steel", "Fire"]
+            },
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Belly Drum", "Play Rough", "Drain Punch", "Protect"],
+                "abilities": ["Unburden"],
+                "teraTypes": ["Steel", "Fighting"]
+            },
+            {
+                "role": "Doubles Support",
+                "movepool": ["Misty Terrain", "Misty Explosion", "Terrain Pulse", "Decorate"],
+                "abilities": ["Sweet Veil"],
+                "teraTypes": ["Fairy", "Fire"]
+            },
+            {
+                "role": "Doubles Support",
+                "movepool": ["Sparkly Swirl", "Sticky Web", "Teatime", "Belch"],
+                "abilities": ["Unburden"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Happy Hour", "Protect", "Yawn", "Sparkly Swirl"],
+                "abilities": ["Sweet Veil", "Supersweet Syrup"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "trevenant": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Trick Room", "Poltergeist", "Wood Hammer", "Drain Punch", "Earthquake", "Sucker Punch"],
+                "abilities": ["Natural Cure", "Harvest"],
+                "teraTypes": ["Dark", "Fighting"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Leech Seed", "Trick-or-Treat", "Spirit Shackle", "Protect"],
+                "abilities": ["Harvest"],
+                "teraTypes": ["Dark", "Water", "Rock"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Leafage", "Horn Leech", "Spirit Shackle", "Will-O-Wisp"],
+                "abilities": ["Natural Cure", "Harvest"],
+                "teraTypes": ["Dark", "Rock"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Rest", "Forest's Curse", "Poison Jab", "Poltergeist"],
+                "abilities": ["Natural Cure"],
+                "teraTypes": ["Poison"]
             }
         ]
     },
