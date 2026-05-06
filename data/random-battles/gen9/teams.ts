@@ -618,6 +618,27 @@ export class RandomTeams {
 		if (species.id === 'mesprit') this.incompatibleMoves(moves, movePool, 'healingwish', 'uturn');
 		if (species.id === 'camerupt') this.incompatibleMoves(moves, movePool, 'roar', 'willowisp');
 		if (species.id === 'coalossal') this.incompatibleMoves(moves, movePool, 'flamethrower', 'overheat');
+
+		// Discourage having two damaging moves of the same type with similar base power (within 20 BP)
+		if (moves.size + movePool.length > this.maxMoveCount) {
+			for (const existingMoveId of moves) {
+				const existingMove = this.dex.moves.get(existingMoveId);
+				if (existingMove.category === 'Status' || !existingMove.basePower) continue;
+				for (const poolMoveId of [...movePool]) {
+					if (!movePool.includes(poolMoveId)) continue;
+					const poolMove = this.dex.moves.get(poolMoveId);
+					if (poolMove.category === 'Status' || !poolMove.basePower) continue;
+					if (
+						poolMove.type === existingMove.type &&
+						Math.abs(poolMove.basePower - existingMove.basePower) <= 20 &&
+						this.randomChance(3, 4)
+					) {
+						this.fastPop(movePool, movePool.indexOf(poolMoveId));
+						if (moves.size + movePool.length <= this.maxMoveCount) return;
+					}
+				}
+			}
+		}
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -1135,6 +1156,11 @@ export class RandomTeams {
 				return (role === 'Fast Attacker') ? 'Silver Powder' : 'Life Orb';
 			}
 		}
+		if (ability === 'Klutz') {
+			if (moves.has('transform')) return this.sample(['Sitrus Berry', 'Choice Scarf']);
+			if (!moves.has('trick') && !moves.has('switcheroo')) return 'Sticky Barb';
+			return 'Lagging Tail';
+		}
 		if (species.requiredItems) {
 			// Z-Crystals aren't available in Gen 9, so require Plates
 			if (species.baseSpecies === 'Arceus') {
@@ -1192,7 +1218,10 @@ export class RandomTeams {
 		if (ability === 'Magic Guard' || (ability === 'Sheer Force' && counter.get('sheerforce'))) return 'Life Orb';
 		if (ability === 'Anger Shell') return this.sample(['Rindo Berry', 'Passho Berry', 'Scope Lens', 'Sitrus Berry']);
 		if (moves.has('dragondance') && isDoubles) return 'Clear Amulet';
-		if (counter.get('skilllink') && ability !== 'Skill Link' && species.id !== 'breloom') return 'Loaded Dice';
+		if (ability !== 'Skill Link' && species.id !== 'breloom') {
+			if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+			if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		}
 		if (ability === 'Unburden') {
 			return (moves.has('closecombat') || moves.has('leafstorm')) ? 'White Herb' : 'Sitrus Berry';
 		}
@@ -1272,10 +1301,11 @@ export class RandomTeams {
 		const moveTypes = new Set<string>();
 		for (const move of counter.damagingMoves) moveTypes.add(move.type);
 		if (moveTypes.size >= 4 && this.randomChance(1, 5)) return 'Expert Belt';
-		// Eject Pack: 15% with a self-stat-lowering move
-		if (counter.get('selfLowering') && this.randomChance(3, 20)) return 'Eject Pack';
-		// Blunder Policy: 25% if any move has 70% accuracy or lower
+		// Eject Pack: 15% with a self-stat-lowering move (not for Setup roles)
+		if (counter.get('selfLowering') && !role.includes('Setup') && this.randomChance(3, 20)) return 'Eject Pack';
+		// Blunder Policy: 25% if any move has 70% accuracy or lower (not Trick Room setters)
 		if (
+			!moves.has('trickroom') &&
 			[...moves].some(m => {
 				const mv = this.dex.moves.get(m);
 				return typeof mv.accuracy === 'number' && mv.accuracy <= 70;
@@ -1313,25 +1343,28 @@ export class RandomTeams {
 			const weaknesses = typeResistBerries.filter(([type]) => this.dex.getEffectiveness(type, species) >= 1);
 			if (weaknesses.length) return this.sample(weaknesses)[1];
 		}
-		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves or Hustle
+		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves, not with accuracy-boosting moves
 		if (
 			(counter.get('inaccurate') >= 2 || ability === 'Hustle') &&
-			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability)
+			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability) &&
+			!moves.has('coil') && !moves.has('honeclaws')
 		) {
 			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
 		}
-		// Loaded Dice for multi-hit move users
-		if (counter.get('multihit') && this.randomChance(1, 2)) return 'Loaded Dice';
+		// Loaded Dice for 2-5 hit move users (guaranteed with 2+, 50% with 1)
+		if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+		if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
 		// Binding Band for trapping moves
 		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
-		// Big Root for draining moves
-		if (counter.get('drain') && this.randomChance(1, 2)) return 'Big Root';
-		// Punching Glove for punch moves
-		if (counter.get('ironfist') && this.randomChance(1, 2)) return 'Punching Glove';
-		// Muscle Band for physical attackers
-		if (counter.get('Physical') >= 2 && this.randomChance(1, 4)) return 'Muscle Band';
-		// Wise Glasses for special attackers
-		if (counter.get('Special') >= 2 && this.randomChance(1, 4)) return 'Wise Glasses';
+		// Big Root for multiple draining moves (90% with 3+, 60% with 2)
+		if (counter.get('drain') >= 3 && this.randomChance(9, 10)) return 'Big Root';
+		if (counter.get('drain') >= 2 && this.randomChance(3, 5)) return 'Big Root';
+		// Punching Glove for punch moves (2+)
+		if (counter.get('ironfist') >= 2 && this.randomChance(1, 2)) return 'Punching Glove';
+		// Muscle Band for all-physical attackers with multiple attacks: 5% chance
+		if (counter.get('Physical') >= 2 && counter.get('Special') === 0 && this.randomChance(1, 20)) return 'Muscle Band';
+		// Wise Glasses for all-special attackers with multiple attacks: 5% chance
+		if (counter.get('Special') >= 2 && counter.get('Physical') === 0 && this.randomChance(1, 20)) return 'Wise Glasses';
 		// Type-boosting plates (2 same-type moves: ~20% chance; 3+: ~90% chance)
 		const typeToPlate: {[type: string]: string} = {
 			Dragon: 'Draco Plate', Dark: 'Dread Plate', Ground: 'Earth Plate',
@@ -1465,10 +1498,11 @@ export class RandomTeams {
 		const moveTypes = new Set<string>();
 		for (const move of counter.damagingMoves) moveTypes.add(move.type);
 		if (moveTypes.size >= 4 && this.randomChance(1, 5)) return 'Expert Belt';
-		// Eject Pack: 15% with a self-stat-lowering move
-		if (counter.get('selfLowering') && this.randomChance(3, 20)) return 'Eject Pack';
-		// Blunder Policy: 25% if any move has 70% accuracy or lower
+		// Eject Pack: 15% with a self-stat-lowering move (not for Setup roles)
+		if (counter.get('selfLowering') && !role.includes('Setup') && this.randomChance(3, 20)) return 'Eject Pack';
+		// Blunder Policy: 25% if any move has 70% accuracy or lower (not Trick Room setters)
 		if (
+			!moves.has('trickroom') &&
 			[...moves].some(m => {
 				const mv = this.dex.moves.get(m);
 				return typeof mv.accuracy === 'number' && mv.accuracy <= 70;
@@ -1506,27 +1540,32 @@ export class RandomTeams {
 			const weaknesses = typeResistBerries.filter(([type]) => this.dex.getEffectiveness(type, species) >= 1);
 			if (weaknesses.length) return this.sample(weaknesses)[1];
 		}
-		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves or Hustle
+		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves, not with accuracy-boosting moves
 		if (
 			(counter.get('inaccurate') >= 2 || ability === 'Hustle') &&
-			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability)
+			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability) &&
+			!moves.has('coil') && !moves.has('honeclaws')
 		) {
 			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
 		}
-		// Loaded Dice for multi-hit move users
-		if (counter.get('multihit') && this.randomChance(1, 2)) return 'Loaded Dice';
+		// Loaded Dice for 2-5 hit move users (guaranteed with 2+, 50% with 1)
+		if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+		if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
 		// Small chance for physical attackers to get Clear Amulet
-		if (counter.get('Physical') >= 2 && this.randomChance(1, 10)) return 'Clear Amulet';
+		if (counter.get('Physical') >= 2 && this.randomChance(1, 15)) return 'Clear Amulet';
 		// Binding Band for trapping moves
 		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
-		// Big Root for draining moves
-		if (counter.get('drain') && this.randomChance(1, 2)) return 'Big Root';
-		// Punching Glove for punch moves
-		if (counter.get('ironfist') && this.randomChance(1, 2)) return 'Punching Glove';
-		// Muscle Band for physical attackers
-		if (counter.get('Physical') >= 2 && this.randomChance(1, 4)) return 'Muscle Band';
-		// Wise Glasses for special attackers
-		if (counter.get('Special') >= 2 && this.randomChance(1, 4)) return 'Wise Glasses';
+		// Big Root for multiple draining moves (90% with 3+, 60% with 2)
+		if (counter.get('drain') >= 3 && this.randomChance(9, 10)) return 'Big Root';
+		if (counter.get('drain') >= 2 && this.randomChance(3, 5)) return 'Big Root';
+		// Punching Glove for punch moves (2+)
+		if (counter.get('ironfist') >= 2 && this.randomChance(1, 2)) return 'Punching Glove';
+		// Muscle Band for all-physical attackers with multiple attacks: 5% chance
+		if (counter.get('Physical') >= 2 && counter.get('Special') === 0 && this.randomChance(1, 20)) return 'Muscle Band';
+		// Wise Glasses for all-special attackers with multiple attacks: 5% chance
+		if (counter.get('Special') >= 2 && counter.get('Physical') === 0 && this.randomChance(1, 20)) return 'Wise Glasses';
+		// Throat Spray: 40% for sound move users with no physical attacks
+		if (counter.get('sound') && !counter.get('Physical') && this.randomChance(2, 5)) return 'Throat Spray';
 		// Type-boosting plates (2 same-type moves: ~20% chance; 3+: ~90% chance)
 		const typeToPlate: {[type: string]: string} = {
 			Dragon: 'Draco Plate', Dark: 'Dread Plate', Ground: 'Earth Plate',
