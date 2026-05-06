@@ -63,6 +63,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 30,
 			status: 'psn',
 		},
+		ignoreImmunity: {'Steel': true},
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
