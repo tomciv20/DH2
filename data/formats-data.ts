@@ -3464,7 +3464,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUber",
 		natDexTier: "Uber",
 	},
-	mokrill: {
+	moandkrill: {
 		tier: "OU",
 		natDexTier: "OU",
 	},

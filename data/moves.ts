@@ -10787,6 +10787,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Water', type);
 		},
+		onBasePower(basePower, attacker, defender, move) {
+        	const boostedUsers = ['lickitung', 'lickilicky', 'gastly', 'haunter', 'gengar'];
+        	if (boostedUsers.includes(attacker.species.id)) {
+            	return this.chainModify(2);
+        	}
+        	return basePower;
+    	},
 		secondary: {
 			chance: 30,
 			status: 'par',

@@ -2171,6 +2171,29 @@
             }
         ]
     },
+    "lickilicky": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Body Press", "Lick", "Wrap", "Earthquake", "Explosion"],
+                "abilities": ["Oblivious", "Gooey"],
+                "teraTypes": ["Ghost", "Fighting", "Ground", "Normal"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Swords Dance", "Lick", "Wrap", "Earthquake", "Power Whip"],
+                "abilities": ["Damp", "Oblivious", "Gooey"],
+                "teraTypes": ["Ghost", "Grass", "Ground"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Thunder Cage", "Lick", "Protect", "Wrap"],
+                "abilities": ["Damp", "Oblivious", "Gooey"],
+                "teraTypes": ["Ghost", "Electric"]
+            }
+        ]
+    },
     "rhyperior": {
         "level": 79,
         "sets": [
@@ -5017,7 +5040,7 @@
             }
         ]
     },
-    "mokrill": {
+    "moandkrill": {
         "level": 83,
         "sets": [
             {

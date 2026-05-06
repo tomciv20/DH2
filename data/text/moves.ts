@@ -3560,8 +3560,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lick: {
 		name: "Lick",
-		desc: "Ghost and Water combined effectiveness. Has a 30% chance to paralyze the target.",
-		shortDesc: "Ghost+Water type. 30% chance to paralyze the target.",
+		desc: "Ghost and Water combined effectiveness. Has a 30% chance to paralyze the target. 2x power when used by Lickitung, Lickilicky, Gastly, Haunter, or Gengar.",
+		shortDesc: "Ghost+Water type. 30% paralyze. 2x power if Lickilicky/Gengar line.",
 	},
 	lifedew: {
 		name: "Life Dew",
