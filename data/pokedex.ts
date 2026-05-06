@@ -1270,7 +1270,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	meowth: {
 		num: 52,
 		name: "Meowth",
-		types: ["Normal"],
+		types: ["Normal", "Steel"],
 		baseStats: {hp: 50, atk: 55, def: 45, spa: 50, spd: 50, spe: 112},
 		abilities: {0: "Pickup", 1: "Technician", H: "Pickpocket"},
 		heightm: 0.4,
@@ -1327,7 +1327,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	persian: {
 		num: 53,
 		name: "Persian",
-		types: ["Normal"],
+		types: ["Normal", "Steel"],
 		baseStats: {hp: 80, atk: 85, def: 70, spa: 75, spd: 75, spe: 138},
 		abilities: {0: "Limber", 1: "Technician", H: "Pickpocket"},
 		heightm: 1,
@@ -3770,8 +3770,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	bellossom: {
 		num: 182,
 		name: "Bellossom",
-		types: ["Grass"],
-		baseStats: {hp: 75, atk: 80, def: 95, spa: 90, spd: 100, spe: 50},
+		types: ["Grass", "Fairy"],
+		baseStats: {hp: 81, atk: 90, def: 104, spa: 90, spd: 109, spe: 51},
 		abilities: {0: "Leaf Guard", 1: "Dancer", H: "Healer"},
 		heightm: 0.4,
 		weightkg: 5.8,
