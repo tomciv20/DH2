@@ -3464,6 +3464,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUber",
 		natDexTier: "Uber",
 	},
+	mokrill: {
+		tier: "OU",
+		natDexTier: "OU",
+	},
 	chespin: {
 		tier: "Illegal",
 		natDexTier: "Illegal",

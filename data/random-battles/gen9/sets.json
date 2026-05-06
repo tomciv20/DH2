@@ -5017,6 +5017,35 @@
             }
         ]
     },
+    "mokrill": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Shore Up", "Rapid Spin", "Earthquake", "Baton Pass"],
+                "abilities": ["Sand Veil", "Sand Rush", "Parental Bond"],
+                "teraTypes": ["Grass", "Water", "Ghost", "Bug"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Shore Up", "Earthquake", "Earth Power", "Double-Edge", "Octolock"],
+                "abilities": ["Sand Veil", "Sand Rush", "Parental Bond"],
+                "teraTypes": ["Grass", "Water", "Ghost", "Bug"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Trailblaze", "Giga Drain", "Earthquake", "Absorb"],
+                "abilities": ["Sand Veil", "Sand Rush", "Parental Bond"],
+                "teraTypes": ["Grass"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Stuff Cheeks", "Belch", "Earthquake", "Hyper Drill"],
+                "abilities": ["Sand Veil", "Sand Rush", "Parental Bond"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
     "pangoro": {
         "level": 83,
         "sets": [

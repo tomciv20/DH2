@@ -19760,4 +19760,15 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+	mokrill: {
+		num: -5015,
+		name: "Mo and Krill",
+		types: ["Normal", "Ground"],
+		baseStats: {hp: 146, atk: 80, def: 70, spa: 80, spd: 80, spe: 94},
+		abilities: {0: "Sand Veil", 1: "Sand Rush", H: "Parental Bond"},
+		heightm: 1.5,
+		weightkg: 60,
+		color: "Brown",
+		eggGroups: ["Undiscovered"],
+	},
 };
