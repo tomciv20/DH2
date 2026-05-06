@@ -4001,7 +4001,7 @@
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["Nasty Plot", "Hurricane", "Sludge Bomb", "Shadow Ball", "Boomburst", "Psychic Noise"],
+                "movepool": ["Nasty Plot", "Hurricane", "Sludge Bomb", "Shadow Ball", "Psychic Noise"],
                 "abilities": ["Infiltrator"],
                 "teraTypes": ["Dark", "Flying", "Poison", "Ghost", "Psychic", "Normal"]
             },
@@ -4384,7 +4384,7 @@
             {
                 "role": "Wallbreaker",
                 "movepool": ["Psychic", "Searing Shot", "Blue Flare", "Dazzling Gleam", "Energy Ball"],
-                "abilities": ["Flower Gift"],
+                "abilities": ["Victory Star"],
                 "teraTypes": ["Grass", "Fairy", "Fire"]
             }
         ]

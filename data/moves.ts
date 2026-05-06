@@ -10628,10 +10628,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			}
 		},
-		boosts: {
-			def: 1,
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
 		},
-		secondary: null,
 		target: "normal",
 		type: "Grass",
 		contestType: "Tough",

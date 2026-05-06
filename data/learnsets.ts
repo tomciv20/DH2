@@ -6076,7 +6076,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psychicnoise: ["9M"],
 			snarl: ["9M"],
 			poisonjab: ["9M"],
-			boomburst: ["9M"],
 			skittersmack: ["9M"],
 			shadowsneak: ["9M"],
 			belch: ["9M"],
