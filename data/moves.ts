@@ -13250,6 +13250,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'snow':
 				move.type = 'Ice';
 				break;
+			case 'deltastream':
+				move.type = 'Flying';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -13267,6 +13270,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'hail':
 			case 'snow':
+				move.basePower *= 2;
+				break;
+			case 'deltastream':
 				move.basePower *= 2;
 				break;
 			}
@@ -21891,6 +21897,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'snow':
 				move.type = 'Ice';
 				break;
+			case 'deltastream':
+				move.type = 'Flying';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -21908,6 +21917,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'hail':
 			case 'snow':
+				move.basePower *= 2;
+				break;
+			case 'deltastream':
 				move.basePower *= 2;
 				break;
 			}

@@ -475,25 +475,25 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": ["Brave Bird", "Triple Axel", "Blaze Kick", "Thrash", "Triple Arrows", "Baton Pass"],
-                "abilities": ["As One (Glastrier)"],
+                "abilities": ["As One (Dodrio)"],
                 "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
             },
             {
                 "role": "Doubles Support",
                 "movepool": ["Tailwind", "Feather Dance", "Double-Edge", "Brave Bird"],
-                "abilities": ["As One (Glastrier)"],
+                "abilities": ["As One (Dodrio)"],
                 "teraTypes": ["Ground", "Steel"]
             },
             {
                 "role": "Offensive Protect",
                 "movepool": ["Rest", "Brave Bird", "Thrash", "Triple Axel", "Blaze Kick", "Triple Arrows", "Protect"],
-                "abilities": ["As One (Glastrier)"],
+                "abilities": ["As One (Dodrio)"],
                 "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
             },
             {
                 "role": "Choice Item user",
                 "movepool": ["Brave Bird", "Triple Axel", "Blaze Kick", "Thrash", "Triple Arrows", "Baton Pass"],
-                "abilities": ["As One (Glastrier)"],
+                "abilities": ["As One (Dodrio)"],
                 "teraTypes": ["Fire", "Fighting", "Flying", "Normal"]
             }
         ]

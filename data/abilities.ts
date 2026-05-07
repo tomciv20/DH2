@@ -267,12 +267,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 165,
 	},
-	asoneglastrier: {
-		onPreStart(pokemon) {
-			this.add('-ability', pokemon, 'Early Bird');
-			this.add('-ability', pokemon, 'Tangled Feet');
-			this.add('-ability', pokemon, 'Big Pecks');
-		},
+	asonedodrio: {
 		onStart(pokemon) {
 			this.add('-ability', pokemon, 'Early Bird');
 			this.add('-ability', pokemon, 'Tangled Feet');
@@ -304,7 +299,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.volatiles['confusion']) return this.chainModify(2);
 		},
 		flags: {},
-		name: "As One (Glastrier)",
+		name: "As One (Dodrio)",
 		rating: 3.5,
 		num: 266,
 	},

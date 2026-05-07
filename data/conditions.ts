@@ -1,4 +1,4 @@
-export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
+﻿export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',
@@ -65,14 +65,14 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asoneglastrier')) {
+			if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asonedodrio')) {
 				pokemon.statusState.time--;
 			}
 			pokemon.statusState.time--;
 			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
-				if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asoneglastrier')) {
-            this.heal(pokemon.baseMaxhp / 4, pokemon);
+				if (pokemon.hasAbility('earlybird') || pokemon.hasAbility('asonedodrio')) {
+						this.heal(pokemon.baseMaxhp / 4, pokemon, pokemon, this.dex.abilities.get('earlybird'));
 				}
 				return;
 			}
