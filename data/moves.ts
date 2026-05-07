@@ -6641,7 +6641,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	furyswipes: {
 		num: 154,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 20,
 		category: "Physical",
 		name: "Fury Swipes",
 		pp: 15,

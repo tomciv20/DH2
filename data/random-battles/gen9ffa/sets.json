@@ -334,16 +334,22 @@
         "level": 85,
         "sets": [
             {
-                "role": "Fast Attacker",
-                "movepool": ["Fire Blast", "Nasty Plot", "Scorching Sands", "Solar Beam", "Psychic", "Psyshock", "Protect"],
+                "role": "Offensive Protect",
+                "movepool": ["Fire Blast", "Protect", "Scorching Sands", "Solar Beam", "Psychic", "Psyshock"],
                 "abilities": ["Drought"],
                 "teraTypes": ["Fire", "Grass"]
             },
             {
-                "role": "Fast Support",
-                "movepool": ["Encore", "Will-O-Wisp", "Overheat", "Baton Pass", "Psychic", "Fake Tears"],
-                "abilities": ["Drought", "Telepathy"],
-                "teraTypes": ["Grass"]
+                "role": "Offensive Protect",
+                "movepool": ["Fire Pledge", "Protect", "Will-O-Wisp", "Psychic", "Psyshock", "Hypnosis", "Fake Tears"],
+                "abilities": ["Psychic Surge"],
+                "teraTypes": ["Psychic"]
+            },
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Barrage", "Tail Slap", "Encore", "Psychic", "Psyshock"],
+                "abilities": ["Skill Link"],
+                "teraTypes": ["Normal"]
             }
         ]
     },
@@ -351,22 +357,22 @@
         "level": 78,
         "sets": [
             {
-                "role": "Bulky Support",
-                "movepool": ["Aurora Veil", "Blizzard", "Encore", "Moonblast", "Protect"],
+                "role": "Doubles Support",
+                "movepool": ["Aurora Veil", "Blizzard", "Encore", "Moonblast"],
                 "abilities": ["Snow Warning"],
                 "teraTypes": ["Steel", "Water"]
             },
             {
-                "role": "Fast Bulky Setup",
-                "movepool": ["Aurora Veil", "Blizzard", "Moonblast", "Nasty Plot"],
+                "role": "Doubles Support",
+                "movepool": ["Aurora Veil", "Blizzard", "Moonblast", "Protect"],
                 "abilities": ["Snow Warning"],
                 "teraTypes": ["Steel", "Water"]
             },
             {
-                "role": "Fast Support",
-                "movepool": ["Aurora Veil", "Blizzard", "Freeze-Dry", "Moonblast", "Protect"],
-                "abilities": ["Snow Warning"],
-                "teraTypes": ["Steel", "Water"]
+                "role": "Tera Blast user",
+                "movepool": ["Icicle Spear", "Tail Slap", "Tera Blast", "Moonblast"],
+                "abilities": ["Skill Link"],
+                "teraTypes": ["Ground", "Fire"]
             }
         ]
     },
@@ -3801,13 +3807,13 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Brave Bird", "Leech Life", "Roost", "Sludge Bomb"],
-                "abilities": ["Gale Wings"],
+                "movepool": ["Brave Bird", "Leech Life", "Roost", "Acid"],
+                "abilities": ["Gale Wings", "Inner Focus", "Infiltrator"],
                 "teraTypes": ["Flying", "Bug", "Poison"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Nasty Plot", "Air Slash", "Sludge Bomb", "Shadow Ball", "Psychic Noise"],
+                "movepool": ["Nasty Plot", "Air Slash", "Sludge Bomb", "Shadow Ball", "Protect"],
                 "abilities": ["Infiltrator"],
                 "teraTypes": ["Dark", "Flying", "Poison", "Ghost", "Psychic"]
             }
@@ -3818,33 +3824,33 @@
         "sets": [
             {
                 "role": "AV Pivot",
-                "movepool": ["Knock Off", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak"],
+                "movepool": ["U-turn", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Dark", "Fighting", "Grass", "Water"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Flame Charge", "Swords Dance", "Shadow Bone", "Leech Life", "Knock Off"],
+                "movepool": ["Flame Charge", "Swords Dance", "Shadow Bone", "Leech Life"],
                 "abilities": ["Moxie"],
-                "teraTypes": ["Dark", "Ghost", "Water"]
+                "teraTypes": ["Dark", "Ghost", "Water", "Fire"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Knock Off", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak", "Poison Jab"],
+                "movepool": ["Knock Off", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak", "Protect"],
                 "abilities": ["Moxie"],
                 "teraTypes": ["Dark", "Fighting", "Grass", "Poison"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Synthesis", "Knock Off", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak", "Poison Jab"],
+                "movepool": ["Synthesis", "Protect", "Shadow Bone", "Leech Life"],
                 "abilities": ["Regenerator", "Moxie", "Mummy"],
                 "teraTypes": ["Dark", "Fighting", "Grass", "Poison"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Synthesis", "Knock Off", "Will-O-Wisp", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak", "Light Screen", "Reflect"],
-                "abilities": ["Regenerator", "Mummy"],
-                "teraTypes": ["Dark", "Water", "Grass", "Fairy"]
+                "movepool": ["Protect", "Skitter Smack", "Will-O-Wisp", "Shadow Bone"],
+                "abilities": ["Regenerator", "Moxie", "Mummy"],
+                "teraTypes": ["Dark", "Fighting", "Grass", "Poison"]
             }
         ]
     },
@@ -4085,25 +4091,31 @@
         "sets": [
             {
                 "role": "Fast Bulky Support",
-                "movepool": ["Barb Barrage", "U-turn", "Roost", "Brave Bird", "Toxic"],
+                "movepool": ["Tailwind", "U-turn", "Roost", "Brave Bird", "Acid"],
                 "abilities": ["Gale Wings", "Inner Focus", "Infiltrator"],
                 "teraTypes": ["Dark", "Ground", "Steel"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Brave Bird", "Leech Life", "Roost", "Poison Jab", "U-turn"],
+                "movepool": ["Brave Bird", "Acid", "Protect", "Tailwind", "Cross Poison"],
                 "abilities": ["Gale Wings"],
                 "teraTypes": ["Flying", "Bug", "Poison"]
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["Nasty Plot", "Hurricane", "Sludge Bomb", "Shadow Ball", "Boomburst", "Psychic Noise"],
+                "movepool": ["Nasty Plot", "Oblivion Wing", "Sludge Bomb", "Shadow Ball", "Protect", "Psychic Noise"],
                 "abilities": ["Infiltrator"],
                 "teraTypes": ["Dark", "Flying", "Poison", "Ghost", "Psychic", "Normal"]
             },
             {
                 "role": "Fast Bulky Support",
                 "movepool": ["Barb Barrage", "Substitute", "Roost", "Toxic"],
+                "abilities": ["Inner Focus", "Infiltrator"],
+                "teraTypes": ["Dark", "Ground", "Steel"]
+            },
+            {
+                "role": "Fast Bulky Support",
+                "movepool": ["Barb Barrage", "Protect", "Roost", "Haze"],
                 "abilities": ["Inner Focus", "Infiltrator"],
                 "teraTypes": ["Dark", "Ground", "Steel"]
             }
