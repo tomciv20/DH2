@@ -388,25 +388,25 @@
             {
                 "role": "AV Pivot",
                 "movepool": ["Circle Throw", "Close Combat", "Knock Off", "Surging Strikes", "Flip Turn"],
-                "abilities": ["Water Absorb"],
+                "abilities": ["Water Absorb", "Damp", "Swift Swim"],
                 "teraTypes": ["Dark", "Fighting", "Steel"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Bulk Up", "Drain Punch", "Ice Punch", "Knock Off", "Surging Strikes", "Poison Jab", "Protect"],
-                "abilities": ["Water Absorb"],
+                "abilities": ["Water Absorb", "Damp", "Swift Swim"],
                 "teraTypes": ["Fighting", "Steel", "Water"]
             },
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Belly Drum", "Drain Punch", "Surging Strikes", "Aqua Jet", "Protect"],
-                "abilities": ["Water Absorb"],
+                "abilities": ["Water Absorb", "Damp", "Swift Swim"],
                 "teraTypes": ["Dark", "Fighting", "Water"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Coaching", "Surging Strikes", "Drain Punch", "Protect"],
-                "abilities": ["Water Absorb", "Swift Swim"],
+                "abilities": ["Water Absorb", "Damp", "Swift Swim"],
                 "teraTypes": ["Dark", "Grass"]
             }
         ]
@@ -422,13 +422,13 @@
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["Knock Off", "Power Whip", "Sleep Powder", "Malignant Chain", "Strength Sap", "Sucker Punch", "Grassy Glide", "Protect"],
+                "movepool": ["Sleep Powder", "Malignant Chain", "Strength Sap", "Sucker Punch", "Grassy Glide", "Protect"],
                 "abilities": ["Grassy Surge"],
                 "teraTypes": ["Grass", "Steel"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Power Whip", "Malignant Chain", "Sunny Day", "Weather Ball", "Fire Lash", "Morning Sun"],
+                "movepool": ["Power Whip", "Malignant Chain", "Sunny Day", "Fire Lash", "Morning Sun"],
                 "abilities": ["Chlorophyll"],
                 "teraTypes": ["Fire"]
             },
@@ -436,6 +436,12 @@
                 "role": "Fast Support",
                 "movepool": ["Spicy Extract", "Knock Off", "Gunk Shot", "Grassy Glide", "Protect"],
                 "abilities": ["Grassy Surge"],
+                "teraTypes": ["Dark", "Water"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Snap Trap", "Leech Seed", "Protect", "Strength Sap"],
+                "abilities": ["Grassy Surge", "Innards Out"],
                 "teraTypes": ["Dark", "Water"]
             }
         ]
@@ -917,26 +923,32 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Encore", "Haze", "Hydro Pump", "Hypnosis", "Ice Beam", "Rest", "Surf"],
-                "abilities": ["Drizzle"],
+                "movepool": ["Encore", "Haze", "Bouncy Bubble", "Scald", "Hypnosis", "Ice Beam", "Protect"],
+                "abilities": ["Drizzle", "Illuminate"],
                 "teraTypes": ["Steel", "Water"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Focus Blast", "Hydro Pump", "Ice Beam", "Weather Ball", "Protect"],
+                "movepool": ["Focus Blast", "Ice Beam", "Weather Ball", "Protect"],
                 "abilities": ["Drizzle"],
                 "teraTypes": ["Water"]
             },
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Belly Drum", "Aqua Jet", "Liquidation", "Tera Blast", "Protect"],
-                "abilities": ["Drizzle"],
+                "abilities": ["Drizzle", "Illuminate"],
                 "teraTypes": ["Grass", "Poison", "Electric", "Ground"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Perish Song", "Scald", "Encore", "Hypnosis", "Protect"],
                 "abilities": ["Drizzle"],
+                "teraTypes": ["Grass", "Poison", "Electric", "Ground"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Belch", "Hyper Voice", "Sludge Wave", "Rest"],
+                "abilities": ["Liquid Voice"],
                 "teraTypes": ["Grass", "Poison", "Electric", "Ground"]
             }
         ]
@@ -3859,31 +3871,31 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Psychic", "Psyshock", "Flash Cannon", "Focus Blast", "Shadow Ball", "Energy Ball"],
-                "abilities": ["Magic Guard", "Magnet Pull", "Synchronize"],
+                "movepool": ["Psychic", "Psyshock", "Flash Cannon", "Focus Blast", "Shadow Ball", "Protect"],
+                "abilities": ["Magic Guard", "Magnet Pull", "Trace"],
                 "teraTypes": ["Fighting", "Ghost", "Grass", "Water"]
             },
             {
                 "role": "Tera Blast user",
-                "movepool": ["Nasty Plot", "Psychic", "Recover", "Tera Blast"],
+                "movepool": ["Nasty Plot", "Twin Beam", "Recover", "Tera Blast"],
                 "abilities": ["Magnet Pull"],
                 "teraTypes": ["Fire"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Thunder Wave", "Encore", "Psychic", "Flash Cannon", "Focus Blast"],
+                "movepool": ["Thunder Wave", "Encore", "Twin Beam", "Protect"],
                 "abilities": ["Magic Guard", "Magnet Pull"],
                 "teraTypes": ["Fighting", "Ghost", "Water"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Reflect", "Light Screen", "Psychic", "Flash Cannon", "Focus Blast"],
-                "abilities": ["Synchronize"],
+                "movepool": ["Reflect", "Light Screen", "Twin Beam", "Flash Cannon", "Focus Blast"],
+                "abilities": ["Trace"],
                 "teraTypes": ["Fighting", "Ghost", "Water"]
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["Nasty Plot", "Psychic", "Flash Cannon", "Focus Blast", "Shadow Ball"],
+                "movepool": ["Nasty Plot", "Twin Beam", "Flash Cannon", "Focus Blast", "Protect"],
                 "abilities": ["Magic Guard"],
                 "teraTypes": ["Fighting", "Ghost", "Water"]
             }
