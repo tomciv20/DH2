@@ -138,7 +138,7 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["Spin Out", "Glacial Lance", "Knock Off", "Stealth Rock"],
-                "abilities": ["Snow Veil", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Iron Barbs"],
                 "teraTypes": ["Ghost", "Water"]
             },
             {
@@ -150,13 +150,13 @@
             {
                 "role": "Fast Bulky Setup",
                 "movepool": ["Defense Curl", "Ice Ball", "Hone Claws", "Iron Head"],
-                "abilities": ["Snow Veil", "Slush Rush", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Slush Rush", "Iron Barbs"],
                 "teraTypes": ["Ghost", "Water"]
             },
             {
                 "role": "Fast Bulky Support",
                 "movepool": ["Rapid Spin", "Glacial Lance", "Iron Head", "Spikes"],
-                "abilities": ["Snow Veil", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Iron Barbs"],
                 "teraTypes": ["Grass", "Dragon", "Water"]
             }
         ]
@@ -440,12 +440,12 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Calm Mind", "Psychic Noise", "Psyshock", "Scald", "Slack Off", "Thunder Wave"],
-                "abilities": ["Unaware"],
+                "abilities": ["Oblivious"],
                 "teraTypes": ["Fairy", "Water"]
             },
             {
-                "role": "AV Pivot",
-                "movepool": ["Body Press", "Fire Blast", "Future Sight", "Ice Beam", "Psychic Noise", "Scald", "Psyshield Bash"],
+                "role": "Bulky Support",
+                "movepool": ["Body Press", "Fire Blast", "Future Sight", "Ice Beam", "Teleport", "Scald", "Psyshield Bash"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fairy", "Fighting"]
             },
@@ -454,6 +454,18 @@
                 "movepool": ["Psychic", "Hydro Pump", "Shell Side Arm", "Fire Blast", "Ice Beam"],
                 "abilities": ["Quick Draw"],
                 "teraTypes": ["Water", "Fire", "Psychic", "Poison"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Psyshield Bash", "Clamp", "Slack Off", "Body Press"],
+                "abilities": ["Oblivious"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Belly Drum", "Zen Headbutt", "Liquidation", "Trick Room"],
+                "abilities": ["Quick Draw"],
+                "teraTypes": ["Dark", "Fire"]
             }
         ]
     },
@@ -946,30 +958,8 @@
             }
         ]
     },
-    "espeon": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": ["Alluring Voice", "Calm Mind", "Morning Sun", "Psychic", "Psyshock", "Shadow Ball", "Trick"],
-                "abilities": ["Magic Bounce"],
-                "teraTypes": ["Fairy", "Psychic"]
-            }
-        ]
-    },
-    "umbreon": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": ["Foul Play", "Protect", "Toxic", "Wish"],
-                "abilities": ["Synchronize"],
-                "teraTypes": ["Poison"]
-            }
-        ]
-    },
     "slowking": {
-        "level": 88,
+        "level": 84,
         "sets": [
             {
                 "role": "Bulky Attacker",
@@ -980,7 +970,7 @@
             {
                 "role": "Wallbreaker",
                 "movepool": ["Fire Blast", "Hydro Pump", "Ice Beam", "Psychic", "Psyshock", "Trick Room"],
-                "abilities": ["Regenerator", "Magic Bounce"],
+                "abilities": ["Oblivious", "Regenerator", "Magic Bounce"],
                 "teraTypes": ["Psychic", "Water"]
             },
             {
@@ -988,6 +978,41 @@
                 "movepool": ["Chilly Reception", "Future Sight", "Scald", "Slack Off"],
                 "abilities": ["Regenerator", "Magic Bounce"],
                 "teraTypes": ["Dragon", "Fairy"]
+            }
+        ]
+    },
+    "slowkinggalar": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Chilly Reception", "Psychic Noise", "Psyshock", "Acid", "Slack Off", "Thunder Wave", "Eerie Spell"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Dark Pulse", "Sludge Wave", "Eerie Spell", "Trick Room"],
+                "abilities": ["Dark Aura", "Regenerator"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Chilly Reception", "Future Sight", "Acid", "Slack Off"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Iron Defense", "Amnesia", "Power Trip", "Slack Off"],
+                "abilities": ["Dark Aura"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Slack Off"],
+                "abilities": ["Dark Aura"],
+                "teraTypes": ["Dark"]
             }
         ]
     },
@@ -2177,27 +2202,33 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Body Press", "Flash Cannon", "Thunderbolt", "Volt Switch", "Thunder Cage"],
+                "movepool": ["Body Press", "Tachyon Cutter", "Thunderbolt", "Volt Switch", "Thunder Cage"],
                 "abilities": ["Magnet Pull", "Sturdy"],
                 "teraTypes": ["Electric", "Fighting", "Flying", "Water"]
             },
             {
                 "role": "AV Pivot",
-                "movepool": ["Discharge", "Flash Cannon", "Mirror Coat", "Thunderbolt", "Volt Switch", "Thunder Cage"],
+                "movepool": ["Discharge", "Tachyon Cutter", "Mirror Coat", "Volt Switch", "Thunder Cage"],
                 "abilities": ["Analytic", "Magnet Pull", "Sturdy"],
                 "teraTypes": ["Flying", "Water"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Body Press", "Discharge", "Flash Cannon", "Iron Defense", "Thunderbolt", "Thunder Cage"],
+                "movepool": ["Body Press", "Behemoth Bash", "Iron Defense", "Thunder Cage"],
                 "abilities": ["Magnet Pull", "Sturdy"],
                 "teraTypes": ["Fighting"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Electro Shot", "Thunderbolt", "Flash Cannon", "Tri Attack", "Signal Beam"],
+                "movepool": ["Electro Shot", "Parabolic Charge", "Tachyon Cutter", "Tri Attack", "Signal Beam", "Incinerate"],
                 "abilities": ["Magnet Pull", "Sturdy"],
-                "teraTypes": ["Electric", "Normal", "Bug"]
+                "teraTypes": ["Electric", "Normal", "Bug", "Fire"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Magnet Bomb", "Freeze Shock", "Electric Terrain", "Rising Voltage"],
+                "abilities": ["Magnet Pull", "Sturdy", "Analytic"],
+                "teraTypes": ["Electric", "Ice", "Flying"]
             }
         ]
     },
@@ -2514,7 +2545,7 @@
             {
                 "role": "Fast Support",
                 "movepool": ["Snowscape", "Blizzard", "Aurora Veil", "Poltergeist"],
-                "abilities": ["Snow Veil"],
+                "abilities": ["Snow Cloak"],
                 "teraTypes": ["Dark", "Water", "Ice"]
             }
         ]
@@ -3381,7 +3412,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Nasty Plot", "Dark Pulse", "Sludge Bomb", "Psychic", "Heat Wave", "Air Slash", "Moonlight"],
+                "movepool": ["Nasty Plot", "Dark Pulse", "Sludge Bomb", "Moonlight"],
                 "abilities": ["Corrosion", "Poison Puppeteer"],
                 "teraTypes": ["Fire", "Flying", "Stellar", "Psychic"]
             }
@@ -3685,7 +3716,7 @@
         ]
     },
     "kakuna": {
-        "level": 95,
+        "level": 92,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -3876,24 +3907,24 @@
         ]
     },
     "farfetchd": {
-        "level": 90,
+        "level": 89,
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Swords Dance", "Brave Bird", "Sacred Sword", "Body Slam", "Leaf Blade", "Roost"],
-                "abilities": ["Sword of Ruin"],
+                "movepool": ["Swords Dance", "Brave Bird", "Sacred Sword", "Slash", "Flower Trick", "Roost"],
+                "abilities": ["Sword of Ruin", "Defiant", "Long Reach"],
                 "teraTypes": ["Fighting", "Grass"]
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["First Impression", "Brave Bird", "Sacred Sword", "Body Slam", "Flower Trick", "Roost"],
-                "abilities": ["Sword of Ruin"],
+                "movepool": ["First Impression", "Brave Bird", "Sacred Sword", "Slash", "Flower Trick", "Roost"],
+                "abilities": ["Sword of Ruin", "Defiant", "Long Reach"],
                 "teraTypes": ["Bug", "Fighting", "Grass"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["U-turn", "Knock Off", "Roost", "Defog", "Brave Bird"],
-                "abilities": ["Sword of Ruin"],
+                "abilities": ["Sword of Ruin", "Defiant", "Long Reach"],
                 "teraTypes": ["Bug", "Dark", "Ground"]
             }
         ]
@@ -3909,19 +3940,19 @@
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["First Impression", "Brave Bird", "Sacred Sword", "Flower Trick", "Roost", "Tailwind"],
+                "movepool": ["First Impression", "Brave Bird", "Meteor Assault", "Flower Trick"],
                 "abilities": ["Sword of Ruin", "Scrappy"],
-                "teraTypes": ["Flying", "Fighting", "Grass"]
+                "teraTypes": ["Flying", "Fighting", "Grass", "Bug"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["U-turn", "Knock Off", "Roost", "First Impression", "Close Combat"],
+                "movepool": ["U-turn", "Knock Off", "Roost", "Defog", "Close Combat"],
                 "abilities": ["Sword of Ruin", "Scrappy"],
                 "teraTypes": ["Bug", "Dark", "Ground"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Grassy Terrain", "Body Press", "Grassy Glide", "Spiky shield", "Flower Trick"],
+                "movepool": ["Grassy Terrain", "Sacred Sword", "Grassy Glide", "Spiky shield", "Flower Trick"],
                 "abilities": ["Grass Pelt"],
                 "teraTypes": ["Grass"]
             }
