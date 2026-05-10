@@ -2327,7 +2327,7 @@
         ]
     },
     "gliscor": {
-        "level": 76,
+        "level": 85,
         "sets": [
             {
                 "role": "Fast Support",
@@ -4006,7 +4006,7 @@
             }
         ]
     },
-    "Mawile": {
+    "mawile": {
         "level": 84,
         "sets": [
             {

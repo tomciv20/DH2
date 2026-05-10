@@ -1,6 +1,6 @@
 {
     "charizard": {
-        "level": 86,
+        "level": 84,
         "sets": [
             {
                 "role": "Wallbreaker",
@@ -46,7 +46,7 @@
         ]
     },
     "blastoise": {
-        "level": 84,
+        "level": 82,
         "sets": [
             {
                 "role": "Wallbreaker",
@@ -4033,7 +4033,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Swords Dance", "Synthesis", "Poltergeist", "Power Whip", "Earthquake"],
+                "movepool": ["Swords Dance", "Synthesis", "Poltergeist", "Power Whip"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Ground", "Water", "Poison"]
             },

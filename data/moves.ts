@@ -17511,7 +17511,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		onTry(source) {
 			if (source.activeMoveActions > 1) {
-				this.hint("Fake Out only works on your first turn out.");
+				this.hint("Skitter Smack only works on your first turn out.");
 				return false;
 			}
 		},

@@ -1,6 +1,6 @@
 {
     "charizard": {
-        "level": 86,
+        "level": 84,
         "sets": [
             {
                 "role": "Doubles Wallbreaker",
@@ -46,7 +46,7 @@
         ]
     },
     "blastoise": {
-        "level": 84,
+        "level": 82,
         "sets": [
             {
                 "role": "Doubles Wallbreaker",
@@ -2518,7 +2518,7 @@
         ]
     },
     "gliscor": {
-        "level": 76,
+        "level": 80,
         "sets": [
             {
                 "role": "Fast Support",
@@ -4139,7 +4139,7 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Swords Dance", "Synthesis", "Poltergeist", "Power Whip", "Earthquake"],
+                "movepool": ["Swords Dance", "Synthesis", "Poltergeist", "Power Whip"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Ground", "Water", "Poison"]
             },
@@ -4267,7 +4267,7 @@
             }
         ]
     },
-    "Mawile": {
+    "mawile": {
         "level": 84,
         "sets": [
             {
