@@ -683,6 +683,7 @@ export class RandomFFATeams extends RandomTeams {
 		// belt on electivire if it has 2 moves that aren't electric or protect
 		if (species.id === 'electivire' && counter.get('Electric') < 3 - +moves.has('protect')) return 'Expert Belt';
 		if (ability === 'Poison Heal') return 'Toxic Orb';
+		if (ability === 'Quick Draw' && this.randomChance(3, 5)) return 'Quick Claw';
 		if (species.nfe) return 'Eviolite';
 		if (moves.has('facade')) {
 			return (types.includes('Fire') || ability === 'Toxic Boost') ? 'Toxic Orb' : 'Flame Orb';
@@ -735,6 +736,106 @@ export class RandomFFATeams extends RandomTeams {
 			return (counter.get('Physical') > counter.get('Special')) ? 'Choice Band' : 'Choice Specs';
 		}
 		if (['blizzard', 'originpulse', 'precipiceblades'].some(m => moves.has(m))) return 'Blunder Policy';
+		// Utility variety items — checked before Assault Vest so all roles can qualify
+		// Expert Belt: 20% when 4+ different attacking types
+		const moveTypes = new Set<string>();
+		for (const move of counter.damagingMoves) moveTypes.add(move.type);
+		if (moveTypes.size >= 4 && this.randomChance(1, 5)) return 'Expert Belt';
+		// Eject Pack: 15% with a self-stat-lowering move (not for Setup roles)
+		if (counter.get('selfLowering') && !role.includes('Setup') && this.randomChance(3, 20)) return 'Eject Pack';
+		// Blunder Policy: 25% if any move has 70% accuracy or lower (not Trick Room setters)
+		if (
+			!moves.has('trickroom') &&
+			[...moves].some(m => {
+				const mv = this.dex.moves.get(m);
+				return typeof mv.accuracy === 'number' && mv.accuracy <= 70;
+			}) && this.randomChance(1, 4)
+		) return 'Blunder Policy';
+		// Weather extending items: 30%
+		const weatherItem = (
+			(ability === 'Drought' || moves.has('sunnyday')) ? 'Heat Rock' :
+			(ability === 'Drizzle' || moves.has('raindance')) ? 'Damp Rock' :
+			(ability === 'Sand Stream' || moves.has('sandstorm')) ? 'Smooth Rock' :
+			(ability === 'Snow Warning' || moves.has('snowscape') || moves.has('hail')) ? 'Icy Rock' : null
+		);
+		if (weatherItem && this.randomChance(3, 10)) return weatherItem;
+		// Terrain Extender: 30%
+		if (
+			['Electric Surge', 'Psychic Surge', 'Misty Surge', 'Grassy Surge'].includes(ability) ||
+			['electricterrain', 'psychicterrain', 'mistyterrain', 'grassyterrain'].some(m => moves.has(m))
+		) {
+			if (this.randomChance(3, 10)) return 'Terrain Extender';
+		}
+		// Custap Berry: 20% for very slow (spe <= 30) or Sturdy
+		if ((species.baseStats.spe <= 30 || ability === 'Sturdy') && this.randomChance(1, 5)) return 'Custap Berry';
+		// Quick Claw: 10% for slow pokemon (spe <= 50)
+		if (species.baseStats.spe <= 50 && this.randomChance(1, 10)) return 'Quick Claw';
+		// Type resist berry: 5% - pick from types the pokemon is weak to
+		if (this.randomChance(1, 20)) {
+			const typeResistBerries: [string, string][] = [
+				['Fire', 'Occa Berry'], ['Water', 'Passho Berry'], ['Electric', 'Wacan Berry'],
+				['Grass', 'Rindo Berry'], ['Ice', 'Yache Berry'], ['Fighting', 'Chople Berry'],
+				['Poison', 'Kebia Berry'], ['Ground', 'Shuca Berry'], ['Flying', 'Coba Berry'],
+				['Psychic', 'Payapa Berry'], ['Bug', 'Tanga Berry'], ['Rock', 'Charti Berry'],
+				['Ghost', 'Kasib Berry'], ['Dragon', 'Haban Berry'], ['Dark', 'Colbur Berry'],
+				['Steel', 'Babiri Berry'], ['Fairy', 'Roseli Berry'],
+			];
+			const weaknesses = typeResistBerries.filter(([type]) => this.dex.getEffectiveness(type, species) >= 1);
+			if (weaknesses.length) return this.sample(weaknesses)[1];
+		}
+		// Wide Lens (fast) / Zoom Lens (slow): 33% for 2+ inaccurate moves, not with accuracy-boosting moves
+		if (
+			(counter.get('inaccurate') >= 2 || ability === 'Hustle') &&
+			!['Compound Eyes', 'No Guard', 'Victory Star'].includes(ability) &&
+			!moves.has('coil') && !moves.has('honeclaws')
+		) {
+			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
+		}
+		// Loaded Dice for 2-5 hit move users (guaranteed with 2+, 50% with 1)
+		if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+		if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		// Clear Amulet: ~7% for physical attackers
+		if (counter.get('Physical') >= 2 && this.randomChance(1, 15)) return 'Clear Amulet';
+		// Binding Band for trapping moves
+		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
+		// Big Root for multiple draining moves (90% with 3+, 60% with 2)
+		if (counter.get('drain') >= 3 && this.randomChance(9, 10)) return 'Big Root';
+		if (counter.get('drain') >= 2 && this.randomChance(3, 5)) return 'Big Root';
+		// Punching Glove for punch moves (2+)
+		if (counter.get('ironfist') >= 2 && this.randomChance(1, 2)) return 'Punching Glove';
+		// Muscle Band for all-physical attackers with multiple attacks: 5% chance
+		if (counter.get('Physical') >= 2 && counter.get('Special') === 0 && this.randomChance(1, 20)) return 'Muscle Band';
+		// Wise Glasses for all-special attackers with multiple attacks: 5% chance
+		if (counter.get('Special') >= 2 && counter.get('Physical') === 0 && this.randomChance(1, 20)) return 'Wise Glasses';
+		// Throat Spray: 40% for sound move users with no physical attacks
+		if (counter.get('sound') && !counter.get('Physical') && this.randomChance(2, 5)) return 'Throat Spray';
+		// Type-boosting plates (2 same-type moves: ~20% chance; 3+: ~90% chance)
+		const typeToPlate: {[type: string]: string} = {
+			Dragon: 'Draco Plate', Dark: 'Dread Plate', Ground: 'Earth Plate',
+			Fighting: 'Fist Plate', Fire: 'Flame Plate', Ice: 'Icicle Plate',
+			Bug: 'Insect Plate', Steel: 'Iron Plate', Grass: 'Meadow Plate',
+			Psychic: 'Mind Plate', Fairy: 'Pixie Plate', Flying: 'Sky Plate',
+			Water: 'Splash Plate', Ghost: 'Spooky Plate', Rock: 'Stone Plate',
+			Poison: 'Toxic Plate', Electric: 'Zap Plate',
+		};
+		for (const [type, plate] of Object.entries(typeToPlate)) {
+			const moveCount = counter.get(type);
+			if (moveCount >= 3 && this.randomChance(9, 10)) return plate;
+			if (moveCount >= 2 && this.randomChance(1, 5)) return plate;
+		}
+		// Incense items for pokemon with moves across matching type combos
+		const incenseGroups: [string, string[]][] = [
+			['Full Incense', ['Normal', 'Fighting', 'Poison']],
+			['Odd Incense', ['Psychic', 'Ghost', 'Dark']],
+			['Rock Incense', ['Rock', 'Ground', 'Steel']],
+			['Rose Incense', ['Grass', 'Bug', 'Fairy']],
+			['Sea Incense', ['Water', 'Ice', 'Dragon']],
+			['Wave Incense', ['Flying', 'Electric', 'Fire']],
+		];
+		for (const [incense, types] of incenseGroups) {
+			const matchingTypes = types.filter(t => counter.get(t) >= 1).length;
+			if (matchingTypes >= 2 && this.randomChance(1, 4)) return incense;
+		}
 		if (!counter.get('Status') && role !== 'Wallbreaker') {
 			return 'Assault Vest';
 		}

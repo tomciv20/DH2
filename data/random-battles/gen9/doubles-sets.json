@@ -218,7 +218,7 @@
                 "teraTypes": ["Dark", "Water", "Grass", "Fairy"]
             },
             {
-                "role": "Choice Item User",
+                "role": "Choice Item user",
                 "movepool": ["Rock Climb", "Earthquake", "Poison Jab", "Submission", "Throat Chop"],
                 "abilities": ["Rivalry", "Sheer Force", "Supreme Overlord"],
                 "teraTypes": ["Dark", "Rock", "Ground", "Fighting", "Poison"]
@@ -3060,7 +3060,7 @@
                 "teraTypes": ["Ground", "Water", "Flying"]
             },
             {
-                "role": "Fast Setup",
+                "role": "Setup Sweeper",
                 "movepool": ["Work Up", "Brave Bird", "Hydro Pump", "Trailblaze", "Roost"],
                 "abilities": ["Simple"],
                 "teraTypes": ["Ground", "Grass"]
@@ -3101,7 +3101,7 @@
                 "teraTypes": ["Fire"]
             },
             {
-                "role": "Fast Bulky Support",
+                "role": "Bulky Support",
                 "movepool": ["Leech Seed", "Substitute", "Headbutt", "Blizzard"],
                 "abilities": ["Serene Grace"],
                 "teraTypes": ["Ice", "Fairy", "Ghost"]
@@ -3378,7 +3378,7 @@
                 "teraTypes": ["Ground", "Water"]
             },
             {
-                "role": "Fast Bulky Support",
+                "role": "Bulky Support",
                 "movepool": ["Bug Buzz", "Fiery Dance", "Will-O-Wisp", "Giga Drain", "Morning Sun", "Tailwind"],
                 "abilities": ["Flame Body", "Swarm", "Dancer"],
                 "teraTypes": ["Water", "Grass"]
@@ -3680,7 +3680,7 @@
                 "teraTypes": ["Dark", "Ghost", "Water", "Fire"]
             },
             {
-                "role": "Choice Item User",
+                "role": "Choice Item user",
                 "movepool": ["Knock Off", "Drain Punch", "Horn Leech", "Shadow Bone", "Leech Life", "Shadow Sneak", "Poison Jab"],
                 "abilities": ["Moxie"],
                 "teraTypes": ["Dark", "Fighting", "Grass", "Poison"]
@@ -3697,7 +3697,7 @@
         "level": 83,
         "sets": [
             {
-                "role": "Choice Item User",
+                "role": "Choice Item user",
                 "movepool": ["Psychic", "Psyshock", "Flash Cannon", "Focus Blast", "Shadow Ball", "Energy Ball"],
                 "abilities": ["Magic Guard", "Magnet Pull", "Trace"],
                 "teraTypes": ["Fighting", "Ghost", "Grass", "Water"]
@@ -3918,7 +3918,7 @@
                 "teraTypes": ["Dark", "Flying", "Poison", "Ghost", "Psychic", "Normal"]
             },
             {
-                "role": "Fast Bulky Support",
+                "role": "Bulky Support",
                 "movepool": ["Barb Barrage", "Substitute", "Roost", "Toxic"],
                 "abilities": ["Inner Focus", "Infiltrator"],
                 "teraTypes": ["Dark", "Ground", "Steel"]
