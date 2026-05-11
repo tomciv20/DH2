@@ -1191,6 +1191,16 @@ export class RandomTeams {
 		) return 'Heavy-Duty Boots';
 		if (moves.has('bellydrum') && moves.has('substitute')) return 'Salac Berry';
 		if (moves.has('bellydrum') || moves.has('filletaway')) return 'Sitrus Berry';
+		if (moves.has('stuffcheeks')) {
+			const berryPool = [
+				'Sitrus Berry', 'Wiki Berry', 'Figy Berry',
+				'Aguav Berry', 'Mago Berry', 'Iapapa Berry',
+				'Salac Berry', 'Ganlon Berry', 'Apicot Berry',
+			];
+			if (!counter.get('Physical')) berryPool.push('Petaya Berry');
+			if (!counter.get('Special')) berryPool.push('Liechi Berry');
+			return this.sample(berryPool);
+		}
 		if (['Cheek Pouch', 'Cud Chew', 'Harvest', 'Ripen'].some(m => ability === m)) {
 			return this.sample([
 				'Sitrus Berry', 'Lum Berry', 'Wiki Berry', 'Figy Berry',

@@ -669,6 +669,16 @@ export class RandomFFATeams extends RandomTeams {
 		) {
 			return 'Sitrus Berry';
 		}
+		if (moves.has('stuffcheeks')) {
+			const berryPool = [
+				'Sitrus Berry', 'Wiki Berry', 'Figy Berry',
+				'Aguav Berry', 'Mago Berry', 'Iapapa Berry',
+				'Salac Berry', 'Ganlon Berry', 'Apicot Berry',
+			];
+			if (!counter.get('Physical')) berryPool.push('Petaya Berry');
+			if (!counter.get('Special')) berryPool.push('Liechi Berry');
+			return this.sample(berryPool);
+		}
 		if (['healingwish', 'switcheroo', 'trick'].some(m => moves.has(m))) {
 			if (
 				species.baseStats.spe >= 60 && species.baseStats.spe <= 108 &&
