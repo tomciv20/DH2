@@ -855,9 +855,9 @@ export class RandomFFATeams extends RandomTeams {
 		)) {
 			return 'Heavy-Duty Boots';
 		}
-		if (['Wallbreaker', 'Fast Attacker'].includes(role) || species.id === 'golduck' && this.prng.randomChance(1, 2)) {
-			const damagingTypes = [...counter.basePowerMoves].map(m => m.type);
-			if (counter.basePowerMoves.size >= 2 && (new Set(damagingTypes)).size === 1) {
+		if (['Wallbreaker', 'Fast Attacker'].includes(role) || species.id === 'golduck' && this.randomChance(1, 2)) {
+			const damagingTypes = [...counter.damagingMoves].map(m => m.type);
+			if (counter.damagingMoves.size >= 2 && (new Set(damagingTypes)).size === 1) {
 				if (damagingTypes[0] === 'Normal') return 'Silk Scarf';
 				return this.dex.species.get('arceus' + damagingTypes[0]).requiredItems![0];
 			}
