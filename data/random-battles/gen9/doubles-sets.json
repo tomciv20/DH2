@@ -486,19 +486,19 @@
         "level": 84,
         "sets": [
             {
-                "role": "Wallbreaker",
-                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Wave", "Trick"],
-                "abilities": ["Cursed Body", "Levitate"],
+                "role": "Offensive Protect",
+                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Bomb", "Protect"],
+                "abilities": ["Cursed Body", "Levitate", "Infiltrator"],
                 "teraTypes": ["Fighting", "Ghost"]
             },
             {
-                "role": "Fast Attacker",
-                "movepool": ["Encore", "Focus Blast", "Shadow Ball", "Sludge Wave", "Toxic Spikes", "Will-O-Wisp", "Bitter Malice"],
-                "abilities": ["Cursed Body", "Levitate"],
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Encore", "Focus Blast", "Shadow Ball", "Sludge Bomb", "Toxic Spikes", "Will-O-Wisp", "Bitter Malice", "Protect"],
+                "abilities": ["Cursed Body", "Levitate", "Infiltrator"],
                 "teraTypes": ["Fighting", "Ghost"]
             },
             {
-                "role": "Fast Support",
+                "role": "Doubles Support",
                 "movepool": ["Encore", "Mortal Spin", "Thunder Wave", "Sludge Bomb", "Toxic Spikes", "Will-O-Wisp", "Bitter Malice"],
                 "abilities": ["Cursed Body", "Levitate"],
                 "teraTypes": ["Fighting", "Dark"]
@@ -924,7 +924,7 @@
         "sets": [
             {
                 "role": "Bulky Protect",
-                "movepool": ["Protect", "Psychic Noise", "Psyshock", "Acid", "Trick Room", "Eerie Spell"],
+                "movepool": ["Protect", "Psychic Noise", "Psyshock", "Acid", "Trick Room", "Eerie Spell", "Excommunication"],
                 "abilities": ["Curious Medicine"],
                 "teraTypes": ["Dark"]
             },
@@ -936,7 +936,7 @@
             },
             {
                 "role": "Doubles Support",
-                "movepool": ["Chilly Reception", "Trick Room", "Acid Spray", "Eerie Spell"],
+                "movepool": ["Chilly Reception", "Trick Room", "Acid Spray", "Eerie Spell", "Excommunication"],
                 "abilities": ["Curious Medicine", "Regenerator"],
                 "teraTypes": ["Dark"]
             },
@@ -948,7 +948,7 @@
             },
             {
                 "role": "Doubles Support",
-                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Trick Room"],
+                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Trick Room", "Excommunication"],
                 "abilities": ["Dark Aura", "Curious Medicine", "Regenerator"],
                 "teraTypes": ["Dark"]
             }

@@ -1837,6 +1837,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Supereffective against Fairy type.",
 		shortDesc: "Supereffective against Fairy type.",
 	},
+	excommunication: {
+		name: "Excommunication",
+		desc: "Forces the target to switch out to a random unfainted ally. Fails if the target has no unfainted allies. Goes first among moves with the same priority.",
+		shortDesc: "Priority. Forces the target to switch out.",
+	},
 	expandingforce: {
 		name: "Expanding Force",
 		desc: "If the current terrain is Psychic Terrain and the user is grounded, this move hits all opposing Pokemon and has its power multiplied by 1.5.",
@@ -5179,6 +5184,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 
 		typeChange: "  [POKEMON]'s type became the same as [SOURCE]'s type!",
+	},
+	refine: {
+		name: "Refine",
+		desc: "The user faints, passing all of its stat changes to the next Pokemon that switches in. That Pokemon is then afflicted with the Perish Song effect, fainting in 3 turns. Fails if the user is the last unfainted Pokemon in its party.",
+		shortDesc: "User faints. Passes stat changes to replacement; that Pokemon gets Perish Song.",
 	},
 	refresh: {
 		name: "Refresh",

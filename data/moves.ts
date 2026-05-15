@@ -5160,6 +5160,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dragon",
 	},
+	excommunication: {
+		num: 20002,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Excommunication",
+		pp: 1,
+		priority: 1,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit(target) {
+			this.add('-message', `${target.name} was excommunicated from the Catholic Church!`);
+		},
+		forceSwitch: true,
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+	},
 	expandingforce: {
 		num: 797,
 		accuracy: 100,
@@ -15650,6 +15667,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
+	},
+	refine: {
+		num: 20001,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Refine",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		onTryHit(source) {
+			if (!this.canSwitch(source.side)) {
+				this.attrLastMove('[still]');
+				this.add('-fail', source);
+				return this.NOT_FAIL;
+			}
+		},
+		selfdestruct: "ifHit",
+		slotCondition: 'refine',
+		condition: {
+			onStart(pokemon) {
+				this.effectState.boosts = {...pokemon.boosts};
+			},
+			onSwap(target) {
+				const boosts = this.effectState.boosts as SparseBoostsTable;
+				if (boosts && Object.values(boosts).some(v => v !== 0)) {
+					this.boost(boosts, target, target);
+				}
+				if (!target.volatiles['perishsong']) {
+					target.addVolatile('perishsong');
+					this.add('-start', target, 'perish3', '[silent]');
+				}
+				this.add('-activate', target, 'move: Refine');
+				target.side.removeSlotCondition(target, 'refine');
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
 	},
 	refresh: {
 		num: 287,

@@ -3467,6 +3467,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	moandkrill: {
 		tier: "OU",
 		natDexTier: "OU",
+		isNonstandard: "Custom",
 	},
 	chespin: {
 		tier: "Illegal",

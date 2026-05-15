@@ -520,8 +520,8 @@
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Wave", "Trick"],
-                "abilities": ["Cursed Body", "Levitate"],
+                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Bomb", "Trick"],
+                "abilities": ["Infiltrator", "Levitate"],
                 "teraTypes": ["Fighting", "Ghost"]
             },
             {
@@ -986,7 +986,7 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Chilly Reception", "Psychic Noise", "Psyshock", "Acid", "Slack Off", "Thunder Wave", "Eerie Spell"],
+                "movepool": ["Chilly Reception", "Psychic Noise", "Psyshock", "Acid", "Slack Off", "Excommunication", "Eerie Spell"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Dark"]
             },
@@ -998,7 +998,7 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Chilly Reception", "Future Sight", "Acid", "Slack Off"],
+                "movepool": ["Chilly Reception", "Future Sight", "Acid", "Excommunication"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Dark"]
             },
@@ -1010,7 +1010,7 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Slack Off"],
+                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Excommunication"],
                 "abilities": ["Dark Aura"],
                 "teraTypes": ["Dark"]
             }

@@ -11437,6 +11437,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	slowkinggalar: {
 		learnset: {
 			acid: ["9L1", "8L1"],
+			excommunication: ["9L1"],
 			acidspray: ["9M"],
 			amnesia: ["9M", "9L27", "8M", "8L27"],
 			avalanche: ["9M", "8M"],

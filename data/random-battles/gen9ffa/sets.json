@@ -544,14 +544,14 @@
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Wave", "Trick"],
-                "abilities": ["Cursed Body", "Levitate"],
+                "movepool": ["Focus Blast", "Nasty Plot", "Shadow Ball", "Sludge Bomb", "Trick"],
+                "abilities": ["Infiltrator", "Levitate"],
                 "teraTypes": ["Fighting", "Ghost"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Encore", "Focus Blast", "Shadow Ball", "Sludge Wave", "Toxic Spikes", "Will-O-Wisp", "Bitter Malice", "Protect"],
-                "abilities": ["Cursed Body", "Levitate"],
+                "movepool": ["Encore", "Shadow Ball", "Sludge Bomb", "Toxic Spikes", "Will-O-Wisp", "Protect"],
+                "abilities": ["Cursed Body", "Levitate", "Infiltrator"],
                 "teraTypes": ["Fighting", "Ghost"]
             },
             {
@@ -1050,7 +1050,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Protect", "Psychic Noise", "Psyshock", "Acid", "Trick Room", "Eerie Spell"],
+                "movepool": ["Protect", "Psychic Noise", "Psyshock", "Acid", "Trick Room", "Eerie Spell", "Excommunication"],
                 "abilities": ["Curious Medicine"],
                 "teraTypes": ["Dark"]
             },
@@ -1062,7 +1062,7 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Chilly Reception", "Trick Room", "Acid Spray", "Eerie Spell"],
+                "movepool": ["Chilly Reception", "Excommunication", "Acid Spray", "Eerie Spell"],
                 "abilities": ["Curious Medicine", "Regenerator"],
                 "teraTypes": ["Dark"]
             },
@@ -1074,7 +1074,7 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Chilly Reception", "Baddy Bad", "Acid", "Trick Room"],
+                "movepool": ["Excommunication", "Baddy Bad", "Acid", "Trick Room"],
                 "abilities": ["Dark Aura", "Curious Medicine", "Regenerator"],
                 "teraTypes": ["Dark"]
             }
