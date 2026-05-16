@@ -2831,8 +2831,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hardpress: {
 		name: "Hard Press",
-		desc: "Power is equal to 100 * (target's current HP / target's maximum HP), rounded half down, but not less than 1.",
-		shortDesc: "More power the more HP the target has left.",
+		desc: "Power is equal to (user's current HP * 150 / user's maximum HP), rounded down, but not less than 1.",
+		shortDesc: "Less power as user's HP decreases.",
 	},
 	haze: {
 		name: "Haze",
@@ -6496,7 +6496,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	sunsteelstrike: {
 		name: "Sunsteel Strike",
 		desc: "1.5x BP in Sun, 0.5x in other weather. This move and its effects ignore the Abilities of other Pokemon.",
-		shortDesc: "1.5x BP in Sun, 0.5x in other weather. Ignores Abilities.",
+		shortDesc: "1.5x BP in Sun, 0.5x in other. Ignores Abilities.",
 	},
 	supercellslam: {
 		name: "Supercell Slam",
@@ -7536,8 +7536,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	zenheadbutt: {
 		name: "Zen Headbutt",
-		desc: "Has a 20% chance to make the target flinch.",
-		shortDesc: "20% chance to make the target flinch.",
+		desc: "Has a 20% chance to make the target flinch. 1/3 recoil.",
+		shortDesc: "20% chance to flinch. 1/3 recoil.",
 	},
 	zingzap: {
 		name: "Zing Zap",

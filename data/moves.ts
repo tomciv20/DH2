@@ -63,7 +63,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 30,
 			status: 'psn',
 		},
-		ignoreImmunity: {'Steel': true},
+		ignoreImmunity: true,
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
@@ -5157,6 +5157,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (type === 'Fairy') return 1;
 		},
 		secondary: null,
+		ignoreImmunity: true,
 		target: "normal",
 		type: "Dragon",
 	},
@@ -6536,8 +6537,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	freezyfrost: {
 		num: 739,
-		accuracy: 60,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 60,
 		category: "Special",
 		name: "Freezy Frost",
 		pp: 10,
@@ -11182,6 +11183,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (type === 'Dartk') return 1;
 		},
 		target: "normal",
+		ignoreImmunity: true,
 		type: "Psychic",
 		contestType: "Clever",
 	},
@@ -18016,6 +18018,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (target.status === 'par') target.cureStatus();
 		},
 		secondary: null,
+		ignoreImmunity: true,
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",

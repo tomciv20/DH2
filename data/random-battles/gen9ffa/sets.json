@@ -2117,33 +2117,27 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Stealth Rock", "Spikes", "Trick Room", "Explosion", "Court Change", "Healing Wish", "Memento", "Protect", "Trick Room"],
+                "movepool": ["Stealth Rock", "Spikes", "Tachyon Cutter", "Meteor Mash"],
                 "abilities": ["Moody"],
                 "teraTypes": ["Flying", "Water", "Dark"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Trick Room", "Nasty Plot", "Doom Desire", "Charge Beam", "Protect"],
+                "movepool": ["Quiver Dance", "Tachyon Cutter", "Protect", "Refine"],
                 "abilities": ["Moody"],
-                "teraTypes": ["Electric"]
+                "teraTypes": ["Flying", "Water", "Dark"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Trick Room", "Punishment", "Protect", "Heart Swap"],
+                "movepool": ["Victory Dance", "Protect", "Meteor Mash", "Refine"],
                 "abilities": ["Moody"],
-                "teraTypes": ["Dark"]
+                "teraTypes": ["Flying", "Water", "Dark"]
             },
             {
-                "role": "Bulky Support",
-                "movepool": ["Trick Room", "Decorate", "Simple Beam", "Punishment"],
+                "role": "Bulky Attacker",
+                "movepool": ["Trick Room", "Tachyon Cutter", "Hyperspace Hole", "Protect"],
                 "abilities": ["Moody"],
-                "teraTypes": ["Dark"]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": ["Magic Powder", "Soak", "Forest's Curse", "Trick-or-Treat"],
-                "abilities": ["Moody"],
-                "teraTypes": ["Dark"]
+                "teraTypes": ["Flying", "Water", "Dark"]
             }
         ]
     },
@@ -2825,7 +2819,7 @@
         ]
     },
     "serperior": {
-        "level": 79,
+        "level": 83,
         "sets": [
             {
                 "role": "Tera Blast user",
@@ -2841,13 +2835,13 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Draco Meteor", "Glare", "Leaf Storm", "Leech Seed", "Substitute", "Synthesis"],
+                "movepool": ["Draco Meteor", "Glare", "Leaf Storm", "Protect"],
                 "abilities": ["Contrary"],
                 "teraTypes": ["Dragon", "Grass", "Water"]
             },
             {
                 "role": "Fast Bulky Setup",
-                "movepool": ["Coil", "Dragon Dance", "Dragon Hammer", "Dragon Rush", "Leaf Blade", "Synthesis"],
+                "movepool": ["Coil", "Dragon Rush", "Leaf Blade", "Synthesis"],
                 "abilities": ["Queenly Majesty"],
                 "teraTypes": ["Steel", "Fire", "Water"]
             }

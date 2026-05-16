@@ -483,8 +483,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	slowpokegalar: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	slowbro: {
 		tier: "UU",
@@ -506,8 +506,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "OU",
 	},
 	slowkinggalar: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	magnemite: {
 		tier: "LC",
@@ -697,14 +697,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	lickitung: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "LC",
+		natDexTier: "LC",
 	},
 	lickilicky: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	koffing: {
 		tier: "LC",

@@ -1627,7 +1627,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	shellarmor: {
 		name: "Shell Armor",
-		shortDesc: "This Pokemon cannot be struck by a critical hit. Immune to Pulse moves.",
+		shortDesc: "This Pokemon cannot be struck by a critical hit. Immune to bite-based moves.",
 	},
 	shielddust: {
 		name: "Shield Dust",

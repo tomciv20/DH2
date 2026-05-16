@@ -2012,15 +2012,27 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Stealth Rock", "Spikes", "Trick Room", "Explosion", "Court Change", "Healing Wish", "Memento"],
+                "movepool": ["Stealth Rock", "Spikes", "Doom Desire", "Memento"],
                 "abilities": ["Moody"],
                 "teraTypes": ["Flying", "Water", "Dark"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Nasty Plot", "Doom Desire", "Charge Beam", "Protect"],
+                "movepool": ["Quiver Dance", "Tachyon Cutter", "Eerie Spell", "Refine"],
                 "abilities": ["Moody"],
-                "teraTypes": ["Electric"]
+                "teraTypes": ["Flying", "Water", "Dark"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Victory Dance", "Heart Stamp", "Meteor Mash", "Refine"],
+                "abilities": ["Moody"],
+                "teraTypes": ["Flying", "Water", "Dark"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Trick Room", "Tachyon Cutter", "Hyperspace Hole", "Nasty Plot"],
+                "abilities": ["Moody"],
+                "teraTypes": ["Flying", "Water", "Dark"]
             }
         ]
     },
@@ -2719,7 +2731,7 @@
         ]
     },
     "serperior": {
-        "level": 79,
+        "level": 81,
         "sets": [
             {
                 "role": "Tera Blast user",
@@ -2741,8 +2753,8 @@
             },
             {
                 "role": "Fast Bulky Setup",
-                "movepool": ["Coil", "Dragon Dance", "Dragon Hammer", "Dragon Rush", "Leaf Blade", "Synthesis"],
-                "abilities": ["Queenly Majesty"],
+                "movepool": ["Coil", "Dragon Hammer", "Dragon Rush", "Leaf Blade", "Synthesis"],
+                "abilities": ["Queenly Majesty", "Overgrow"],
                 "teraTypes": ["Steel", "Fire", "Water"]
             }
         ]
