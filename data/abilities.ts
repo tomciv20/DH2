@@ -1684,10 +1684,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({spe: -1}, source, target, null, true);
 			}
 		},
-		onModifyDefPriority: 6,
-		onModifyDef(spd) {
-			return this.chainModify(1.2);
-		},
 		flags: {breakable: 1},
 		name: "Gooey",
 		rating: 2,

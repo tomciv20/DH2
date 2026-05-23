@@ -506,65 +506,53 @@
         ]
     },
     "electrode": {
-        "level": 83,
+        "level": 86,
         "sets": [
             {
                 "role": "Fast Support",
-                "movepool": ["Explosion", "Foul Play", "Taunt", "Thunder Wave", "Thunderbolt", "Volt Switch", "Flash Cannon", "Rapid Spin"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Dark", "Electric"]
-            },
-            {
-                "role": "Tera Blast user",
-                "movepool": ["Taunt", "Tera Blast", "Thunderbolt", "Volt Switch", "Flash Cannon", "Meteor Mash", "Supercell Slam"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Ice"]
+                "movepool": ["Explosion", "Electroweb", "Meteor Mash", "Protect"],
+                "abilities": ["Aftermath", "Battery"],
+                "teraTypes": ["Normal"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Mortal Spin", "Mind Blown", "Volt Switch", "Explosion", "Light Screen", "Reflect", "Eerie Impulse", "Thunder Cage", "Substitute"],
-                "abilities": ["Aftermath", "Transistor"],
+                "movepool": ["Taunt", "Protect", "Double Shock", "Flash Cannon"],
+                "abilities": ["Aftermath", "Battery"],
+                "teraTypes": ["Electric"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Mortal Spin", "Mind Blown", "Volt Switch", "Explosion", "Protect"],
+                "abilities": ["Aftermath", "Battery"],
                 "teraTypes": ["Normal", "Fire", "Flying"]
             },
             {
-                "role": "Setup Sweeper",
-                "movepool": ["Shift Gear", "Zing Zap", "Meteor Mash", "Double Shock", "Pyro Ball"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Electric", "Flying"]
-            },
-            {
                 "role": "Fast Attacker",
-                "movepool": ["Thunderbolt", "Meteor Mash", "Energy Ball", "Head Smash", "Thunderclap", "Overheat"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Electric", "Fire", "Rock"]
+                "movepool": ["Barrage", "Rock Blast", "Bullet Seed", "Volt Switch", "Protect"],
+                "abilities": ["Ball Fetch"],
+                "teraTypes": ["Grass", "Fire", "Rock"]
             }
         ]
     },
     "exeggutor": {
-        "level": 89,
+        "level": 88,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Leech Seed", "Synthesis", "Psychic Noise", "Sleep Powder", "Apple Acid", "Grassy Glide", "Earthquake"],
+                "movepool": ["Leech Seed", "Protect", "Psychic Noise", "Grassy Glide"],
                 "abilities": ["Seed Sower"],
                 "teraTypes": ["Steel"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Leech Seed", "Protect", "Psychic Noise", "Substitute"],
-                "abilities": ["Harvest"],
-                "teraTypes": ["Steel"]
-            },
-            {
-                "role": "Bulky Setup",
-                "movepool": ["Calm Mind", "Giga Drain", "Psychic", "Psyshock", "Substitute"],
-                "abilities": ["Harvest", "Seed Sower"],
-                "teraTypes": ["Steel"]
+                "movepool": ["Trick Room", "Mist Ball", "Egg Bomb", "Barrage"],
+                "abilities": ["Ball Fetch"],
+                "teraTypes": ["Fire"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Egg Bomb", "Barrage", "Bullet Seed", "Population Bomb", "Swords Dance", "Sunny Day"],
-                "abilities": ["Chlorophyll", "Harvest"],
+                "movepool": ["Egg Bomb", "Barrage", "Population Bomb", "Swords Dance", "Protect"],
+                "abilities": ["Ball Fetch"],
                 "teraTypes": ["Fire", "Normal"]
             },
             {
@@ -1950,7 +1938,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Stealth Rock", "Spikes", "Tachyon Cutter", "Meteor Mash"],
+                "movepool": ["Stealth Rock", "Spikes", "Tachyon Cutter", "Acupressure"],
                 "abilities": ["Moody"],
                 "teraTypes": ["Flying", "Water", "Dark"]
             },
@@ -1968,7 +1956,7 @@
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Trick Room", "Tachyon Cutter", "Hyperspace Hole", "Nasty Plot"],
+                "movepool": ["Trick Room", "Tachyon Cutter", "Hyperspace Hole", "Protect"],
                 "abilities": ["Moody"],
                 "teraTypes": ["Flying", "Water", "Dark"]
             }
@@ -2187,32 +2175,26 @@
         "sets": [
             {
                 "role": "Bulky Setup",
-                "movepool": ["Precipice Blades", "Ice Punch", "Megahorn", "Rock Polish", "Mighty Cleave"],
+                "movepool": ["Precipice Blades", "Ice Punch", "Megahorn", "Rock Polish", "Mighty Cleave", "Protect"],
                 "abilities": ["Solid Rock"],
                 "teraTypes": ["Bug", "Ground", "Rock"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Dragon Tail", "Precipice Blades", "Ice Punch", "Megahorn", "Mighty Cleave"],
-                "abilities": ["Solid Rock"],
+                "movepool": ["Protect", "Precipice Blades", "Ice Punch", "Megahorn", "Mighty Cleave"],
+                "abilities": ["Solid Rock", "Lightning Rod", "Battle Armor"],
                 "teraTypes": ["Bug", "Dragon", "Grass", "Steel"]
             },
             {
-                "role": "Bulky Support",
-                "movepool": ["Dragon Tail", "Precipice Blades", "Stealth Rock", "Mighty Cleave"],
+                "role": "Bulky Attacker",
+                "movepool": ["Protect", "Precipice Blades", "Stealth Rock", "Mighty Cleave"],
                 "abilities": ["Lightning Rod"],
                 "teraTypes": ["Water"]
             },
             {
-                "role": "Bulky Attacker",
-                "movepool": ["Double-Edge", "Headlong Rush", "Supercell Slam", "Mighty Cleave"],
-                "abilities": ["Reckless"],
-                "teraTypes": ["Electric", "Normal"]
-            },
-            {
                 "role": "Bulky Setup",
-                "movepool": ["Iron Defense", "Body Press", "Earthquake", "Mighty Cleave"],
-                "abilities": ["Solid Rock"],
+                "movepool": ["Iron Defense", "Body Press", "Protect", "Mighty Cleave"],
+                "abilities": ["Battle Armor"],
                 "teraTypes": ["Fighting"]
             }
         ]
@@ -3832,19 +3814,19 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Knock Off", "U-turn", "Will-O-Wisp", "Trick", "Bonemerang"],
+                "movepool": ["Knock Off", "U-turn", "Will-O-Wisp", "Trick", "Bonemerang", "Protect"],
                 "abilities": ["Klutz"],
                 "teraTypes": ["Dark", "Bug", "Ground"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Spectral Thief", "Bonemerang", "Stone Edge", "Sucker Punch", "Stealth Rock"],
+                "movepool": ["Spectral Thief", "Bonemerang", "Stone Edge", "Sucker Punch", "Stealth Rock", "Protect"],
                 "abilities": ["Klutz"],
                 "teraTypes": ["Ghost", "Ground", "Rock", "Dark"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Fake Out", "Transform", "Will-O-Wisp", "Bonemerang"],
+                "movepool": ["Fake Out", "Transform", "Protect", "Bonemerang"],
                 "abilities": ["Klutz"],
                 "teraTypes": ["Water", "Fairy", "Dark", "Grass", "Normal", "Fire", "Fighting"]
             }
@@ -3856,18 +3838,18 @@
             {
                 "role": "Tera Blast user",
                 "movepool": ["Sunny Day", "Solar Beam", "Sleep Powder", "Tera Blast", "Shadow Ball", "Synthesis"],
-                "abilities": ["Chlorophyll"],
+                "abilities": ["Leaf Guard"],
                 "teraTypes": ["Fire"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Leaf Storm", "Knock Off", "Will-O-Wisp", "Shadow Ball", "Synthesis"],
+                "movepool": ["Leaf Storm", "Rage Powder", "Will-O-Wisp", "Shadow Ball", "Synthesis"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Rock", "Water", "Electric"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Sludge Bomb", "Substitute", "Leech Seed", "Shadow Ball"],
+                "movepool": ["Giga Drain", "Rage Powder", "Trick Room", "Shadow Ball"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Rock", "Water", "Poison"]
             }
@@ -3878,25 +3860,25 @@
         "sets": [
             {
                 "role": "Tera Blast user",
-                "movepool": ["Sunny Day", "Solar Beam", "Sleep Powder", "Tera Blast"],
-                "abilities": ["Chlorophyll"],
+                "movepool": ["Sunny Day", "Solar Beam", "Sleep Powder", "Tera Blast", "Protect"],
+                "abilities": ["Leaf Guard"],
                 "teraTypes": ["Fire"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Leaf Storm", "Knock Off", "Will-O-Wisp", "Shadow Ball", "Synthesis"],
+                "movepool": ["Leaf Storm", "Sleep Powder", "Will-O-Wisp", "Shadow Ball", "Protect"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Rock", "Water", "Electric"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Sludge Bomb", "Substitute", "Leech Seed", "Shadow Ball"],
+                "movepool": ["Leaf Storm", "Trick Room", "Sleep Powder", "Poltergeist"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Rock", "Water", "Poison"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Swords Dance", "Synthesis", "Poltergeist", "Power Whip", "Earthquake"],
+                "movepool": ["Swords Dance", "Poltergeist", "Power Whip", "Protect"],
                 "abilities": ["Regenerator", "Tangling Hair"],
                 "teraTypes": ["Dark", "Ground", "Water", "Poison"]
             },

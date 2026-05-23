@@ -5168,6 +5168,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Status",
 		name: "Excommunication",
 		pp: 1,
+		noPPBoosts: true,
 		priority: 1,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onHit(target) {

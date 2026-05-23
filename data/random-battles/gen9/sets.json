@@ -539,46 +539,46 @@
         ]
     },
     "electrode": {
-        "level": 83,
+        "level": 85,
         "sets": [
             {
                 "role": "Fast Support",
-                "movepool": ["Explosion", "Foul Play", "Taunt", "Thunder Wave", "Thunderbolt", "Volt Switch", "Flash Cannon", "Rapid Spin"],
-                "abilities": ["Aftermath", "Transistor"],
+                "movepool": ["Explosion", "Foul Play", "Thunderbolt", "Volt Switch", "Flash Cannon", "Rapid Spin"],
+                "abilities": ["Aftermath"],
                 "teraTypes": ["Dark", "Electric"]
             },
             {
                 "role": "Tera Blast user",
-                "movepool": ["Taunt", "Tera Blast", "Thunderbolt", "Volt Switch", "Flash Cannon", "Meteor Mash", "Supercell Slam"],
-                "abilities": ["Aftermath", "Transistor"],
+                "movepool": ["Taunt", "Tera Blast", "Thunderbolt", "Volt Switch", "Meteor Mash", "Supercell Slam"],
+                "abilities": ["Aftermath"],
                 "teraTypes": ["Ice"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Mortal Spin", "Mind Blown", "Volt Switch", "Explosion", "Light Screen", "Reflect", "Eerie Impulse", "Thunder Cage", "Substitute"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Normal", "Fire", "Flying"]
+                "movepool": ["Rapid Spin", "Mind Blown", "Volt Switch", "Explosion"],
+                "abilities": ["Aftermath"],
+                "teraTypes": ["Normal", "Fire"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Shift Gear", "Zing Zap", "Meteor Mash", "Double Shock", "Pyro Ball"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Electric", "Flying"]
+                "movepool": ["Shift Gear", "Meteor Mash", "Double Shock", "Pyro Ball"],
+                "abilities": ["Ball Fetch", "Aftermath"],
+                "teraTypes": ["Electric"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Thunderbolt", "Meteor Mash", "Energy Ball", "Head Smash", "Thunderclap", "Overheat"],
-                "abilities": ["Aftermath", "Transistor"],
-                "teraTypes": ["Electric", "Fire", "Rock"]
+                "movepool": ["Barrage", "Rock Blast", "Bullet Seed", "Volt Switch"],
+                "abilities": ["Ball Fetch"],
+                "teraTypes": ["Grass", "Fire", "Rock"]
             }
         ]
     },
     "exeggutor": {
-        "level": 89,
+        "level": 87,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Leech Seed", "Synthesis", "Psychic Noise", "Sleep Powder", "Apple Acid", "Grassy Glide", "Earthquake"],
+                "movepool": ["Leech Seed", "Psychic Noise", "Grassy Glide", "Earthquake"],
                 "abilities": ["Seed Sower"],
                 "teraTypes": ["Steel"]
             },
@@ -596,8 +596,8 @@
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Egg Bomb", "Barrage", "Bullet Seed", "Population Bomb", "Swords Dance", "Sunny Day"],
-                "abilities": ["Chlorophyll", "Harvest"],
+                "movepool": ["Egg Bomb", "Barrage", "Bullet Seed", "Population Bomb", "Swords Dance"],
+                "abilities": ["Ball Fetch"],
                 "teraTypes": ["Fire", "Normal"]
             },
             {
@@ -2279,7 +2279,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Dragon Tail", "Precipice Blades", "Ice Punch", "Megahorn", "Mighty Cleave"],
-                "abilities": ["Solid Rock"],
+                "abilities": ["Solid Rock", "Battle Armor"],
                 "teraTypes": ["Bug", "Dragon", "Grass", "Steel"]
             },
             {
@@ -2289,15 +2289,9 @@
                 "teraTypes": ["Water"]
             },
             {
-                "role": "Bulky Attacker",
-                "movepool": ["Double-Edge", "Headlong Rush", "Supercell Slam", "Mighty Cleave"],
-                "abilities": ["Reckless"],
-                "teraTypes": ["Electric", "Normal"]
-            },
-            {
                 "role": "Bulky Setup",
                 "movepool": ["Iron Defense", "Body Press", "Earthquake", "Mighty Cleave"],
-                "abilities": ["Solid Rock"],
+                "abilities": ["Battle Armor"],
                 "teraTypes": ["Fighting"]
             }
         ]
@@ -4004,8 +3998,8 @@
         "sets": [
             {
                 "role": "Tera Blast user",
-                "movepool": ["Sunny Day", "Solar Beam", "Sleep Powder", "Tera Blast", "Shadow Ball", "Synthesis"],
-                "abilities": ["Chlorophyll"],
+                "movepool": ["Sunny Day", "Solar Beam", "Tera Blast", "Shadow Ball", "Synthesis"],
+                "abilities": ["Leaf Guard"],
                 "teraTypes": ["Fire"]
             },
             {
@@ -4028,7 +4022,7 @@
             {
                 "role": "Tera Blast user",
                 "movepool": ["Sunny Day", "Solar Beam", "Sleep Powder", "Tera Blast"],
-                "abilities": ["Chlorophyll"],
+                "abilities": ["Leaf Guard"],
                 "teraTypes": ["Fire"]
             },
             {
