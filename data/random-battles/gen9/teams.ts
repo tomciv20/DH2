@@ -1179,7 +1179,7 @@ export class RandomTeams {
 			(species.baseSpecies === 'Magearna' && role === 'Tera Blast user') ||
 			species.id === 'necrozmaduskmane' || (species.id === 'calyrexice' && isDoubles)
 		) return 'Weakness Policy';
-		if (['dragonenergy', 'lastrespects', 'waterspout'].some(m => moves.has(m))) return 'Choice Scarf';
+		if (['dragonenergy', 'waterspout'].some(m => moves.has(m))) return 'Choice Scarf';
 		if (
 			!isDoubles && (ability === 'Imposter' || (species.id === 'magnezone' && role === 'Fast Attacker'))
 		) return 'Choice Scarf';
