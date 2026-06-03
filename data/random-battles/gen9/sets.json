@@ -687,7 +687,7 @@
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Freeze-Dry", "Draco Meteor", "Ice Beam", "Sparkling Aria", "Outrage", "Alluring Voice"],
+                "movepool": ["Freeze-Dry", "Draco Meteor", "Ice Beam", "Eternabeam", "Flip Turn"],
                 "abilities": ["Water Absorb", "Shell Armor"],
                 "teraTypes": ["Ice", "Dragon", "Fairy"]
             },
@@ -698,14 +698,20 @@
                 "teraTypes": ["Dragon", "Ghost", "Ground", "Poison", "Steel"]
             },
             {
+                "role": "Bulky Attacker",
+                "movepool": ["Freeze Dry", "Shelter", "Glaciate", "Perish Song"],
+                "abilities": ["Water Absorb", "Shell Armor"],
+                "teraTypes": ["Dragon", "Ghost", "Ground", "Poison", "Steel"]
+            },
+            {
                 "role": "Setup Sweeper",
-                "movepool": ["Dragon Dance", "Earthquake", "Outrage", "Waterfall", "Ice Spinner"],
+                "movepool": ["Dragon Dance", "Earthquake", "Outrage", "Waterfall", "Glaciate"],
                 "abilities": ["Water Absorb", "Shell Armor"],
                 "teraTypes": ["Steel", "Ghost", "Dragon", "Ground"]
             },
             {
                 "role": "AV Pivot",
-                "movepool": ["Flip Turn", "Earthquake", "Ice Shard", "Freezing Glare", "Freeze-Dry", "Draco Meteor"],
+                "movepool": ["Flip Turn", "Earthquake", "Ice Shard", "Freezing Glare", "Freeze-Dry", "Draco Meteor", "Freezy Frost"],
                 "abilities": ["Water Absorb", "Shell Armor"],
                 "teraTypes": ["Steel", "Ghost", "Dragon"]
             }
@@ -716,15 +722,21 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Encore", "Milk Drink", "Scald", "Toxic", "Heal Bell", "Last Resort", "Hyper Voice"],
-                "abilities": ["Sweet Veil"],
+                "movepool": ["Encore", "Milk Drink", "Scald", "Toxic", "Heal Bell", "Hyper Voice"],
+                "abilities": ["Sweet Veil", "Sticky Hold"],
                 "teraTypes": ["Ghost", "Grass"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Calm Mind", "Soft-Boiled", "Scald", "Draining Kiss"],
-                "abilities": ["Sweet Veil"],
+                "abilities": ["Sweet Veil", "Sticky Hold"],
                 "teraTypes": ["Fairy"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Celebrate", "Soft-Boiled", "Toxic", "Echoed Voice"],
+                "abilities": ["Sweet Veil", "Sticky Hold"],
+                "teraTypes": ["Grass"]
             }
         ]
     },
@@ -733,26 +745,26 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Body Slam", "Curse", "Rest", "Sleep Talk"],
-                "abilities": ["Thick Fat"],
+                "movepool": ["Body Slam", "Curse", "Slack Off", "Earthquake"],
+                "abilities": ["Thick Fat", "Honey Gather", "Comatose"],
                 "teraTypes": ["Fairy", "Poison"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Body Slam", "Crunch", "Curse", "Earthquake", "Rest"],
-                "abilities": ["Thick Fat"],
+                "abilities": ["Thick Fat", "Honey Gather"],
                 "teraTypes": ["Ground", "Poison"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Body Slam", "Encore", "Slack Off", "Earthquake", "Protect"],
-                "abilities": ["Poison Heal"],
+                "abilities": ["Honey Gather", "Comatose"],
                 "teraTypes": ["Ground", "Ghost"]
             },
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Body Slam", "Ice Punch", "Slack Off", "Earthquake", "Heat Crash", "Heavy Slam", "Last Resort", "Seed Bomb"],
-                "abilities": ["Comatose"],
+                "abilities": ["Comatose", "Honey Gather"],
                 "teraTypes": ["Ground", "Fire", "Steel", "Grass", "Normal"]
             }
         ]
@@ -787,25 +799,25 @@
         ]
     },
     "lanturn": {
-        "level": 81,
+        "level": 85,
         "sets": [
             {
                 "role": "Fast Support",
-                "movepool": ["Scald", "Thunder Wave", "Thunderbolt", "Volt Switch", "Recover"],
-                "abilities": ["Volt Absorb"],
-                "teraTypes": ["Flying"]
+                "movepool": ["Scald", "Thunder Wave", "Thunderbolt", "Volt Switch"],
+                "abilities": ["Volt Absorb", "Illuminate"],
+                "teraTypes": ["Flying", "Grass"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Ice Beam", "Scald", "Thunder Wave", "Thunderbolt", "Volt Switch", "Flip Turn", "Recover"],
-                "abilities": ["Volt Absorb"],
-                "teraTypes": ["Flying", "Water"]
+                "movepool": ["Ice Beam", "Scald", "Aurora Beam", "Thunderbolt", "Volt Switch", "Flip Turn"],
+                "abilities": ["Volt Absorb", "Illuminate"],
+                "teraTypes": ["Flying", "Water", "Grass"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Electric Terrain", "Surf", "Rising Voltage", "Ice Beam", "Sludge Wave"],
+                "movepool": ["Electric Terrain", "Surf", "Rising Voltage", "Freeze Shock", "Sludge Wave"],
                 "abilities": ["Surge Surfer"],
-                "teraTypes": ["Flying", "Electric", "Water"]
+                "teraTypes": ["Flying", "Electric", "Water", "Grass"]
             }
         ]
     },
@@ -814,26 +826,32 @@
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Agility", "Dazzling Gleam", "Focus Blast", "Thunderbolt", "Rising Voltage", "Ice Beam", "Dragon Pulse", "Bolt Beak"],
-                "abilities": ["Static", "Electric Surge", "Thick Fat"],
+                "movepool": ["Thunderclap", "Rising Voltage", "Freeze Shock", "Eternabeam"],
+                "abilities": ["Electric Surge"],
+                "teraTypes": ["Electric", "Fairy"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Agility", "Dazzling Gleam", "Focus Blast", "Thunderbolt", "Rising Voltage", "Freeze Shock", "Dragon Pulse", "Bolt Beak"],
+                "abilities": ["Electromorphosis", "Electric Surge", "Illuminate"],
                 "teraTypes": ["Electric", "Fairy"]
             },
             {
                 "role": "AV Pivot",
-                "movepool": ["Dazzling Gleam", "Focus Blast", "Rising Voltage", "Volt Switch", "Thunderclap", "Dragon Pulse", "Draco Meteor"],
-                "abilities": ["Electric Surge"],
+                "movepool": ["Dazzling Gleam", "Focus Blast", "Rising Voltage", "Volt Switch", "Thunderclap", "Dragon Pulse", "Fire Blast", "Energy Ball"],
+                "abilities": ["Electric Surge", "Electromorphosis", "Illuminate"],
                 "teraTypes": ["Fairy"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Cotton Guard", "Thunderclap", "Dragon Pulse", "Thunderbolt", "Rising Voltage", "Ice beam", "Draco Meteor"],
-                "abilities": ["Electric Surge"],
+                "movepool": ["Cotton Guard", "Thunderclap", "Dragon Pulse", "Thunderbolt", "Rising Voltage", "Freeze Shock"],
+                "abilities": ["Electric Surge", "Electromorphosis", "Illuminate"],
                 "teraTypes": ["Electric", "Grass", "Steel"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Dragon Dance", "Bolt Beak", "Dragon Hammer", "Draco Meteor", "Ice Punch", "Fire Punch"],
-                "abilities": ["Thick Fat"],
+                "movepool": ["Dragon Dance", "Bolt Beak", "Dragon Hammer", "Freeze Shock", "Fire Punch"],
+                "abilities": ["Electric Surge", "Electromorphosis", "Illuminate"],
                 "teraTypes": ["Electric", "Fire", "Grass", "Ice"]
             }
         ]
@@ -4011,14 +4029,14 @@
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Thunder Wave", "Air Slash", "Tailwind", "Soft-Boiled"],
+                "movepool": ["Thunder Wave", "Air Slash", "Tailwind", "Soft-Boiled", "Baton Pass"],
                 "abilities": ["Serene Grace"],
                 "teraTypes": ["Electric", "Steel"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Nasty Plot", "Draining Kiss", "Air Slash", "Fire Blast", "Alluring Voice", "Soft-Boiled"],
-                "abilities": ["Misty Surge"],
+                "movepool": ["Baton Pass", "Draining Kiss", "Air Slash", "Fire Blast", "Alluring Voice", "Soft-Boiled"],
+                "abilities": ["Super Luck", "Serene Grace"],
                 "teraTypes": ["Fire", "Electric", "Steel"]
             }
         ]
@@ -4040,13 +4058,13 @@
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Nasty Plot", "Draining Kiss", "Air Slash", "Flamethrower", "Alluring Voice", "Soft-Boiled"],
-                "abilities": ["Misty Surge"],
+                "movepool": ["Baton Pass", "Air Slash", "Flamethrower", "Alluring Voice", "Soft-Boiled"],
+                "abilities": ["Super Luck", "Serene Grace"],
                 "teraTypes": ["Fire", "Electric", "Steel", "Fairy", "Flying"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Wish", "Protect", "Alluring Voice", "Air Slash", "Flamethrower"],
+                "movepool": ["Wish", "Protect", "Alluring Voice", "Air Slash"],
                 "abilities": ["Serene Grace"],
                 "teraTypes": ["Fire", "Electric", "Steel", "Flying"]
             }
@@ -4791,9 +4809,9 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Recover", "Ice Shard", "Blizzard", "Tri Attack", "Thunderbolt", "Freeze Dry"],
+                "movepool": ["Recover", "Blizzard", "Tri Attack", "Freeze Dry"],
                 "abilities": ["Snow Warning"],
-                "teraTypes": ["Ghost", "Electric"]
+                "teraTypes": ["Ghost"]
             }
         ]
     },
