@@ -760,7 +760,8 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 			resolver(lines);
 			break;
 
-		case 'update':
+		case 'update': {
+			const autoDtLines: string[] = [];
 			for (const line of lines.slice(1)) {
 				if (line.startsWith('|turn|')) {
 					this.turn = parseInt(line.slice(6));
@@ -779,7 +780,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 							this.seenPokemon.add(speciesId);
 							const species = Dex.species.get(speciesStr);
 							if (species.exists) {
-								this.room.add(`|raw|${Chat.getDataPokemonHTML(species, 9, '')}`);
+								autoDtLines.push(`|raw|${Chat.getDataPokemonHTML(species, 9, '')}`);
 							}
 						}
 					}
@@ -791,7 +792,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 							this.seenAbilities.add(abilityId);
 							const ability = Dex.abilities.get(abilityName);
 							if (ability.exists) {
-								this.room.add(`|raw|${Chat.getDataAbilityHTML(ability)}`);
+								autoDtLines.push(`|raw|${Chat.getDataAbilityHTML(ability)}`);
 							}
 						}
 					}
@@ -803,16 +804,34 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 							this.seenMoves.add(moveId);
 							const move = Dex.moves.get(moveName);
 							if (move.exists) {
-								this.room.add(`|raw|${Chat.getDataMoveHTML(move)}`);
+								autoDtLines.push(`|raw|${Chat.getDataMoveHTML(move)}`);
 							}
 						}
 					}
 				}
+				// Catch abilities that fire via "[from] ability: Name" (e.g. Earth Eater, Sturdy, etc.)
+				const fromAbilityMatch = line.match(/\[from\] ability: ([^\[|]+)/);
+				if (fromAbilityMatch) {
+					const abilityName = fromAbilityMatch[1].trim();
+					const abilityId = toID(abilityName);
+					if (!this.seenAbilities.has(abilityId)) {
+						this.seenAbilities.add(abilityId);
+						const ability = Dex.abilities.get(abilityName);
+						if (ability.exists) {
+							autoDtLines.push(`|raw|${Chat.getDataAbilityHTML(ability)}`);
+						}
+					}
+				}
+			}
+			// Emit after all split blocks are closed so we don't corrupt channel routing
+			for (const dtLine of autoDtLines) {
+				this.room.add(dtLine);
 			}
 			this.room.update();
 			if (!this.ended) this.timer.nextRequest();
 			this.checkActive();
 			break;
+		}
 
 		case 'sideupdate': {
 			const slot = lines[1] as SideID;
