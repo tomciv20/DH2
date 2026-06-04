@@ -453,6 +453,10 @@ namespace RandomTeamsTypes {
 		illusion?: number;
 		statusCure?: number;
 		teraBlast?: number;
+		grassyTerrain?: number;
+		electricTerrain?: number;
+		psychicTerrain?: number;
+		mistyTerrain?: number;
 	}
 	export interface FactoryTeamDetails {
 		megaCount?: number;

@@ -538,6 +538,9 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 	options: RoomBattleOptions;
 	frozen?: boolean;
 	dataResolvers?: [((args: string[]) => void), ((error: Error) => void)][];
+	readonly seenPokemon: Set<string> = new Set();
+	readonly seenAbilities: Set<string> = new Set();
+	readonly seenMoves: Set<string> = new Set();
 	constructor(room: GameRoom, options: RoomBattleOptions) {
 		super(room);
 		const format = Dex.formats.get(options.format, true);
@@ -765,6 +768,45 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 				this.room.add(line);
 				if (line.startsWith(`|bigerror|You will auto-tie if `) && Config.allowrequestingties && !this.room.tour) {
 					this.room.add(`|-hint|If you want to tie earlier, consider using \`/offertie\`.`);
+				}
+				const parts = line.split('|');
+				const msgType = parts[1];
+				if (msgType === 'switch' || msgType === 'drag') {
+					const speciesStr = parts[3]?.split(',')[0]?.trim();
+					if (speciesStr) {
+						const speciesId = toID(speciesStr);
+						if (!this.seenPokemon.has(speciesId)) {
+							this.seenPokemon.add(speciesId);
+							const species = Dex.species.get(speciesStr);
+							if (species.exists) {
+								this.room.add(`|raw|${Chat.getDataPokemonHTML(species, 9, '')}`);
+							}
+						}
+					}
+				} else if (msgType === '-ability') {
+					const abilityName = parts[3]?.trim();
+					if (abilityName) {
+						const abilityId = toID(abilityName);
+						if (!this.seenAbilities.has(abilityId)) {
+							this.seenAbilities.add(abilityId);
+							const ability = Dex.abilities.get(abilityName);
+							if (ability.exists) {
+								this.room.add(`|raw|${Chat.getDataAbilityHTML(ability)}`);
+							}
+						}
+					}
+				} else if (msgType === 'move') {
+					const moveName = parts[3]?.trim();
+					if (moveName) {
+						const moveId = toID(moveName);
+						if (!this.seenMoves.has(moveId)) {
+							this.seenMoves.add(moveId);
+							const move = Dex.moves.get(moveName);
+							if (move.exists) {
+								this.room.add(`|raw|${Chat.getDataMoveHTML(move)}`);
+							}
+						}
+					}
 				}
 			}
 			this.room.update();

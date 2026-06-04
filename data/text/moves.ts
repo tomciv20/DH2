@@ -2324,8 +2324,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	frustration: {
 		name: "Frustration",
-		desc: "Power is equal to the greater of ((255 - user's Happiness) * 2/5), rounded down, or 1.",
-		shortDesc: "Max 102 power at minimum Happiness.",
+		desc: "Has 80 base power, plus 10 more for each stage of each stat that has been lowered on the user. When calculating the user's Attack, all Attack stages are inverted (drops count as boosts and vice versa).",
+		shortDesc: "+10 power per stat drop on user; Attack drops act as boosts.",
 	},
 	furyattack: {
 		name: "Fury Attack",
@@ -5218,8 +5218,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	return: {
 		name: "Return",
-		desc: "Power is equal to the greater of (user's Happiness * 2/5), rounded down, or 1.",
-		shortDesc: "Max 102 power at maximum Happiness.",
+		desc: "After dealing damage, the user switches out to a chosen ally. Fails if the user is the last unfainted member of its party.",
+		shortDesc: "User switches out after damaging the target.",
 	},
 	revelationdance: {
 		name: "Revelation Dance",

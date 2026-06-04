@@ -114,6 +114,14 @@ const PIVOT_MOVES = [
 	'chillyreception', 'flipturn', 'partingshot', 'shedtail', 'teleport', 'uturn', 'voltswitch',
 ];
 
+// Moves that require a specific terrain to be effective
+const GRASSY_TERRAIN_MOVES = ['grassyglide'];
+const ELECTRIC_TERRAIN_MOVES = ['risingvoltage'];
+const PSYCHIC_TERRAIN_MOVES = ['expandingforce'];
+const MISTY_TERRAIN_MOVES = ['mistyexplosion'];
+// Moves that require sun to be viable (charge turn without sun)
+const SUN_MOVES = ['solarbeam', 'solarblade'];
+
 // Moves that should be paired together when possible
 const MOVE_PAIRS = [
 	['lightscreen', 'reflect'],
@@ -512,6 +520,54 @@ export class RandomTeams {
 		}
 		if (teamDetails.statusCure) {
 			if (movePool.includes('healbell')) this.fastPop(movePool, movePool.indexOf('healbell'));
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+
+		// Terrain-dependent moves require a setter on this Pokemon or an already-added teammate
+		const hasGrassyTerrain = !!teamDetails.grassyTerrain ||
+			abilities.some(a => ['Grassy Surge', 'Seed Sower'].includes(a)) ||
+			moves.has('grassyterrain') || movePool.includes('grassyterrain');
+		if (!hasGrassyTerrain) {
+			for (const move of GRASSY_TERRAIN_MOVES) {
+				if (movePool.includes(move)) this.fastPop(movePool, movePool.indexOf(move));
+			}
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+		const hasElectricTerrain = !!teamDetails.electricTerrain ||
+			abilities.some(a => ['Electric Surge', 'Hadron Engine'].includes(a)) ||
+			moves.has('electricterrain') || movePool.includes('electricterrain');
+		if (!hasElectricTerrain) {
+			for (const move of ELECTRIC_TERRAIN_MOVES) {
+				if (movePool.includes(move)) this.fastPop(movePool, movePool.indexOf(move));
+			}
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+		const hasPsychicTerrain = !!teamDetails.psychicTerrain ||
+			abilities.some(a => ['Psychic Surge'].includes(a)) ||
+			moves.has('psychicterrain') || movePool.includes('psychicterrain');
+		if (!hasPsychicTerrain) {
+			for (const move of PSYCHIC_TERRAIN_MOVES) {
+				if (movePool.includes(move)) this.fastPop(movePool, movePool.indexOf(move));
+			}
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+		const hasMistyTerrain = !!teamDetails.mistyTerrain ||
+			abilities.some(a => ['Misty Surge'].includes(a)) ||
+			moves.has('mistyterrain') || movePool.includes('mistyterrain');
+		if (!hasMistyTerrain) {
+			for (const move of MISTY_TERRAIN_MOVES) {
+				if (movePool.includes(move)) this.fastPop(movePool, movePool.indexOf(move));
+			}
+			if (moves.size + movePool.length <= this.maxMoveCount) return;
+		}
+		// Solar moves require sun support (charge turn without sun makes them unviable)
+		const hasSun = !!teamDetails.sun ||
+			abilities.some(a => ['Drought', 'Orichalcum Pulse'].includes(a)) ||
+			moves.has('sunnyday') || movePool.includes('sunnyday');
+		if (!hasSun) {
+			for (const move of SUN_MOVES) {
+				if (movePool.includes(move)) this.fastPop(movePool, movePool.indexOf(move));
+			}
 			if (moves.size + movePool.length <= this.maxMoveCount) return;
 		}
 
@@ -2013,6 +2069,10 @@ export class RandomTeams {
 			if (set.ability === 'Snow Warning' || set.moves.includes('snowscape') || set.moves.includes('chillyreception')) {
 				teamDetails.snow = 1;
 			}
+			if (set.ability === 'Grassy Surge' || set.ability === 'Seed Sower' || set.moves.includes('grassyterrain')) teamDetails.grassyTerrain = 1;
+			if (set.ability === 'Electric Surge' || set.ability === 'Hadron Engine' || set.moves.includes('electricterrain')) teamDetails.electricTerrain = 1;
+			if (set.ability === 'Psychic Surge' || set.moves.includes('psychicterrain')) teamDetails.psychicTerrain = 1;
+			if (set.ability === 'Misty Surge' || set.moves.includes('mistyterrain')) teamDetails.mistyTerrain = 1;
 			if (set.moves.includes('healbell')) teamDetails.statusCure = 1;
 			if (set.moves.includes('spikes') || set.moves.includes('ceaselessedge')) {
 				teamDetails.spikes = (teamDetails.spikes || 0) + 1;

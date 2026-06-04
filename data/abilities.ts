@@ -870,7 +870,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const randomStat = this.sample(stats);
             const boost: SparseBoostsTable = {};
             boost[randomStat] = -1;
-            this.boost(boost, source, target);
+            this.add('-ability', target, 'Cute Charm');
+            this.boost(boost, source, target, null, true);
          }
       }
     },

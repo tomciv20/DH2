@@ -6591,22 +6591,40 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	frustration: {
 		num: 218,
 		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			return Math.floor(((255 - pokemon.happiness) * 10) / 25) || 1;
+		basePower: 80,
+		basePowerCallback(pokemon, target, move) {
+			let bp = move.basePower;
+			let stat: BoostID;
+			for (stat in pokemon.boosts) {
+				if (pokemon.boosts[stat] < 0) bp += 10 * (-pokemon.boosts[stat]);
+			}
+			this.debug('Frustration BP: ' + bp);
+			return bp;
 		},
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "Frustration",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onModifyAtk(atk, pokemon) {
+			const boost = pokemon.boosts.atk;
+			if (!boost) return;
+			// Invert attack stage: drops count as boosts, boosts count as drops.
+			// atk has already been multiplied by boostTable[boost]; compensate by
+			// dividing that out and applying the inverse multiplier instead.
+			const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+			const b = Math.min(6, Math.abs(boost));
+			// ratio = (1/boostMult)^2 for positive boost, boostMult^2 for negative boost
+			return boost > 0
+				? this.chainModify(1 / (boostTable[b] * boostTable[b]))
+				: this.chainModify(boostTable[b] * boostTable[b]);
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
 		zMove: {basePower: 160},
 		maxMove: {basePower: 130},
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	furyattack: {
 		num: 31,
@@ -15814,16 +15832,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	return: {
 		num: 216,
 		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			return Math.floor((pokemon.happiness * 10) / 25) || 1;
-		},
+		basePower: 80,
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "Return",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		selfSwitch: true,
 		secondary: null,
 		target: "normal",
 		type: "Normal",
