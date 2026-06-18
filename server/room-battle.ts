@@ -781,6 +781,7 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 							const species = Dex.species.get(speciesStr);
 							if (species.exists) {
 								autoDtLines.push(`|raw|${Chat.getDataPokemonHTML(species, 9, '')}`);
+								autoDtLines.push(`|raw|${Chat.getWeaknessHTML(species)}`);
 							}
 						}
 					}

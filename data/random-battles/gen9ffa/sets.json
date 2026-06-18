@@ -144,7 +144,7 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["Spin Out", "Glacial Lance", "Knock Off", "Stealth Rock", "Protect"],
-                "abilities": ["Snow Veil", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Iron Barbs"],
                 "teraTypes": ["Ghost", "Water"]
             },
             {
@@ -156,13 +156,13 @@
             {
                 "role": "Bulky Setup",
                 "movepool": ["Defense Curl", "Ice Ball", "Hone Claws", "Iron Head", "Protect"],
-                "abilities": ["Snow Veil", "Slush Rush", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Slush Rush", "Iron Barbs"],
                 "teraTypes": ["Ghost", "Water"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Rapid Spin", "Glacial Lance", "Iron Head", "Spikes", "Protect"],
-                "abilities": ["Snow Veil", "Iron Barbs"],
+                "abilities": ["Snow Cloak", "Iron Barbs"],
                 "teraTypes": ["Grass", "Dragon", "Water"]
             }
         ]
@@ -2438,14 +2438,14 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Earthquake", "Knock Off", "Protect", "Toxic", "Toxic Spikes", "Spikes", "U-turn"],
+                "movepool": ["Earthquake", "Protect", "Toxic", "Toxic Spikes", "Spikes", "U-turn"],
                 "abilities": ["Poison Heal"],
                 "teraTypes": ["Water"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["High Horsepower", "Knock Off", "Dual Wingbeat", "U-turn", "Guillotine", "Crabhammer", "Swords Dance", "Agility"],
-                "abilities": ["Tough Claws"],
+                "movepool": ["High Horsepower", "Night Slash", "Dual Wingbeat", "U-turn", "Guillotine", "Cross Poison", "Protect"],
+                "abilities": ["Hyper Cutter"],
                 "teraTypes": ["Water", "Steel", "Flying"]
             },
             {
@@ -2561,7 +2561,7 @@
             {
                 "role": "Fast Support",
                 "movepool": ["Snowscape", "Blizzard", "Aurora Veil", "Poltergeist"],
-                "abilities": ["Snow Veil"],
+                "abilities": ["Snow Cloak"],
                 "teraTypes": ["Dark", "Water", "Ice"]
             }
         ]

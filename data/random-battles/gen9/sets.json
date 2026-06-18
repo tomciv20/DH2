@@ -294,7 +294,13 @@
             },
             {
                 "role": "AV Pivot",
-                "movepool": ["Fake Out", "Make It Rain", "U-turn", "Last Resort"],
+                "movepool": ["Fake Out", "Make It Rain", "Return", "Knock Off"],
+                "abilities": ["Limber", "Technician", "Pickpocket"],
+                "teraTypes": ["Dark", "Steel", "Normal", "Ghost"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Fake Out", "Make It Rain", "Last Resort"],
                 "abilities": ["Limber", "Technician", "Pickpocket"],
                 "teraTypes": ["Bug", "Steel", "Normal", "Ghost"]
             },
@@ -2372,14 +2378,14 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Earthquake", "Knock Off", "Protect", "Toxic", "Toxic Spikes", "Spikes", "U-turn"],
+                "movepool": ["Earthquake", "Protect", "Toxic", "Toxic Spikes", "Spikes", "U-turn"],
                 "abilities": ["Poison Heal"],
                 "teraTypes": ["Water"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["High Horsepower", "Knock Off", "Dual Wingbeat", "U-turn", "Guillotine", "Crabhammer", "Swords Dance", "Agility"],
-                "abilities": ["Tough Claws"],
+                "movepool": ["Earthquake", "Night Slash", "Dual Wingbeat", "U-turn", "Guillotine", "Cross Poison", "Swords Dance", "Agility"],
+                "abilities": ["Hyper Cutter"],
                 "teraTypes": ["Water", "Steel", "Flying"]
             },
             {

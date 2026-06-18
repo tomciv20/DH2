@@ -2488,6 +2488,41 @@ export const Chat = new class {
 		buf += `</li><li style="clear:both"></li></ul>`;
 		return buf;
 	}
+	getWeaknessHTML(species: Species) {
+		const weaknesses: string[] = [];
+		const resistances: string[] = [];
+		const immunities: string[] = [];
+		for (const type of Dex.types.names()) {
+			const notImmune = Dex.getImmunity(type, species);
+			if (notImmune) {
+				const typeMod = Dex.getEffectiveness(type, species);
+				switch (typeMod) {
+				case 1: weaknesses.push(type); break;
+				case 2: weaknesses.push(`<b>${type}</b>`); break;
+				case 3: weaknesses.push(`<b><i>${type}</i></b>`); break;
+				case -1: resistances.push(type); break;
+				case -2: resistances.push(`<b>${type}</b>`); break;
+				case -3: resistances.push(`<b><i>${type}</i></b>`); break;
+				}
+			} else {
+				immunities.push(type);
+			}
+		}
+		const statuses: {[k: string]: string} = {
+			brn: "Burn", frz: "Frozen", par: "Paralysis",
+			powder: "Powder moves", sandstorm: "Sandstorm damage", tox: "Toxic",
+		};
+		for (const status in statuses) {
+			if (!Dex.getImmunity(status, species)) immunities.push(statuses[status]);
+		}
+		const buf = [
+			`${species.name} (ignoring abilities):`,
+			`<span class="message-effect-weak">Weaknesses</span>: ${weaknesses.join(', ') || '<font color=#999999>None</font>'}`,
+			`<span class="message-effect-resist">Resistances</span>: ${resistances.join(', ') || '<font color=#999999>None</font>'}`,
+			`<span class="message-effect-immune">Immunities</span>: ${immunities.join(', ') || '<font color=#999999>None</font>'}`,
+		];
+		return `<div class="infobox">${buf.join('<br />')}</div>`;
+	}
 	getDataItemHTML(item: Item) {
 		let buf = `<ul class="utilichart"><li class="result">`;
 		buf += `<span class="col itemiconcol"><psicon item="${item.id}"></span> <span class="col namecol"><a href="https://${Config.routes.dex}/items/${item.id}">${item.name}</a></span> `;

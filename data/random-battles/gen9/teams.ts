@@ -1418,8 +1418,10 @@ export class RandomTeams {
 			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
 		}
 		// Loaded Dice for 2-5 hit move users (guaranteed with 2+, 50% with 1)
-		if (counter.get('skilllink') >= 2) return 'Loaded Dice';
-		if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		if (ability !== 'Skill Link') {
+			if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+			if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		}
 		// Binding Band for trapping moves
 		if (counter.get('trap') && this.randomChance(1, 2)) return 'Binding Band';
 		// Big Root for multiple draining moves (90% with 3+, 60% with 2)
@@ -1615,8 +1617,10 @@ export class RandomTeams {
 			if (this.randomChance(1, 3)) return species.baseStats.spe >= 60 ? 'Wide Lens' : 'Zoom Lens';
 		}
 		// Loaded Dice for 2-5 hit move users (guaranteed with 2+, 50% with 1)
-		if (counter.get('skilllink') >= 2) return 'Loaded Dice';
-		if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		if (ability !== 'Skill Link') {
+			if (counter.get('skilllink') >= 2) return 'Loaded Dice';
+			if (counter.get('skilllink') >= 1 && this.randomChance(1, 2)) return 'Loaded Dice';
+		}
 		// Small chance for physical attackers to get Clear Amulet
 		if (counter.get('Physical') >= 2 && this.randomChance(1, 15)) return 'Clear Amulet';
 		// Binding Band for trapping moves
