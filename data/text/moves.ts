@@ -5798,8 +5798,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	skittersmack: {
 		name: "Skitter Smack",
-		desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
-		shortDesc: "Hits first. First turn out only. 100% flinch chance.",
+		desc: "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field. Bug-type Pokemon are immune to this move.",
+		shortDesc: "Hits first. First turn out only. 100% flinch. Bug immune.",
 	},
 	skullbash: {
 		name: "Skull Bash",

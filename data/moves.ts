@@ -17623,6 +17623,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return false;
 			}
 		},
+		onTryHit(target) {
+			if (target.hasType('Bug')) {
+				this.add('-immune', target);
+				this.hint("Bug-type Pokemon are immune to Skitter Smack.");
+				return this.NOT_FAIL;
+			}
+		},
 		secondary: {
 			chance: 100,
 			volatileStatus: 'flinch',
