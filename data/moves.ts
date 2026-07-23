@@ -564,7 +564,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	armthrust: {
 		num: 292,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 22,
 		category: "Physical",
 		name: "Arm Thrust",
 		pp: 20,
@@ -1109,7 +1109,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	barrage: {
 		num: 140,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 25,
 		category: "Physical",
 		isNonstandard: "Past",
@@ -1738,7 +1738,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	bonerush: {
 		num: 198,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 25,
 		category: "Physical",
 		name: "Bone Rush",
@@ -2750,7 +2750,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	cometpunch: {
 		num: 4,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 22,
 		category: "Physical",
 		name: "Comet Punch",
 		pp: 15,
@@ -6598,27 +6598,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			for (stat in pokemon.boosts) {
 				if (pokemon.boosts[stat] < 0) bp += 10 * (-pokemon.boosts[stat]);
 			}
+			// Invert attack stage: negative boost → acts like a boost, positive → acts like a drop.
+			// Since damage ∝ atk × BP, we fold the inversion into BP:
+			//   positive atkBoost: atk is rawAtk*mult, we want rawAtk/mult → BP × (1/mult²)
+			//   negative atkBoost: atk is rawAtk/mult, we want rawAtk*mult → BP × mult²
+			const atkBoost = pokemon.boosts.atk;
+			if (atkBoost) {
+				const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+				const b = Math.min(6, Math.abs(atkBoost));
+				bp = atkBoost > 0
+					? bp / (boostTable[b] * boostTable[b])
+					: bp * (boostTable[b] * boostTable[b]);
+			}
 			this.debug('Frustration BP: ' + bp);
-			return bp;
+			return Math.max(1, Math.round(bp));
 		},
 		category: "Physical",
 		name: "Frustration",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		onModifyAtk(atk, pokemon) {
-			const boost = pokemon.boosts.atk;
-			if (!boost) return;
-			// Invert attack stage: drops count as boosts, boosts count as drops.
-			// atk has already been multiplied by boostTable[boost]; compensate by
-			// dividing that out and applying the inverse multiplier instead.
-			const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
-			const b = Math.min(6, Math.abs(boost));
-			// ratio = (1/boostMult)^2 for positive boost, boostMult^2 for negative boost
-			return boost > 0
-				? this.chainModify(1 / (boostTable[b] * boostTable[b]))
-				: this.chainModify(boostTable[b] * boostTable[b]);
-		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -6629,7 +6628,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	furyattack: {
 		num: 31,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 22,
 		category: "Physical",
 		name: "Fury Attack",
 		pp: 20,
@@ -6678,7 +6677,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	furyswipes: {
 		num: 154,
 		accuracy: 100,
-		basePower: 20,
+		basePower: 22,
 		category: "Physical",
 		name: "Fury Swipes",
 		pp: 15,
@@ -10595,7 +10594,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	lastrespects: {
 		num: 854,
 		accuracy: 100,
-		basePower: 40,
+		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
 			return 60 + 20 * pokemon.side.totalFainted;
 		},
@@ -12239,6 +12238,43 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Cool",
 	},
+	merrychristmas: {
+		num: 20003,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Merry Christmas",
+		pp: 5,
+		priority: 0,
+		flags: {failencore: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1},
+		onTryMove(source) {
+			if (source.species.id !== 'delibird') {
+				this.add('-fail', source);
+				return this.NOT_FAIL;
+			}
+		},
+		onHit(target, source) {
+			this.actions.useMove('present', source);
+			const moves = this.dex.moves.all().filter(move => (
+				(!move.isNonstandard || move.isNonstandard === 'Unobtainable') &&
+				move.flags['metronome']
+			));
+			let randomMove = '';
+			if (moves.length) {
+				moves.sort((a, b) => a.num - b.num);
+				randomMove = this.sample(moves).id;
+			}
+			if (randomMove) {
+				source.side.lastSelectedMove = this.toID(randomMove);
+				this.actions.useMove(randomMove, source);
+			}
+		},
+		callsMove: true,
+		secondary: null,
+		target: "self",
+		type: "Ice",
+		contestType: "Cute",
+	},
 	metalburst: {
 		num: 368,
 		accuracy: 100,
@@ -13615,7 +13651,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 90,
 		basePower: 130,
 		category: "Special",
-		isNonstandard: "Past",
 		name: "Octazooka",
 		pp: 10,
 		priority: 0,
@@ -13928,8 +13963,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	peck: {
 		num: 64,
-		accuracy: 100,
-		basePower: 25,
+		accuracy: 95,
+		basePower: 22,
 		category: "Physical",
 		name: "Peck",
 		pp: 35,
@@ -14258,7 +14293,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	poisonsting: {
 		num: 40,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 22,
 		category: "Physical",
 		name: "Poison Sting",
 		pp: 35,
@@ -16015,7 +16050,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	rockblast: {
 		num: 350,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 25,
 		category: "Physical",
 		name: "Rock Blast",
@@ -16729,7 +16764,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 100,
 		category: "Special",
-		isNonstandard: "Past",
 		name: "Searing Shot",
 		pp: 5,
 		priority: 0,
@@ -18513,7 +18547,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	spikecannon: {
 		num: 131,
 		accuracy: 100,
-		basePower: 25,
+		basePower: 22,
 		category: "Physical",
 		name: "Spike Cannon",
 		pp: 15,
@@ -19992,8 +20026,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	tailslap: {
 		num: 541,
-		accuracy: 100,
-		basePower: 25,
+		accuracy: 90,
+		basePower: 28,
 		category: "Physical",
 		name: "Tail Slap",
 		pp: 10,

@@ -1386,12 +1386,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	ursaluna: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	ursalunabloodmoon: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	slugma: {
 		tier: "LC",
@@ -1428,18 +1428,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Illegal",
 	},
 	remoraid: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	octillery: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	delibird: {
-		tier: "Illegal",
-		natDexTier: "Illegal",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	mantyke: {
 		isNonstandard: "Past",

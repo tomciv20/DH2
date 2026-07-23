@@ -3995,6 +3995,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This move and its effects ignore the Abilities of other Pokemon.",
 		shortDesc: "Ignores the Abilities of other Pokemon.",
 	},
+	merrychristmas: {
+		name: "Merry Christmas",
+		desc: "Exclusive to Delibird. First uses Present, then uses a randomly selected move from all moves that can be called by Metronome. Each effect occurs independently.",
+		shortDesc: "Delibird only. Uses Present, then a random move.",
+	},
 	metalburst: {
 		name: "Metal Burst",
 		desc: "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn.",

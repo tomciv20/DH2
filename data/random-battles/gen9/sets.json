@@ -1047,7 +1047,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Double-Edge", "Headlong Rush", "Close Combat", "Trailblaze", "Play Rough", "Ice Punch"],
-                "abilities": ["Mind's Eye"],
+                "abilities": ["Honey Gather"],
                 "teraTypes": ["Fighting", "Grass", "Fairy"]
             },
             {
@@ -1058,31 +1058,65 @@
             }
         ]
     },
+    "ursaluna": {
+        "level": 79,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Swords Dance", "Earthquake", "Body Slam", "Rest"],
+                "abilities": ["Bulletproof", "Honey Gather"],
+                "teraTypes": ["Ghost", "Ground", "Grass"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Crunch", "Facade", "Headlong Rush", "Swords Dance", "Throat Chop", "Trailblaze"],
+                "abilities": ["Guts"],
+                "teraTypes": ["Normal"]
+            }
+        ]
+    },
+    "ursalunabloodmoon": {
+        "level": 79,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Blood Moon", "Calm Mind", "Earth Power", "Moonlight"],
+                "abilities": ["Mind's Eye"],
+                "teraTypes": ["Ghost", "Normal", "Poison"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Blood Moon", "Calm Mind", "Moonlight", "Vacuum Wave"],
+                "abilities": ["Mind's Eye"],
+                "teraTypes": ["Fighting", "Ghost", "Normal", "Poison"]
+            }
+        ]
+    },
     "magcargo": {
         "level": 87,
         "sets": [
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Earth Power", "Fire Blast", "Power Gem", "Shell Smash"],
-                "abilities": ["Steam Engine", "Water Absorb"],
+                "abilities": ["Steam Engine", "Water Absorb", "Magma Armor"],
                 "teraTypes": ["Dragon", "Grass"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Magma Storm", "Power Gem", "Recover", "Stealth Rock", "Yawn", "Scald"],
-                "abilities": ["Flame Body", "Water Absorb"],
+                "abilities": ["Flame Body", "Water Absorb", "Magma Armor"],
                 "teraTypes": ["Dragon", "Grass"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Magma Storm", "Diamond Storm", "Recover", "Stealth Rock", "Will-O-Wisp", "Rapid Spin"],
-                "abilities": ["Flame Body", "Water Absorb"],
+                "abilities": ["Flame Body", "Water Absorb", "Magma Armor"],
                 "teraTypes": ["Dragon", "Grass"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Meteor Beam", "Flamethrower", "Recover", "Earth Power", "Scald", "Energy Ball"],
-                "abilities": ["Flame Body", "Water Absorb", "Steam Engine"],
+                "abilities": ["Flame Body", "Water Absorb", "Magma Armor"],
                 "teraTypes": ["Dragon", "Grass"]
             }
         ]
@@ -2195,13 +2229,13 @@
                 "role": "Fast Attacker",
                 "movepool": ["Ice Shard", "Knock Off", "Low Kick", "Swords Dance", "Triple Axel"],
                 "abilities": ["Pickpocket", "Opportunist"],
-                "teraTypes": ["Dark", "Fighting", "Ice"]
+                "teraTypes": ["Dark", "Fighting", "Ice", "Ghost"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Snowscape", "Knock Off", "Low Kick", "Swords Dance", "Triple Axel"],
-                "abilities": ["Slush Rush"],
-                "teraTypes": ["Dark", "Fighting", "Ice"]
+                "movepool": ["Icicle Spear", "Fury Attack", "Comet Punch", "Swords Dance"],
+                "abilities": ["Pickpocket", "Opportunist"],
+                "teraTypes": ["Dark", "Fighting", "Ice", "Ghost"]
             }
         ]
     },
@@ -2402,20 +2436,60 @@
             {
                 "role": "Wallbreaker",
                 "movepool": ["Earthquake", "Headlong Rush", "Ice Shard", "Icicle Crash", "Knock Off", "Stealth Rock"],
-                "abilities": ["Thick Fat", "Thermal Exchange"],
+                "abilities": ["Oblivious", "Thermal Exchange", "Snow Cloak"],
                 "teraTypes": ["Ground", "Ice"]
             },
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Headlong Rush", "Earthquake", "Trailblaze", "Mountain Gale", "Knock Off", "Wild Charge"],
-                "abilities": ["Thick Fat", "Thermal Exchange"],
+                "abilities": ["Oblivious", "Thermal Exchange", "Snow Cloak"],
                 "teraTypes": ["Water", "Grass", "Ghost", "Electric"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Earthquake", "Headlong Rush", "Ice Shard", "Mountain Gale", "Knock Off", "Stealth Rock"],
-                "abilities": ["Thick Fat", "Thermal Exchange"],
+                "movepool": ["Earthquake", "Headlong Rush", "Ice Shard", "Glacial Lance", "Stealth Rock"],
+                "abilities": ["Oblivious", "Thermal Exchange", "Snow Cloak"],
                 "teraTypes": ["Ground", "Ice", "Water"]
+            }
+        ]
+    },
+    "octillery": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Octazooka", "Liquidation", "Seed Bomb", "Gunk Shot"],
+                "abilities": ["Suction Cups", "Sniper", "Ball Fetch"],
+                "teraTypes": ["Poison", "Grass", "Water"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Octazooka", "Bullet Seed", "Barrage", "Rock Blast"],
+                "abilities": ["Ball Fetch"],
+                "teraTypes": ["Fire", "Grass", "Water", "Rock"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Octolock", "Protect", "Bouncy Bubble", "Rest"],
+                "abilities": ["Sniper", "Ball Fetch"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "delibird": {
+        "level": 93,
+        "sets": [
+            {
+                "role": "Fast Support",
+                "movepool": ["Merry Christmas", "Spikes", "Ice Beam", "Brave Bird"],
+                "abilities": ["Super Luck", "Delta Stream"],
+                "teraTypes": ["Steel", "Ground", "Water"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Merry Christmas", "Rapid Spin", "Ice Beam", "Brave Bird"],
+                "abilities": ["Super Luck", "Delta Stream"],
+                "teraTypes": ["Steel", "Ground", "Water"]
             }
         ]
     },
