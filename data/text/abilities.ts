@@ -1,4 +1,4 @@
-export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
+﻿export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	noability: {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
@@ -358,12 +358,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	deltastream: {
 		name: "Delta Stream",
-		desc: "On switch-in, the weather becomes Delta Stream, which removes the weaknesses of the Flying type from Flying-type Pokemon. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Desolate Land or Primordial Sea Abilities.",
-		shortDesc: "On switch-in, strong winds begin until this Ability is not active in battle.",
+		desc: "On switch-in, the weather becomes Delta Stream for 5 turns (8 turns if the user is holding a Pretty Feather), which removes the weaknesses of the Flying type from Flying-type Pokemon and causes Weather Ball and Nature's Madness to become Flying type. This weather can be overwritten by other weather moves and abilities.",
+		shortDesc: "On switch-in, Delta Stream begins for 5 turns (8 with Pretty Feather).",
 	},
 	desolateland: {
 		name: "Desolate Land",
-		desc: "On switch-in, the weather becomes Desolate Land, which includes all the effects of Sunny Day and prevents damaging Water-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Primordial Sea Abilities.",
+		desc: "On switch-in, the weather becomes Desolate Land, which includes all the effects of Sunny Day and prevents damaging Water-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Primordial Sea Ability.",
 		shortDesc: "On switch-in, extremely harsh sunlight begins until this Ability is not active in battle.",
 	},
 	disguise: {
@@ -582,6 +582,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Electric type and have 1.2x power.",
 	},
+	garbagedump: {
+		name: "Garbage Dump",
+		desc: "On switch-in, the terrain becomes Noxious Terrain for 5 turns. During the effect, the power of Poison-type attacks used by grounded Pokemon is multiplied by 1.3, grounded Pokemon cannot restore HP by any means, and Terrain Pulse becomes Poison type.",
+		shortDesc: "On switch-in, Noxious Terrain begins for 5 turns.",
+	},
 	gluttony: {
 		name: "Gluttony",
 		desc: "When this Pokemon is holding a Berry that usually activates with 1/4 or less of its maximum HP, it is eaten at 1/2 or less of its maximum HP instead.",
@@ -738,6 +743,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "This Pokemon appears as the last Pokemon in the party until it takes direct damage.",
 
 		end: "  [POKEMON]'s illusion wore off!",
+	},
+	immensebulk: {
+		name: "Immense Bulk",
+		desc: "This Pokemon cannot restore HP by any means.",
+		shortDesc: "This Pokemon cannot restore HP by any means.",
 	},
 	immunity: {
 		name: "Immunity",
@@ -1324,8 +1334,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	pressure: {
 		name: "Pressure",
-		desc: "If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison, Snatch, and Tera Blast also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not.",
-		shortDesc: "If this Pokemon is the target of a foe's move, that move loses one additional PP.",
+		desc: "On switch-in, Gravity begins for 5 turns. If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison, Snatch, and Tera Blast also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not.",
+		shortDesc: "On switch-in, Gravity begins for 5 turns. Foe's moves targeting this Pokemon lose 1 PP.",
 		gen8: {
 			desc: "If this Pokemon is the target of an opposing Pokemon's move, that move loses one additional PP. Imprison and Snatch also lose one additional PP when used by an opposing Pokemon, but Sticky Web does not.",
 		},
@@ -1341,7 +1351,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	primordialsea: {
 		name: "Primordial Sea",
-		desc: "On switch-in, the weather becomes Primordial Sea, which includes all the effects of Rain Dance and prevents damaging Fire-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Delta Stream or Desolate Land Abilities.",
+		desc: "On switch-in, the weather becomes Primordial Sea, which includes all the effects of Rain Dance and prevents damaging Fire-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Desolate Land Ability.",
 		shortDesc: "On switch-in, heavy rain begins until this Ability is not active in battle.",
 	},
 	prismarmor: {

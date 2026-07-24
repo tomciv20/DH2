@@ -1,4 +1,4 @@
-export const ItemsText: {[id: IDEntry]: ItemText} = {
+﻿export const ItemsText: {[id: IDEntry]: ItemText} = {
 	abilityshield: {
 		name: "Ability Shield",
 		shortDesc: "Holder's Ability cannot be changed by any effect.",
@@ -1382,6 +1382,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	premierball: {
 		name: "Premier Ball",
 		shortDesc: "A rare Poke Ball that has been crafted to commemorate an event.",
+	},
+	prettyfeather: {
+		name: "Pretty Feather",
+		shortDesc: "Holder's use of Delta Stream lasts 8 turns instead of 5.",
 	},
 	primariumz: {
 		name: "Primarium Z",

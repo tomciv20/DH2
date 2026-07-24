@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Ratings and how they work:
 
@@ -820,7 +820,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				ally.clearBoosts();
 				this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
 
-				if (ally.cureStatus()) success = true;
+				ally.cureStatus();
 
 				const stats: BoostID[] = [];
 			let stat: BoostID;
@@ -1009,21 +1009,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(source) {
 			this.field.setWeather('deltastream');
 		},
-		onAnySetWeather(target, source, weather) {
-			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
-			if (this.field.getWeather().id === 'deltastream' && !strongWeathers.includes(weather.id)) return false;
-		},
-		onEnd(pokemon) {
-			if (this.field.weatherState.source !== pokemon) return;
-			for (const target of this.getAllActive()) {
-				if (target === pokemon) continue;
-				if (target.hasAbility('deltastream')) {
-					this.field.weatherState.source = target;
-					return;
-				}
-			}
-			this.field.clearWeather();
-		},
 		flags: {},
 		name: "Delta Stream",
 		rating: 4,
@@ -1034,7 +1019,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.setWeather('desolateland');
 		},
 		onAnySetWeather(target, source, weather) {
-			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			const strongWeathers = ['desolateland', 'primordialsea'];
 			if (this.field.getWeather().id === 'desolateland' && !strongWeathers.includes(weather.id)) return false;
 		},
 		onEnd(pokemon) {
@@ -1654,6 +1639,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 206,
 	},
+	garbagedump: {
+		onStart(source) {
+			this.field.setTerrain('noxiousterrain');
+		},
+		flags: {},
+		name: "Garbage Dump",
+		rating: 4,
+		num: 20001,
+	},
 	gluttony: {
 		onStart(pokemon) {
 			pokemon.abilityState.gluttony = true;
@@ -2172,6 +2166,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Illusion",
 		rating: 4.5,
 		num: 149,
+	},
+	immensebulk: {
+		onTryHeal() {
+			return false;
+		},
+		flags: {breakable: 1},
+		name: "Immense Bulk",
+		rating: 1,
+		num: 20002,
 	},
 	immunity: {
 		onUpdate(pokemon) {
@@ -3054,7 +3057,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onPreStart(pokemon) {
 			this.add('-ability', pokemon, 'Neutralizing Gas');
 			pokemon.abilityState.ending = false;
-			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			const strongWeathers = ['desolateland', 'primordialsea'];
 			for (const target of this.getAllActive()) {
 				if (target.hasItem('Ability Shield')) {
 					this.add('-block', target, 'item: Ability Shield');
@@ -3596,6 +3599,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	pressure: {
 		onStart(pokemon) {
 			this.add('-ability', pokemon, 'Pressure');
+			this.field.addPseudoWeather('gravity', pokemon);
 		},
 		onDeductPP(target, source) {
 			if (target.isAlly(source)) return;
@@ -3611,7 +3615,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.setWeather('primordialsea');
 		},
 		onAnySetWeather(target, source, weather) {
-			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			const strongWeathers = ['desolateland', 'primordialsea'];
 			if (this.field.getWeather().id === 'primordialsea' && !strongWeathers.includes(weather.id)) return false;
 		},
 		onEnd(pokemon) {

@@ -1,4 +1,4 @@
-export const MovesText: {[id: IDEntry]: MoveText} = {
+﻿export const MovesText: {[id: IDEntry]: MoveText} = {
 	"10000000voltthunderbolt": {
 		name: "10,000,000 Volt Thunderbolt",
 		desc: "Has a very high chance for a critical hit.",
@@ -4441,6 +4441,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		start: "  [POKEMON] can no longer escape because it used No Retreat!",
 	},
+	noxiousterrain: {
+		name: "Noxious Terrain",
+		desc: "For 5 turns, the terrain becomes Noxious Terrain. During the effect, the power of Poison-type attacks used by grounded Pokemon is multiplied by 1.3, grounded Pokemon cannot restore HP by any means, and Terrain Pulse becomes Poison type. Fails if the current terrain is Noxious Terrain.",
+		shortDesc: "5 turns. Grounded: +Poison power, no healing.",
+	},
 	noxioustorque: {
 		name: "Noxious Torque",
 		desc: "Has a 30% chance to poison the target.",
@@ -6399,6 +6404,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		gen2: {
 			shortDesc: "Lowers the target's Speed by 1.",
 		},
+	},
+	strongwinds: {
+		name: "Strong Winds",
+		desc: "For 5 turns, the weather becomes Delta Stream. During the effect, the damage of attacks against Flying-type Pokemon is not very effective, Weather Ball becomes Flying type, and Nature's Madness becomes Flying type. Lasts 8 turns if the user is holding a Pretty Feather. Fails if the current weather is Delta Stream.",
+		shortDesc: "For 5 turns, strong winds blow. Extends to 8 with Pretty Feather.",
 	},
 	struggle: {
 		name: "Struggle",

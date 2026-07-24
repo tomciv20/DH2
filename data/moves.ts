@@ -1,4 +1,4 @@
-// List of flags and their descriptions can be found in sim/dex-moves.ts
+﻿// List of flags and their descriptions can be found in sim/dex-moves.ts
 
 export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	"10000000voltthunderbolt": {
@@ -13524,6 +13524,55 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Fighting",
 	},
+	noxiousterrain: {
+		num: 20004,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Noxious Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1, metronome: 1},
+		terrain: 'noxiousterrain',
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Poison' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+					this.debug('noxious terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+			},
+			onTryHeal(damage, target, source, effect) {
+				if (!target.isGrounded() || target.isSemiInvulnerable()) return damage;
+				if (effect?.id === 'zpower') return damage;
+				this.add('-activate', target, 'move: Noxious Terrain');
+				return false;
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Noxious Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Noxious Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Noxious Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Poison",
+		contestType: "Tough",
+	},
 	noxioustorque: {
 		num: 898,
 		accuracy: 100,
@@ -19359,6 +19408,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {boost: {spe: 1}},
 		contestType: "Clever",
 	},
+	strongwinds: {
+		num: 20005,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Strong Winds",
+		pp: 5,
+		priority: 0,
+		flags: {metronome: 1},
+		weather: 'DeltaStream',
+		secondary: null,
+		target: "all",
+		type: "Flying",
+		zMove: {boost: {spe: 1}},
+		contestType: "Cool",
+	},
 	struggle: {
 		num: 165,
 		accuracy: true,
@@ -20495,6 +20560,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'psychicterrain':
 				move.type = 'Psychic';
+				break;
+			case 'noxiousterrain':
+				move.type = 'Poison';
 				break;
 			}
 		},
@@ -22213,7 +22281,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wingattack: {
 		num: 17,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 70,
 		category: "Physical",
 		name: "Wing Attack",
 		pp: 35,

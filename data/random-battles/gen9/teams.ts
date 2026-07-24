@@ -60,6 +60,13 @@ type MoveEnforcementChecker = (
 	isLead: boolean, isDoubles: boolean, teraType: string, role: RandomTeamsTypes.Role,
 ) => boolean;
 
+// Items that restore HP — banned for Pokemon with Immense Bulk:
+const IMMENSE_BULK_BANNED_ITEMS = new Set([
+	'Leftovers', 'Black Sludge', 'Shell Bell', 'Big Root',
+	'Sitrus Berry', 'Oran Berry', 'Berry Juice',
+	'Figy Berry', 'Wiki Berry', 'Mago Berry', 'Aguav Berry', 'Iapapa Berry',
+]);
+
 // Moves that restore HP:
 const RECOVERY_MOVES = [
 	'healorder', 'milkdrink', 'moonlight', 'morningsun', 'recover', 'roost', 'shoreup', 'slackoff', 'softboiled', 'strengthsap', 'synthesis',
@@ -1781,6 +1788,10 @@ export class RandomTeams {
 			} else {
 				item = this.getItem(ability, types, moves, counter, teamDetails, species, isLead, teraType, role);
 			}
+		}
+		// Immense Bulk prevents all healing — replace any HP-restoring item
+		if (ability === 'Immense Bulk' && IMMENSE_BULK_BANNED_ITEMS.has(item)) {
+			item = 'Life Orb';
 		}
 
 		// Get level

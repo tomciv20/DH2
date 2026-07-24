@@ -1,4 +1,4 @@
-export const Items: import('../sim/dex-items').ItemDataTable = {
+﻿export const Items: import('../sim/dex-items').ItemDataTable = {
 	abilityshield: {
 		name: "Ability Shield",
 		spritenum: 746,
@@ -4570,6 +4570,16 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 12,
 		gen: 3,
 		isPokeball: true,
+	},
+	prettyfeather: {
+		name: "Pretty Feather",
+		spritenum: 565,
+		fling: {
+			basePower: 10,
+		},
+		num: 565,
+		gen: 5,
+		rating: 1,
 	},
 	primariumz: {
 		name: "Primarium Z",

@@ -718,7 +718,11 @@
 	deltastream: {
 		name: 'DeltaStream',
 		effectType: 'Weather',
-		duration: 0,
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source?.hasItem('prettyfeather')) return 8;
+			return 5;
+		},
 		onEffectivenessPriority: -1,
 		onEffectiveness(typeMod, target, type, move) {
 			if (move && move.effectType === 'Move' && move.category !== 'Status' && type === 'Flying' && typeMod > 0) {
@@ -727,7 +731,11 @@
 			}
 		},
 		onFieldStart(field, source, effect) {
-			this.add('-weather', 'DeltaStream', '[from] ability: ' + effect.name, '[of] ' + source);
+			if (effect?.effectType === 'Ability') {
+				this.add('-weather', 'DeltaStream', '[from] ability: ' + effect.name, '[of] ' + source);
+			} else {
+				this.add('-weather', 'DeltaStream');
+			}
 		},
 		onFieldResidualOrder: 1,
 		onFieldResidual() {
