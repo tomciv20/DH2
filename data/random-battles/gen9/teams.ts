@@ -882,6 +882,17 @@ export class RandomTeams {
 			}
 		}
 
+		// Enforce a weather-setting move on Castform so Forecast can change its forme
+		if (species.id === 'castform') {
+			const castformWeatherMoves = ['sunnyday', 'raindance', 'sandstorm', 'snowscape'].filter(
+				moveid => movePool.includes(moveid)
+			);
+			if (castformWeatherMoves.length) {
+				counter = this.addMove(this.sample(castformWeatherMoves), moves, types, abilities, teamDetails, species, isLead, isDoubles,
+					movePool, teraType, role);
+			}
+		}
+
 		// Enforce moves in doubles
 		if (isDoubles) {
 			const doublesEnforcedMoves = ['auroraveil', 'mortalspin', 'spore'];

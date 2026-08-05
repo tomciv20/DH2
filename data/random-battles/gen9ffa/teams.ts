@@ -318,6 +318,17 @@ export class RandomFFATeams extends RandomTeams {
 				movePool, teraType, role);
 		}
 
+		// Enforce a weather-setting move on Castform so Forecast can change its forme
+		if (species.id === 'castform') {
+			const castformWeatherMoves = ['sunnyday', 'raindance', 'sandstorm', 'snowscape'].filter(
+				moveid => movePool.includes(moveid)
+			);
+			if (castformWeatherMoves.length) {
+				counter = this.addMove(this.sample(castformWeatherMoves), moves, types, abilities, teamDetails, species, isLead, isDoubles,
+					movePool, teraType, role);
+			}
+		}
+
 		// Add other moves you really want to have, e.g. STAB, recovery, setup.
 
 		// Enforce Facade if Guts is a possible ability

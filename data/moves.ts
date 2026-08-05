@@ -13549,10 +13549,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return this.chainModify([5325, 4096]);
 				}
 			},
+			onDisableMove(pokemon) {
+				if (!pokemon.isGrounded() || pokemon.isSemiInvulnerable()) return;
+				for (const moveSlot of pokemon.moveSlots) {
+					if (this.dex.moves.get(moveSlot.id).flags['heal']) {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+			onBeforeMovePriority: 6,
+			onBeforeMove(pokemon, target, move) {
+				if (move.flags['heal'] && !move.isZ && !move.isMax && pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
+					this.add('-activate', pokemon, 'move: Noxious Terrain');
+					return false;
+				}
+			},
 			onTryHeal(damage, target, source, effect) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return damage;
 				if (effect?.id === 'zpower') return damage;
-				this.add('-activate', target, 'move: Noxious Terrain');
 				return false;
 			},
 			onFieldStart(field, source, effect) {

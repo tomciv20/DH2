@@ -361,6 +361,11 @@
 		desc: "On switch-in, the weather becomes Delta Stream for 5 turns (8 turns if the user is holding a Pretty Feather), which removes the weaknesses of the Flying type from Flying-type Pokemon and causes Weather Ball and Nature's Madness to become Flying type. This weather can be overwritten by other weather moves and abilities.",
 		shortDesc: "On switch-in, Delta Stream begins for 5 turns (8 with Pretty Feather).",
 	},
+	desertswarm: {
+		name: "Desert Swarm",
+		desc: "This Pokemon and its allies' Bug-type moves have their power multiplied by 1.5, or by 2 if Sandstorm is active.",
+		shortDesc: "This Pokemon and allies' Bug-type moves: 1.5x power, or 2x in Sandstorm.",
+	},
 	desolateland: {
 		name: "Desolate Land",
 		desc: "On switch-in, the weather becomes Desolate Land, which includes all the effects of Sunny Day and prevents damaging Water-type moves from executing. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Primordial Sea Ability.",
@@ -531,8 +536,8 @@
 	},
 	forecast: {
 		name: "Forecast",
-		desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type, except Sandstorm. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain Dance or Sunny Day.",
-		shortDesc: "Castform's type changes to the current weather condition's type, except Sandstorm.",
+		desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain Dance or Sunny Day.",
+		shortDesc: "Castform's type changes to the current weather condition's type.",
 		gen7: {
 			desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type, except Sandstorm.",
 		},

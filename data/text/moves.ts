@@ -4445,6 +4445,8 @@
 		name: "Noxious Terrain",
 		desc: "For 5 turns, the terrain becomes Noxious Terrain. During the effect, the power of Poison-type attacks used by grounded Pokemon is multiplied by 1.3, grounded Pokemon cannot restore HP by any means, and Terrain Pulse becomes Poison type. Fails if the current terrain is Noxious Terrain.",
 		shortDesc: "5 turns. Grounded: +Poison power, no healing.",
+
+		activate: "  [POKEMON] cannot restore HP in the Noxious Terrain!",
 	},
 	noxioustorque: {
 		name: "Noxious Torque",
@@ -6408,7 +6410,7 @@
 	strongwinds: {
 		name: "Strong Winds",
 		desc: "For 5 turns, the weather becomes Delta Stream. During the effect, the damage of attacks against Flying-type Pokemon is not very effective, Weather Ball becomes Flying type, and Nature's Madness becomes Flying type. Lasts 8 turns if the user is holding a Pretty Feather. Fails if the current weather is Delta Stream.",
-		shortDesc: "For 5 turns, strong winds blow. Extends to 8 with Pretty Feather.",
+		shortDesc: "For 5 turns, strong winds blow.",
 	},
 	struggle: {
 		name: "Struggle",

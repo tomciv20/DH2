@@ -188,6 +188,8 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	castformwater: "Castform-Rainy",
 	castforms: "Castform-Sunny",
 	castformfire: "Castform-Sunny",
+	castformd: "Castform-Sandy",
+	castformrock: "Castform-Sandy",
 	cherrims: "Cherrim-Sunshine",
 	cherrimsunny: "Cherrim-Sunshine",
 	darmanitanz: "Darmanitan-Zen",

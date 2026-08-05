@@ -1014,6 +1014,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 191,
 	},
+	desertswarm: {
+		onAllyBasePowerPriority: 22,
+		onAllyBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Bug') {
+				if (this.field.isWeather('sandstorm')) {
+					this.debug('Desert Swarm boost (sandstorm)');
+					return this.chainModify(2);
+				}
+				this.debug('Desert Swarm boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Desert Swarm",
+		rating: 3.5,
+		num: 20003,
+	},
 	desolateland: {
 		onStart(source) {
 			this.field.setWeather('desolateland');
@@ -1524,6 +1541,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			case 'hail':
 			case 'snow':
 				if (pokemon.species.id !== 'castformsnowy') forme = 'Castform-Snowy';
+				break;
+			case 'sandstorm':
+				if (pokemon.species.id !== 'castformsandy') forme = 'Castform-Sandy';
 				break;
 			default:
 				if (pokemon.species.id !== 'castform') forme = 'Castform';
