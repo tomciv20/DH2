@@ -1535,7 +1535,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
 		onModifyMove(move, pokemon, target) {
-			if (target && ['hail', 'snow'].includes(target.effectiveWeather())) {
+			if (target && ['hail', 'snow', 'deltastream'].includes(target.effectiveWeather())) {
 				move.accuracy = true;
 			}
 		},
