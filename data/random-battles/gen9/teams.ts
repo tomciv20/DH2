@@ -884,7 +884,7 @@ export class RandomTeams {
 
 		// Enforce a weather-setting move on Castform so Forecast can change its forme
 		if (species.id === 'castform') {
-			const castformWeatherMoves = ['sunnyday', 'raindance', 'sandstorm', 'snowscape'].filter(
+			const castformWeatherMoves = ['sunnyday', 'raindance', 'sandstorm', 'snowscape', 'newmoon'].filter(
 				moveid => movePool.includes(moveid)
 			);
 			if (castformWeatherMoves.length) {

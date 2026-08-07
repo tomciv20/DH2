@@ -345,6 +345,10 @@
 		name: "Darkinium Z",
 		shortDesc: "If holder has a Dark move, this item allows it to use a Dark Z-Move.",
 	},
+	darkrock: {
+		name: "Dark Rock",
+		shortDesc: "Holder's use of New Moon lasts 8 turns instead of 5.",
+	},
 	dawnstone: {
 		name: "Dawn Stone",
 		desc: "Evolves male Kirlia into Gallade and female Snorunt into Froslass when used.",

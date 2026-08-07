@@ -40,6 +40,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	absolution: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (this.field.isWeather('darkness')) {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (effect.id === 'darkness') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: {},
+		name: "Absolution",
+		rating: 2,
+		num: 20005,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
@@ -1545,6 +1562,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			case 'sandstorm':
 				if (pokemon.species.id !== 'castformsandy') forme = 'Castform-Sandy';
 				break;
+			case 'deltastream':
+				if (pokemon.species.id !== 'castformwindy') forme = 'Castform-Windy';
+				break;
+			case 'darkness':
+				if (pokemon.species.id !== 'castformdark') forme = 'Castform-Dark';
+				break;
 			default:
 				if (pokemon.species.id !== 'castform') forme = 'Castform';
 				break;
@@ -1927,6 +1950,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Heavy Metal",
 		rating: 0,
 		num: 134,
+	},
+	heliophobia: {
+		onWeather(target, source, effect) {
+			if (effect.id === 'darkness') {
+				this.heal(target.baseMaxhp / 8);
+			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+				if (target.hasItem('utilityumbrella')) return;
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: {},
+		name: "Heliophobia",
+		rating: 2,
+		num: 20006,
 	},
 	honeygather: {
 		onResidualOrder: 5,
@@ -3136,6 +3173,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 256,
 	},
+	noctem: {
+		onStart(source) {
+			this.field.setWeather('darkness');
+		},
+		flags: {},
+		name: "Noctem",
+		rating: 4.5,
+		num: 20004,
+	},
 	noguard: {
 		onAnyInvulnerabilityPriority: 1,
 		onAnyInvulnerability(target, source, move) {
@@ -3556,6 +3602,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Poison Touch",
 		rating: 2,
 		num: 143,
+	},
+	pollutedtide: {
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			if (this.field.isTerrain('noxiousterrain') && pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
+				this.heal(pokemon.baseMaxhp / 16);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type !== 'Water') return;
+			if (!this.field.isTerrain('noxiousterrain') || !source.isGrounded() || source.isSemiInvulnerable()) return;
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Polluted Tide's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			target.trySetStatus('psn', source);
+		},
+		flags: {},
+		name: "Polluted Tide",
+		rating: 3.5,
+		num: 20009,
 	},
 	powerconstruct: {
 		onResidualOrder: 29,
@@ -4347,6 +4413,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 32,
 	},
+	shadowdance: {
+		onModifySpe(spe, pokemon) {
+			if (this.field.isWeather('darkness')) {
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Shadow Dance",
+		rating: 3,
+		num: 20007,
+	},
 	shadowshield: {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.hp >= target.maxhp) {
@@ -4939,6 +5016,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 21,
 	},
+	supercell: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['darkness', 'raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Supercell",
+		rating: 3,
+		num: 20008,
+	},
 	superluck: {
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1;
@@ -5356,7 +5445,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	toxicboost: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
-			if ((attacker.status === 'psn' || attacker.status === 'tox')) {
+			if (
+				attacker.status === 'psn' || attacker.status === 'tox' ||
+				(this.field.isTerrain('noxiousterrain') && attacker.isGrounded() && !attacker.isSemiInvulnerable())
+			) {
 				return this.chainModify(1.5);
 			}
 		},

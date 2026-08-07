@@ -3076,8 +3076,8 @@
 	},
 	honeclaws: {
 		name: "Hone Claws",
-		desc: "Raises the user's Attack and accuracy by 1 stage.",
-		shortDesc: "Raises the user's Attack and accuracy by 1.",
+		desc: "Raises the user's Attack and accuracy by 1 stage. If Darkness is active, raises them by 2 stages instead.",
+		shortDesc: "Raises the user's Attack, accuracy by 1 (2 if Darkness is active).",
 	},
 	hornattack: {
 		name: "Horn Attack",
@@ -3678,6 +3678,11 @@
 
 		heal: "  [POKEMON] became cloaked in mystical moonlight!",
 	},
+	lunarcannon: {
+		name: "Lunar Cannon",
+		desc: "This attack charges on the first turn and executes on the second. If Darkness is active, the user completes both turns in one turn.",
+		shortDesc: "Charges turn 1, attacks turn 2. Instant if Darkness is active.",
+	},
 	lunge: {
 		name: "Lunge",
 		desc: "Has a 100% chance to lower the target's Attack by 1 stage.",
@@ -4254,7 +4259,7 @@
 	},
 	moonlight: {
 		name: "Moonlight",
-		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
+		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Darkness, Desolate Land, or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",
 		gen8: {
 			desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
@@ -4274,7 +4279,7 @@
 	},
 	morningsun: {
 		name: "Morning Sun",
-		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
+		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, and 1/6 of its maximum HP if the weather is Darkness, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",
 		gen8: {
 			desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
@@ -4387,7 +4392,7 @@
 	},
 	naturesmadness: {
 		name: "Nature's Madness",
-		desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, Fire type during Desolate Land or Sunny Day, and Flying type during Delta Stream.",
+		desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, Fire type during Desolate Land or Sunny Day, Flying type during Delta Stream, and Dark type during Darkness.",
 		shortDesc: "Power doubles and type varies in each weather.",
 	},
 	needlearm: {
@@ -4401,6 +4406,11 @@
 	neverendingnightmare: {
 		name: "Never-Ending Nightmare",
 		shortDesc: "Power is equal to the base move's Z-Power.",
+	},
+	newmoon: {
+		name: "New Moon",
+		desc: "For 5 turns, the weather becomes Darkness, which boosts the power of Dark- and Ghost-type moves by 35% and weakens Fairy-type moves by 25%. Lasts for 8 turns if the user is holding Dark Rock. Fails if the current weather is Darkness.",
+		shortDesc: "For 5 turns, Darkness falls. Dark/Ghost: 1.35x power; Fairy: 0.75x power.",
 	},
 	nightdaze: {
 		name: "Night Daze",
@@ -4443,8 +4453,8 @@
 	},
 	noxiousterrain: {
 		name: "Noxious Terrain",
-		desc: "For 5 turns, the terrain becomes Noxious Terrain. During the effect, the power of Poison-type attacks used by grounded Pokemon is multiplied by 1.3, grounded Pokemon cannot restore HP by any means, and Terrain Pulse becomes Poison type. Fails if the current terrain is Noxious Terrain.",
-		shortDesc: "5 turns. Grounded: +Poison power, no healing.",
+		desc: "For 5 turns, the terrain becomes Noxious Terrain. During the effect, the power of Poison-type attacks used by grounded Pokemon is multiplied by 1.3, grounded Pokemon that are not Poison type cannot restore HP by any means, and Terrain Pulse becomes Poison type. Fails if the current terrain is Noxious Terrain.",
+		shortDesc: "5 turns. Grounded: +Poison power, no healing unless Poison type.",
 
 		activate: "  [POKEMON] cannot restore HP in the Noxious Terrain!",
 	},
@@ -4626,7 +4636,7 @@
 	},
 	phantomforce: {
 		name: "Phantom Force",
-		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, or if Darkness is active, the move completes in one turn.",
 		shortDesc: "Disappears turn 1. Hits turn 2. Breaks protection.",
 		gen6: {
 			desc: "If this move is successful, it breaks through the target's Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
@@ -4960,8 +4970,8 @@
 	},
 	purify: {
 		name: "Purify",
-		desc: "The target is cured if it has a non-volatile status condition. If the target was cured, the user restores 3/4 of its maximum HP, rounded down.",
-		shortDesc: "Cures target's status; heals user 3/4 max HP if so.",
+		desc: "The target is cured if it has a non-volatile status condition. If the target was cured, the user restores 3/4 of its maximum HP, rounded down. This move's healing still works in Noxious Terrain.",
+		shortDesc: "Cures status, heals 3/4 max HP if so. Works in Noxious Terrain.",
 	},
 	pursuit: {
 		name: "Pursuit",
@@ -5114,8 +5124,8 @@
 	},
 	razorwind: {
 		name: "Razor Wind",
-		desc: "Has a higher chance for a critical hit. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges, then hits foe(s) turn 2. High crit ratio.",
+		desc: "Has a higher chance for a critical hit. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, or if the weather is Delta Stream, the move completes in one turn.",
+		shortDesc: "Charges turn 1, hits turn 2. Instant in Delta Stream.",
 		gen4: {
 			desc: "Has a higher chance for a critical hit. This attack charges on the first turn and executes on the second.",
 		},
@@ -5625,7 +5635,7 @@
 	},
 	shadowforce: {
 		name: "Shadow Force",
-		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, or if Darkness is active, the move completes in one turn.",
 		shortDesc: "Disappears turn 1. Hits turn 2. Breaks protection.",
 		gen6: {
 			desc: "If this move is successful, it breaks through the target's Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
@@ -6026,8 +6036,8 @@
 	},
 	solarbeam: {
 		name: "Solar Beam",
-		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
-		shortDesc: "Charges turn 1. Hits turn 2. No charge in sunlight.",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella, and power is multiplied by 0.3 if the weather is Darkness. If the user is holding a Power Herb or the weather is Desolate Land, Sunny Day, or Darkness, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in sunlight/Darkness.",
 		gen8: {
 			desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
 		},
@@ -6055,8 +6065,8 @@
 	},
 	solarblade: {
 		name: "Solar Blade",
-		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
-		shortDesc: "Charges turn 1. Hits turn 2. No charge in sunlight.",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella, and power is multiplied by 0.3 if the weather is Darkness. If the user is holding a Power Herb or the weather is Desolate Land, Sunny Day, or Darkness, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in sunlight/Darkness.",
 		gen8: {
 			desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
 		},
@@ -6546,8 +6556,8 @@
 	},
 	surf: {
 		name: "Surf",
-		desc: "Damage doubles if the target is using Dive.",
-		shortDesc: "Hits adjacent Pokemon. Double damage on Dive.",
+		desc: "Damage doubles if the target is using Dive. Power is multiplied by 1.5 if the weather is Darkness.",
+		shortDesc: "Hits adjacent Pokemon. Double damage on Dive. 1.5x in Darkness.",
 		gen4: {
 			desc: "Power doubles if the target is using Dive.",
 			shortDesc: "Hits adjacent Pokemon. Power doubles on Dive.",
@@ -6640,7 +6650,7 @@
 	},
 	synthesis: {
 		name: "Synthesis",
-		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, all rounded half down.",
+		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, 1/4 of its maximum HP if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow, and 1/6 of its maximum HP if the weather is Darkness, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",
 		gen8: {
 			desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
@@ -7341,7 +7351,7 @@
 	},
 	weatherball: {
 		name: "Weather Ball",
-		desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, Fire type during Desolate Land or Sunny Day, and Flying type during Delta Stream. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
+		desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Snow, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, Fire type during Desolate Land or Sunny Day, Flying type during Delta Stream, and Dark type during Darkness. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",
 		shortDesc: "Power doubles and type varies in each weather.",
 		gen8: {
 			desc: "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Hail, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move remains Normal type and does not double in power.",

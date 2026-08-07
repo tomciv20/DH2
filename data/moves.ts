@@ -9394,6 +9394,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
+		onModifyMove(move) {
+			if (this.field.isWeather('darkness')) move.boosts = {atk: 2, accuracy: 2};
+		},
 		boosts: {
 			atk: 1,
 			accuracy: 1,
@@ -11169,6 +11172,36 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	lunarcannon: {
+		num: 20007,
+		accuracy: 100,
+		basePower: 105,
+		category: "Special",
+		name: "Lunar Cannon",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (attacker.effectiveWeather() === 'darkness') {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Beautiful",
+	},
 	lunge: {
 		num: 679,
 		accuracy: 100,
@@ -12927,6 +12960,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'snow':
 				factor = 0.25;
 				break;
+			case 'darkness':
+				factor = 0.667;
+				break;
 			}
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
 			if (!success) {
@@ -12963,6 +12999,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'hail':
 			case 'snow':
 				factor = 0.25;
+				break;
+			case 'darkness':
+				factor = 0.16667;
 				break;
 			}
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
@@ -13327,6 +13366,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'deltastream':
 				move.type = 'Flying';
 				break;
+			case 'darkness':
+				move.type = 'Dark';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -13347,6 +13389,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.basePower *= 2;
 				break;
 			case 'deltastream':
+				move.basePower *= 2;
+				break;
+			case 'darkness':
 				move.basePower *= 2;
 				break;
 			}
@@ -13390,6 +13435,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Cool",
+	},
+	newmoon: {
+		num: 20006,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "New Moon",
+		pp: 5,
+		priority: 0,
+		flags: {},
+		weather: 'Darkness',
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		zMove: {boost: {spe: 1}},
+		contestType: "Beautiful",
 	},
 	nightdaze: {
 		num: 539,
@@ -13550,23 +13611,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 			onDisableMove(pokemon) {
-				if (!pokemon.isGrounded() || pokemon.isSemiInvulnerable()) return;
+				if (
+					!pokemon.isGrounded() || pokemon.isSemiInvulnerable() ||
+					pokemon.hasAbility(['pollutedtide', 'poisonheal']) || pokemon.hasType('Poison')
+				) return;
 				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.id).flags['heal']) {
+					if (moveSlot.id !== 'purify' && this.dex.moves.get(moveSlot.id).flags['heal']) {
 						pokemon.disableMove(moveSlot.id);
 					}
 				}
 			},
 			onBeforeMovePriority: 6,
 			onBeforeMove(pokemon, target, move) {
-				if (move.flags['heal'] && !move.isZ && !move.isMax && pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
+				if (
+					move.flags['heal'] && move.id !== 'purify' && !move.isZ && !move.isMax &&
+					pokemon.isGrounded() && !pokemon.isSemiInvulnerable() &&
+					!pokemon.hasAbility(['pollutedtide', 'poisonheal']) && !pokemon.hasType('Poison')
+				) {
 					this.add('-activate', pokemon, 'move: Noxious Terrain');
 					return false;
 				}
 			},
 			onTryHeal(damage, target, source, effect) {
-				if (!target.isGrounded() || target.isSemiInvulnerable()) return damage;
-				if (effect?.id === 'zpower') return damage;
+				if (
+					!target.isGrounded() || target.isSemiInvulnerable() ||
+					target.hasAbility(['pollutedtide', 'poisonheal']) || target.hasType('Poison')
+				) return damage;
+				if (effect?.id === 'zpower' || effect?.id === 'purify') return damage;
 				return false;
 			},
 			onFieldStart(field, source, effect) {
@@ -14139,6 +14210,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
+			if (attacker.effectiveWeather() === 'darkness') {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
@@ -15215,7 +15291,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		isNonstandard: "Past",
 		name: "Purify",
 		pp: 20,
 		priority: 0,
@@ -15651,7 +15726,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	razorwind: {
 		num: 13,
 		accuracy: 100,
-		basePower: 140,
+		basePower: 120,
 		category: "Special",
 		name: "Razor Wind",
 		pp: 10,
@@ -15662,6 +15737,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
+			if (attacker.effectiveWeather() === 'deltastream') {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
@@ -17061,6 +17141,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
+			if (attacker.effectiveWeather() === 'darkness') {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
@@ -18361,7 +18446,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['sunnyday', 'desolateland'].includes(attacker.effectiveWeather())) {
+			if (['sunnyday', 'desolateland', 'darkness'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -18377,6 +18462,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (weakWeathers.includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
+			}
+			if (pokemon.effectiveWeather() === 'darkness') {
+				this.debug('weakened by weather');
+				return this.chainModify(0.3);
 			}
 		},
 		secondary: null,
@@ -18398,7 +18487,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
-			if (['sunnyday', 'desolateland'].includes(attacker.effectiveWeather())) {
+			if (['sunnyday', 'desolateland', 'darkness'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -18414,6 +18503,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (weakWeathers.includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);
+			}
+			if (pokemon.effectiveWeather() === 'darkness') {
+				this.debug('weakened by weather');
+				return this.chainModify(0.3);
 			}
 		},
 		secondary: null,
@@ -19792,6 +19885,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1, metronome: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isWeather('darkness')) {
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Water",
@@ -20011,6 +20109,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'hail':
 			case 'snow':
 				factor = 0.25;
+				break;
+			case 'darkness':
+				factor = 0.16667;
 				break;
 			}
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
@@ -22098,6 +22199,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'deltastream':
 				move.type = 'Flying';
 				break;
+			case 'darkness':
+				move.type = 'Dark';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -22118,6 +22222,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.basePower *= 2;
 				break;
 			case 'deltastream':
+				move.basePower *= 2;
+				break;
+			case 'darkness':
 				move.basePower *= 2;
 				break;
 			}

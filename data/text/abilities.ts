@@ -3,6 +3,11 @@
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
+	absolution: {
+		name: "Absolution",
+		desc: "If Darkness is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn.",
+		shortDesc: "If Darkness is active, this Pokemon's Sp. Atk is 1.5x, but it loses 1/8 max HP per turn.",
+	},
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
@@ -675,6 +680,11 @@
 		desc: "Defense stat is multiplied by 1.2x in damage calculations. This Pokemon's weight is doubled. This effect is calculated after the effect of Autotomize, and before the effect of Float Stone.",
 		shortDesc: "1.2x Defense. This Pokemon's weight is doubled.",
 	},
+	heliophobia: {
+		name: "Heliophobia",
+		desc: "If Sunny Day or Desolate Land is active, this Pokemon loses 1/8 of its maximum HP, rounded down, at the end of each turn, unless this Pokemon is holding a Utility Umbrella. If Darkness is active, this Pokemon instead heals 1/8 of its maximum HP, rounded down, at the end of each turn.",
+		shortDesc: "Heals 1/8 max HP per turn in Darkness; loses 1/8 max HP per turn in Sun.",
+	},
 	honeygather: {
 		name: "Honey Gather",
 		shortDesc: "Heals 1/16 max health at the end of the turn.",
@@ -1141,6 +1151,10 @@
 		start: "  Neutralizing gas filled the area!",
 		end: "  The effects of the neutralizing gas wore off!",
 	},
+	noctem: {
+		name: "Noctem",
+		shortDesc: "On switch-in, this Pokemon summons Darkness that lasts 5 turns.",
+	},
 	noguard: {
 		name: "No Guard",
 		shortDesc: "Every move used by or against this Pokemon will always hit.",
@@ -1278,8 +1292,8 @@
 	},
 	poisonheal: {
 		name: "Poison Heal",
-		desc: "If this Pokemon is poisoned, it restores 1/8 of its maximum HP, rounded down, at the end of each turn instead of losing HP.",
-		shortDesc: "This Pokemon is healed by 1/8 of its max HP each turn when poisoned; no HP loss.",
+		desc: "If this Pokemon is poisoned, it restores 1/8 of its maximum HP, rounded down, at the end of each turn instead of losing HP. This Pokemon ignores Noxious Terrain's effect of preventing healing, both for this Ability and for healing moves.",
+		shortDesc: "Healed by 1/8 max HP/turn when poisoned; ignores Noxious Terrain no-heal.",
 	},
 	poisonpoint: {
 		name: "Poison Point",
@@ -1301,6 +1315,11 @@
 		name: "Poison Touch",
 		desc: "This Pokemon's contact moves have a 30% chance of poisoning. This effect comes after a move's inherent secondary effect chance. This Pokemon's Poison type attacks deal 1.2x damage.",
 		shortDesc: "Contact moves have a 30% chance of poisoning. 1.2x boost to Poison attacks.",
+	},
+	pollutedtide: {
+		name: "Polluted Tide",
+		desc: "If Noxious Terrain is active and this Pokemon is grounded, it ignores the terrain's effect of preventing healing, and instead heals 1/16 of its maximum HP, rounded down, at the end of each turn. While active and grounded, this Pokemon's Water-type attacks are guaranteed to poison the target, unless the target is behind a substitute, is a Poison- or Steel-type, or has the Shield Dust Ability or is holding a Covert Cloak.",
+		shortDesc: "Noxious Terrain: user heals 1/16 HP/turn; Water moves always poison.",
 	},
 	powerconstruct: {
 		name: "Power Construct",
@@ -1593,6 +1612,10 @@
 			desc: "This Pokemon's moves have their secondary effect chance doubled.",
 		},
 	},
+	shadowdance: {
+		name: "Shadow Dance",
+		shortDesc: "If Darkness is active, this Pokemon's Speed is doubled.",
+	},
 	shadowshield: {
 		name: "Shadow Shield",
 		shortDesc: "If this Pokemon is at full HP, damage taken from attacks is halved.",
@@ -1863,6 +1886,10 @@
 
 		block: "  [POKEMON] is anchored in place with its suction cups!",
 	},
+	supercell: {
+		name: "Supercell",
+		shortDesc: "If Darkness or Rain Dance is active, this Pokemon's Special Attack is 1.5x.",
+	},
 	superluck: {
 		name: "Super Luck",
 		shortDesc: "+1 crit ratio. 1.05x accuracy. 1.25x chance for secondary effects.",
@@ -2040,8 +2067,8 @@
 	},
 	toxicboost: {
 		name: "Toxic Boost",
-		desc: "While this Pokemon is poisoned, the power of its attacks is multiplied by 1.5.",
-		shortDesc: "While this Pokemon is poisoned, its attacks have 1.5x power.",
+		desc: "While this Pokemon is poisoned, or while Noxious Terrain is active and this Pokemon is grounded, the power of its attacks is multiplied by 1.5.",
+		shortDesc: "While poisoned, or grounded in Noxious Terrain: attacks have 1.5x power.",
 	},
 	toxicchain: {
 		name: "Toxic Chain",

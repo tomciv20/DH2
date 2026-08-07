@@ -1370,6 +1370,12 @@ export const PokedexText: {[id: IDEntry]: PokedexText} = {
 	castformsandy: {
 		name: "Castform-Sandy",
 	},
+	castformwindy: {
+		name: "Castform-Windy",
+	},
+	castformdark: {
+		name: "Castform-Dark",
+	},
 	kecleon: {
 		name: "Kecleon",
 	},

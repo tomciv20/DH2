@@ -1226,6 +1226,14 @@
 		num: 285,
 		gen: 4,
 	},
+	darkrock: {
+		name: "Dark Rock",
+		spritenum: 762,
+		fling: {
+			basePower: 60,
+		},
+		num: 927,
+	},
 	darkgem: {
 		name: "Dark Gem",
 		spritenum: 89,
