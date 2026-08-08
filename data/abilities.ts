@@ -1574,6 +1574,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (pokemon.isActive && forme) {
 				pokemon.formeChange(forme, this.effect, false, '[msg]');
+				// Also show a Color Change-style type badge alongside the forme change, so the
+				// current type is always clear regardless of whether the sprite reflects it.
+				this.add('-start', pokemon, 'typechange', pokemon.getTypes().join('/'), '[from] ability: Forecast');
 			}
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},

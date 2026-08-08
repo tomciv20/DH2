@@ -351,12 +351,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	mankey: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	primeape: {
-		tier: "OU",
-		doublesTier: "DOU",
-		natDexTier: "OU",
+		tier: "Illegal",
 	},
 	growlithe: {
 		tier: "Illegal",
