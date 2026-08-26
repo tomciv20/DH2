@@ -106,6 +106,10 @@ export const Formats: FormatList = [
 		],
 		unbanlist: ['Normalium Z'],
 		onValidateSet(set) {
+			const species = this.dex.species.get(set.species);
+			if (species.tier === 'Illegal') {
+				return [`${set.name || set.species} is not a tiered/legal Pokémon in this format.`];
+			}
 			if (set.moves.length !== 1 || this.dex.moves.get(set.moves[0]).id !== 'metronome') {
 				return [`${set.name || set.species} has illegal moves.`, `(Pokémon can only have Metronome as their move)`];
 			}
