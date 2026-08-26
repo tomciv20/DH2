@@ -1003,8 +1003,8 @@
 	},
 	confusion: {
 		name: "Confusion",
-		desc: "Has a 10% chance to confuse the target.",
-		shortDesc: "10% chance to confuse the target.",
+		desc: "Has a 40% chance to confuse the target.",
+		shortDesc: "40% chance to confuse the target.",
 	},
 	constrict: {
 		name: "Constrict",

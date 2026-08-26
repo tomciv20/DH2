@@ -5931,6 +5931,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 193,
 	},
+	windchime: {
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound'] && this.field.isWeather('deltastream')) {
+				this.debug('Wind Chime boost');
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Wind Chime",
+		rating: 3,
+		num: 20010,
+	},
 	windpower: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {

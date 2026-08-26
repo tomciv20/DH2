@@ -93,6 +93,24 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		ruleset: ['Standard', 'Sleep Moves Clause', '!Sleep Clause Mod', '!Evasion Items Clause'],
 	},
+	{
+		name: "[Gen 9] Metronome Battle",
+		desc: `<b>Metronome Battle</b>: Doubles, 6v6, Level 50, where the only move any Pok&eacute;mon may know is Metronome.`,
+		mod: 'gen9',
+		gameType: 'doubles',
+		ruleset: ['Standard Doubles', 'Item Clause', 'Adjust Level = 50'],
+		banlist: [
+			'Regenerator', 'Seed Sower', 'Grassy Surge', 'Harvest',
+			'Leftovers', 'Black Sludge', 'Toxic Orb',
+			'Aguav Berry', 'Berry Juice', 'Enigma Berry', 'Figy Berry', 'Iapapa Berry', 'Mago Berry', 'Oran Berry', 'Wiki Berry',
+		],
+		unbanlist: ['Normalium Z'],
+		onValidateSet(set) {
+			if (set.moves.length !== 1 || this.dex.moves.get(set.moves[0]).id !== 'metronome') {
+				return [`${set.name || set.species} has illegal moves.`, `(Pokémon can only have Metronome as their move)`];
+			}
+		},
+	},
 	///////////////////////////////////////////////////////////////
 	///////////////////// Gen 9 Pet Mods //////////////////////////
 	///////////////////////////////////////////////////////////////

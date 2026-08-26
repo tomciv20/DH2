@@ -1710,7 +1710,7 @@
             {
                 "role": "Bulky Setup",
                 "movepool": ["Calm Mind", "Dazzling Gleam", "Psychic", "Psychic Noise", "Psyshock", "Recover"],
-                "abilities": ["Levitate", "Magic Guard", "Beads of Ruin"],
+                "abilities": ["Magic Guard", "Beads of Ruin"],
                 "teraTypes": ["Electric", "Fairy", "Poison", "Steel"]
             },
             {
@@ -2175,20 +2175,20 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Toxic", "Will-O-Wisp"],
-                "abilities": ["Magic Bounce"],
+                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Stealth Rock", "Will-O-Wisp"],
+                "abilities": ["Magic Bounce", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Support",
                 "movepool": ["Foul Play", "Spirit Shackle", "Stealth Rock", "Shadow Sneak", "Sucker Punch", "Pain Split", "Will-O-Wisp", "Dark Pulse"],
-                "abilities": ["Magic Bounce", "Shadow Shield"],
+                "abilities": ["Magic Bounce", "Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Setup",
                 "movepool": ["Nasty Plot", "Dark Pulse", "Shadow Ball", "Focus Blast", "Trick Room", "Thunderbolt"],
-                "abilities": ["Shadow Shield"],
+                "abilities": ["Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost", "Electric"]
             }
         ]

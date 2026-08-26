@@ -1980,19 +1980,19 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Air Slash", "Calm Mind", "Defog", "Shadow Ball", "Strength Sap"],
+                "movepool": ["Air Slash", "Calm Mind", "Protect", "Shadow Ball", "Strength Sap"],
                 "abilities": ["Aftermath", "Unburden"],
                 "teraTypes": ["Fairy", "Ghost"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Bleakwind Storm", "Calm Mind", "Shadow Ball", "Strength Sap", "Heat Wave", "Thunderbolt"],
+                "movepool": ["Bleakwind Storm", "Protect", "Shadow Ball", "Strength Sap", "Heat Wave", "Tailwind"],
                 "abilities": ["Flare Boost"],
                 "teraTypes": ["Fairy", "Ghost", "Electric"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Acrobatics", "Knock Off", "Will-O-Wisp", "Strength Sap", "Infernal Parade", "Explosion"],
+                "movepool": ["Acrobatics", "Knock Off", "Will-O-Wisp", "Strength Sap", "Tailwind", "Explosion"],
                 "abilities": ["Unburden"],
                 "teraTypes": ["Fairy", "Ghost", "Electric"]
             }
@@ -2148,20 +2148,20 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Toxic", "Will-O-Wisp"],
-                "abilities": ["Magic Bounce"],
+                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Protect", "Will-O-Wisp"],
+                "abilities": ["Magic Bounce", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Foul Play", "Spirit Shackle", "Stealth Rock", "Shadow Sneak", "Sucker Punch", "Pain Split", "Will-O-Wisp", "Dark Pulse"],
-                "abilities": ["Magic Bounce", "Shadow Shield"],
+                "movepool": ["Foul Play", "Spirit Shackle", "Protect", "Shadow Sneak", "Sucker Punch", "Pain Split", "Will-O-Wisp", "Dark Pulse"],
+                "abilities": ["Magic Bounce", "Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Nasty Plot", "Dark Pulse", "Shadow Ball", "Focus Blast", "Trick Room", "Thunderbolt"],
-                "abilities": ["Shadow Shield"],
+                "movepool": ["Nasty Plot", "Dark Pulse", "Shadow Ball", "Focus Blast", "Trick Room", "Protect"],
+                "abilities": ["Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost", "Electric"]
             }
         ]
@@ -2170,14 +2170,14 @@
         "level": 73,
         "sets": [
             {
-                "role": "Fast Support",
-                "movepool": ["Earthquake", "Outrage", "Spikes", "Stealth Rock", "Stone Edge"],
+                "role": "Fast Attacker",
+                "movepool": ["Earthquake", "Outrage", "Protect", "Poison Jab", "Stone Edge", "Iron Head"],
                 "abilities": ["Rough Skin"],
-                "teraTypes": ["Ground", "Steel"]
+                "teraTypes": ["Ground", "Steel", "Poison"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Earthquake", "Fire Fang", "Iron Head", "Scale Shot", "Stone Edge", "Swords Dance"],
+                "movepool": ["Earthquake", "Fire Fang", "Iron Head", "Scale Shot", "Protect", "Swords Dance"],
                 "abilities": ["Rough Skin"],
                 "teraTypes": ["Fire", "Ground", "Steel"]
             }

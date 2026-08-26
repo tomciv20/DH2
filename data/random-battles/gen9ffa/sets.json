@@ -2084,19 +2084,19 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Air Slash", "Calm Mind", "Defog", "Shadow Ball", "Strength Sap", "Tailwind"],
+                "movepool": ["Air Slash", "Calm Mind", "Defog", "Shadow Ball", "Strength Sap", "Protect"],
                 "abilities": ["Aftermath", "Unburden"],
                 "teraTypes": ["Fairy", "Ghost"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Bleakwind Storm", "Calm Mind", "Shadow Ball", "Strength Sap", "Heat Wave", "Thunderbolt", "Tailwind"],
+                "movepool": ["Bleakwind Storm", "Calm Mind", "Shadow Ball", "Strength Sap", "Heat Wave", "Thunderbolt", "Protect"],
                 "abilities": ["Flare Boost"],
                 "teraTypes": ["Fairy", "Ghost", "Electric"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Acrobatics", "Knock Off", "Will-O-Wisp", "Strength Sap", "Infernal Parade", "Explosion", "Tailwind"],
+                "movepool": ["Acrobatics", "Knock Off", "Will-O-Wisp", "Strength Sap", "Infernal Parade", "Explosion", "Protect"],
                 "abilities": ["Unburden"],
                 "teraTypes": ["Fairy", "Ghost", "Electric"]
             }
@@ -2246,20 +2246,20 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Toxic", "Will-O-Wisp", "Trick Room", "Helping Hand"],
-                "abilities": ["Magic Bounce"],
+                "movepool": ["Foul Play", "Ruination", "Poltergeist", "Shadow Sneak", "Sucker Punch", "Protect", "Will-O-Wisp", "Trick Room", "Helping Hand"],
+                "abilities": ["Magic Bounce", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["Foul Play", "Spirit Shackle", "Stealth Rock", "Shadow Sneak", "Sucker Punch", "Pain Split", "Will-O-Wisp", "Dark Pulse", "Trick Room", "Helping Hand"],
-                "abilities": ["Magic Bounce", "Shadow Shield"],
+                "movepool": ["Foul Play", "Spirit Shackle", "Stealth Rock", "Shadow Sneak", "Sucker Punch", "Pain Split", "Will-O-Wisp", "Dark Pulse", "Trick Room", "Protect"],
+                "abilities": ["Magic Bounce", "Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Nasty Plot", "Dark Pulse", "Shadow Ball", "Focus Blast", "Trick Room", "Thunderbolt", "Trick Room"],
-                "abilities": ["Shadow Shield"],
+                "movepool": ["Nasty Plot", "Dark Pulse", "Shadow Ball", "Focus Blast", "Trick Room", "Thunderbolt", "Protect"],
+                "abilities": ["Shadow Shield", "Noctem"],
                 "teraTypes": ["Dark", "Ghost", "Electric"]
             }
         ]
