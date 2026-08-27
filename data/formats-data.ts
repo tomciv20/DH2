@@ -915,7 +915,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	eevee: {
-		tier: "LC",
+		tier: "Illegal",
 	},
 	eeveestarter: {
 		isNonstandard: "LGPE",

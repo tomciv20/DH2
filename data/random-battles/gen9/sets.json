@@ -2255,7 +2255,7 @@
                 "teraTypes": ["Dragon", "Rock", "Steel", "Fighting", "Electric"]
             },
             {
-                "role": "AV Pivot",
+                "role": "Bulky Attacker",
                 "movepool": ["Thousand Waves", "Stone Edge", "Liquidation", "Body Press", "Heavy Slam"],
                 "abilities": ["Sand Stream", "Earth Eater", "Water Compaction"],
                 "teraTypes": ["Dragon", "Rock", "Steel", "Water", "Fighting"]

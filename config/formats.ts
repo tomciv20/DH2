@@ -100,7 +100,7 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		ruleset: ['Standard Doubles', 'Item Clause', 'Adjust Level = 50'],
 		banlist: [
-			'Regenerator', 'Seed Sower', 'Grassy Surge', 'Harvest',
+			'Regenerator', 'Seed Sower', 'Grassy Surge', 'Harvest', 'Honey Gather', 'Natural Cure', 'Hospitality',
 			'Leftovers', 'Black Sludge', 'Toxic Orb',
 			'Aguav Berry', 'Berry Juice', 'Enigma Berry', 'Figy Berry', 'Iapapa Berry', 'Mago Berry', 'Oran Berry', 'Wiki Berry',
 		],

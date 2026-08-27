@@ -2188,26 +2188,32 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Close Combat", "Extreme Speed", "Meteor Mash", "Stone Edge", "Swords Dance"],
+                "movepool": ["Close Combat", "Extreme Speed", "Meteor Mash", "Protect", "Swords Dance"],
                 "abilities": ["Justified"],
                 "teraTypes": ["Normal"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Aura Sphere", "Flash Cannon", "Focus Blast", "Nasty Plot", "Vacuum Wave"],
+                "movepool": ["Aura Sphere", "Flash Cannon", "Protect", "Nasty Plot", "Vacuum Wave"],
                 "abilities": ["Inner Focus"],
                 "teraTypes": ["Fighting"]
             },
             {
                 "role": "Wallbreaker",
-                "movepool": ["Plasma Fists", "Close Combat", "Extreme Speed", "Meteor Mash"],
+                "movepool": ["Plasma Fists", "Close Combat", "Extreme Speed", "Meteor Mash", "Protect"],
                 "abilities": ["Transistor"],
                 "teraTypes": ["Electric"]
             },
             {
-                "role": "Wallbreaker",
-                "movepool": ["Thunderbolt", "Aura Sphere", "Flash Cannon", "Vacuum Wave"],
+                "role": "Fast Attacker",
+                "movepool": ["Thunderbolt", "Aura Sphere", "Flash Cannon", "Protect"],
                 "abilities": ["Transistor"],
+                "teraTypes": ["Electric"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Follow Me", "Protect", "Flash Cannon", "Aura Sphere"],
+                "abilities": ["Inner Focus"],
                 "teraTypes": ["Electric"]
             }
         ]
@@ -2217,19 +2223,19 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Earthquake", "Slack Off", "Stealth Rock", "Stone Edge", "Whirlwind"],
+                "movepool": ["Thousand Waves", "Slack Off", "Stealth Rock", "Stone Edge", "Protect"],
                 "abilities": ["Sand Stream"],
                 "teraTypes": ["Dragon", "Rock", "Steel"]
             },
             {
-                "role": "Bulky Support",
-                "movepool": ["Thousand Waves", "Slack Off", "Stealth Rock", "Stone Edge", "Body Press"],
+                "role": "Bulky Attacker",
+                "movepool": ["Thousand Waves", "Slack Off", "Protect", "Stone Edge", "Body Press"],
                 "abilities": ["Earth Eater", "Water Compaction"],
                 "teraTypes": ["Dragon", "Rock", "Steel", "Fighting", "Electric"]
             },
             {
-                "role": "AV Pivot",
-                "movepool": ["Thousand Waves", "Stone Edge", "Liquidation", "Body Press", "Heavy Slam"],
+                "role": "Bulky Attacker",
+                "movepool": ["Thousand Waves", "Stone Edge", "Liquidation", "Body Press", "Protect", "High Horsepower"],
                 "abilities": ["Sand Stream", "Earth Eater", "Water Compaction"],
                 "teraTypes": ["Dragon", "Rock", "Steel", "Water", "Fighting"]
             }
@@ -4380,25 +4386,25 @@
         "sets": [
             {
                 "role": "AV Pivot",
-                "movepool": ["U-turn", "Ceaseless Edge", "Knock Off", "Dire Claw", "Earthquake"],
+                "movepool": ["U-turn", "Ceaseless Edge", "Knock Off", "Dire Claw", "Skitter Smack"],
                 "abilities": ["Tough Claws", "Toxic Chain"],
                 "teraTypes": ["Dark", "Ground"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Ceaseless Edge", "Obstruct", "Dire Claw", "Earthquake"],
+                "movepool": ["Ceaseless Edge", "Obstruct", "Dire Claw", "Skitter Smack"],
                 "abilities": ["Tough Claws", "Toxic Chain"],
                 "teraTypes": ["Dark", "Ground"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Kowtow Cleave", "Dire Claw", "Earthquake", "Knock Off", "Ceaseless Edge", "Swords Dance", "Razor Shell"],
+                "movepool": ["Kowtow Cleave", "Dire Claw", "Obstruct", "Knock Off", "Ceaseless Edge", "Swords Dance", "Razor Shell"],
                 "abilities": ["Tough Claws", "Toxic Chain"],
                 "teraTypes": ["Dark", "Ground", "Water"]
             },
             {
-                "role": "Setup Sweeper",
-                "movepool": ["Agility", "Fell Stinger", "Kowtow Cleave", "Dire Claw"],
+                "role": "Fast Attacker",
+                "movepool": ["Obstruct", "Fell Stinger", "Kowtow Cleave", "Dire Claw"],
                 "abilities": ["Tough Claws"],
                 "teraTypes": ["Bug"]
             },
